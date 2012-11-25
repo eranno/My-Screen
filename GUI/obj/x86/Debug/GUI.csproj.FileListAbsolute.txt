@@ -1,0 +1,20 @@
+C:\Users\Noam Tzumie\documents\visual studio 2010\Projects\MyScreen\GUI\bin\Debug\GUI.exe
+C:\Users\Noam Tzumie\documents\visual studio 2010\Projects\MyScreen\GUI\bin\Debug\GUI.pdb
+C:\Users\Noam Tzumie\documents\visual studio 2010\Projects\MyScreen\GUI\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Noam Tzumie\documents\visual studio 2010\Projects\MyScreen\GUI\obj\x86\Debug\GUI.Properties.Resources.resources
+C:\Users\Noam Tzumie\documents\visual studio 2010\Projects\MyScreen\GUI\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\Noam Tzumie\documents\visual studio 2010\Projects\MyScreen\GUI\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Users\Noam Tzumie\documents\visual studio 2010\Projects\MyScreen\GUI\obj\x86\Debug\GUI.exe
+C:\Users\Noam Tzumie\documents\visual studio 2010\Projects\MyScreen\GUI\obj\x86\Debug\GUI.pdb
+C:\Users\Noam Tzumie\documents\visual studio 2010\Projects\MyScreen\GUI\obj\x86\Debug\GUI.MainForm.resources
+C:\Users\Noam Tzumie\Documents\Visual Studio 2010\Projects\MyScreen\GUI\obj\x86\Debug\GUI.EncrypForm.resources
+C:\Users\Noam Tzumie\Desktop\פרוייקטים\MyScreen\VCS\My-Screen\GUI\obj\x86\Debug\GUI.exe
+C:\Users\Noam Tzumie\Desktop\פרוייקטים\MyScreen\VCS\My-Screen\GUI\obj\x86\Debug\GUI.pdb
+C:\Users\Noam Tzumie\Desktop\פרוייקטים\MyScreen\VCS\My-Screen\GUI\bin\Debug\GUI.exe
+C:\Users\Noam Tzumie\Desktop\פרוייקטים\MyScreen\VCS\My-Screen\GUI\bin\Debug\GUI.pdb
+C:\Users\Noam Tzumie\Desktop\פרוייקטים\MyScreen\VCS\My-Screen\GUI\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Noam Tzumie\Desktop\פרוייקטים\MyScreen\VCS\My-Screen\GUI\obj\x86\Debug\GUI.EncrypForm.resources
+C:\Users\Noam Tzumie\Desktop\פרוייקטים\MyScreen\VCS\My-Screen\GUI\obj\x86\Debug\GUI.MainForm.resources
+C:\Users\Noam Tzumie\Desktop\פרוייקטים\MyScreen\VCS\My-Screen\GUI\obj\x86\Debug\GUI.Properties.Resources.resources
+C:\Users\Noam Tzumie\Desktop\פרוייקטים\MyScreen\VCS\My-Screen\GUI\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\Noam Tzumie\Desktop\פרוייקטים\MyScreen\VCS\My-Screen\GUI\obj\x86\Debug\GenerateResource.write.1.tlog

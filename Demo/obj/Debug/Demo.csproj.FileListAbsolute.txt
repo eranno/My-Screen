@@ -1,0 +1,15 @@
+C:\Users\Noam Tzumie\Desktop\FiddlerCoreAPI\SampleApp\bin\Debug\Demo.exe
+C:\Users\Noam Tzumie\Desktop\FiddlerCoreAPI\SampleApp\bin\Debug\Demo.pdb
+C:\Users\Noam Tzumie\Desktop\FiddlerCoreAPI\SampleApp\bin\Debug\FiddlerCore.dll
+C:\Users\Noam Tzumie\Desktop\FiddlerCoreAPI\SampleApp\bin\Debug\FiddlerCore.pdb
+C:\Users\Noam Tzumie\Desktop\FiddlerCoreAPI\SampleApp\bin\Debug\FiddlerCore.xml
+C:\Users\Noam Tzumie\Desktop\FiddlerCoreAPI\SampleApp\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Noam Tzumie\Desktop\FiddlerCoreAPI\SampleApp\obj\Debug\Demo.exe
+C:\Users\Noam Tzumie\Desktop\FiddlerCoreAPI\SampleApp\obj\Debug\Demo.pdb
+C:\Users\Noam Tzumie\Desktop\פרוייקטים\MyScreen\VCS\My-Screen\Demo\bin\Debug\Demo.exe
+C:\Users\Noam Tzumie\Desktop\פרוייקטים\MyScreen\VCS\My-Screen\Demo\bin\Debug\Demo.pdb
+C:\Users\Noam Tzumie\Desktop\פרוייקטים\MyScreen\VCS\My-Screen\Demo\bin\Debug\FiddlerCore.pdb
+C:\Users\Noam Tzumie\Desktop\פרוייקטים\MyScreen\VCS\My-Screen\Demo\bin\Debug\FiddlerCore.xml
+C:\Users\Noam Tzumie\Desktop\פרוייקטים\MyScreen\VCS\My-Screen\Demo\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Noam Tzumie\Desktop\פרוייקטים\MyScreen\VCS\My-Screen\Demo\obj\Debug\Demo.exe
+C:\Users\Noam Tzumie\Desktop\פרוייקטים\MyScreen\VCS\My-Screen\Demo\obj\Debug\Demo.pdb
