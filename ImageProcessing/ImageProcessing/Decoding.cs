@@ -14,7 +14,6 @@ namespace ImageProcessing
         Image inputImage;
         Bitmap inputBitmap;
         int SWAPS = 300;
-        int HIGHT = 300;
         int WIDTH = 400;
         int[,] path;
         String imageIndex;
@@ -26,6 +25,47 @@ namespace ImageProcessing
             path = new int[SWAPS, 2];
 
             //retreving image from url
+            get_image_from_url(url);
+
+            //get id from image
+            Console.Write(get_id());
+
+            //get path for decoding from file 
+            Decoding_Path_reader();
+
+            //decodes the image
+            Decode_Image();
+
+            //save encoded image
+            inputBitmap.Save("C:\\Users\\user\\pics\\stage\\DecodedImage" + imageIndex + ".jpg");
+
+
+        }
+
+        public int get_id()
+        {
+            String num_str = "";
+            for (int x =0 ; x < 10; x++)
+            {
+                Color tempPixel = inputBitmap.GetPixel(x, 0);
+                int avg_rgb = (tempPixel.R + tempPixel.G + tempPixel.B)/3;
+                if (avg_rgb >= 128)//White
+                {
+                    num_str += "0";
+                }
+                else//Black
+                {
+                    num_str += "1";
+                }
+
+            }
+
+            int id = Convert.ToInt32(num_str,2);
+            return id;
+        }
+
+        public void get_image_from_url(String url)
+        {
             using (WebClient wc = new WebClient())
             {
                 Stream strm = null;
@@ -42,20 +82,9 @@ namespace ImageProcessing
                         strm.Close();
                 }
             }
-
-            //get path for decoding from file 
-            Deoding_Path_reader();
-
-            //decodes the image
-            Decode_Image();
-
-            //save encoded image
-            inputBitmap.Save("C:\\Users\\user\\pics\\stage\\DecodedImage" + imageIndex + ".jpg");
-
-
         }
 
-        public void Deoding_Path_reader()
+        public void Decoding_Path_reader()
         {
             StreamReader sr = new StreamReader("C:\\Users\\user\\pics\\stage\\path" + imageIndex + ".txt");
             string[] words = sr.ReadToEnd().Split(' ');

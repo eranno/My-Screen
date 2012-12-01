@@ -12,7 +12,7 @@ namespace ImageProcessing
     class Encoding
     {
 
-
+        String PROGRAM_ID = "0101010101";
         Image inputImage;
         Bitmap inputBitmap;
         int SWAPS = 300;
@@ -34,6 +34,9 @@ namespace ImageProcessing
 
             //resize the pic to 400 x 300 pix
             inputBitmap = Resize_Image(inputBitmap, 400, 300);
+
+            //save id in image
+            make_id();
 
             //Encode the image
             Random_Shuffle();
@@ -64,7 +67,7 @@ namespace ImageProcessing
             {
                 for (int j = 0; j < 2; j++)
                 {
-                    path[i, j] = rand.Next(HIGHT);
+                    path[i, j] = rand.Next(HIGHT - 1) + 1;//[1,HIGHT]
                 }
             }
         }
@@ -102,6 +105,17 @@ namespace ImageProcessing
             }
         }
 
+
+        public void make_id()
+        {
+            for (int x = 0; x < PROGRAM_ID.Length; x++)
+            {
+                if (PROGRAM_ID[x] == '0')
+                    inputBitmap.SetPixel(x, 0, Color.White);
+                else
+                    inputBitmap.SetPixel(x, 0, Color.Black);
+            }
+        }
 
 
     }

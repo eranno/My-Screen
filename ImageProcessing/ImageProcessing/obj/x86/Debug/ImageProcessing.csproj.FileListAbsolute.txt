@@ -8,3 +8,8 @@ C:\Users\user\documents\visual studio 2010\Projects\ImageProcessing\ImageProcess
 C:\Users\user\documents\visual studio 2010\Projects\ImageProcessing\ImageProcessing\bin\Debug\ImageProcessing.exe
 C:\Users\user\documents\visual studio 2010\Projects\ImageProcessing\ImageProcessing\bin\Debug\ImageProcessing.pdb
 C:\Users\user\documents\visual studio 2010\Projects\ImageProcessing\ImageProcessing\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\user\Documents\GitHub\My-Screen\ImageProcessing\ImageProcessing\obj\x86\Debug\ImageProcessing.exe
+C:\Users\user\Documents\GitHub\My-Screen\ImageProcessing\ImageProcessing\obj\x86\Debug\ImageProcessing.pdb
+C:\Users\user\Documents\GitHub\My-Screen\ImageProcessing\ImageProcessing\bin\Debug\ImageProcessing.exe
+C:\Users\user\Documents\GitHub\My-Screen\ImageProcessing\ImageProcessing\bin\Debug\ImageProcessing.pdb
+C:\Users\user\Documents\GitHub\My-Screen\ImageProcessing\ImageProcessing\obj\x86\Debug\ResolveAssemblyReference.cache
