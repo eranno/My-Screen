@@ -3,3 +3,8 @@ C:\Users\user\AppData\Local\Temporary Projects\ImageProcessing\bin\Debug\ImagePr
 C:\Users\user\AppData\Local\Temporary Projects\ImageProcessing\obj\x86\Debug\ResolveAssemblyReference.cache
 C:\Users\user\AppData\Local\Temporary Projects\ImageProcessing\obj\x86\Debug\ImageProcessing.exe
 C:\Users\user\AppData\Local\Temporary Projects\ImageProcessing\obj\x86\Debug\ImageProcessing.pdb
+C:\Users\user\documents\visual studio 2010\Projects\ImageProcessing\ImageProcessing\obj\x86\Debug\ImageProcessing.exe
+C:\Users\user\documents\visual studio 2010\Projects\ImageProcessing\ImageProcessing\obj\x86\Debug\ImageProcessing.pdb
+C:\Users\user\documents\visual studio 2010\Projects\ImageProcessing\ImageProcessing\bin\Debug\ImageProcessing.exe
+C:\Users\user\documents\visual studio 2010\Projects\ImageProcessing\ImageProcessing\bin\Debug\ImageProcessing.pdb
+C:\Users\user\documents\visual studio 2010\Projects\ImageProcessing\ImageProcessing\obj\x86\Debug\ResolveAssemblyReference.cache

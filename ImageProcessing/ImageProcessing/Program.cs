@@ -9,7 +9,8 @@ namespace ImageProcessing
     {
         static void Main(string[] args)
         {
-            Encoding e = new Encoding("http://vulcan.wr.usgs.gov/Imgs/Jpg/MSH/Images/MSH64_aerial_view_st_helens_from_NE_09-64_med.jpg", "0");
+            //Encoding e = new Encoding("C:\\Users\\user\\pics\\stage\\fromWeb0.jpg", "0");
+            //Decoding d = new Decoding("http://sphotos-d.ak.fbcdn.net/hphotos-ak-prn1/21763_10152326198560595_298561314_n.jpg","0");
         }
     }
 }
