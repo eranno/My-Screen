@@ -12,7 +12,7 @@ namespace ImageProcessing
     class Encoding
     {
 
-        String PROGRAM_ID = "0101010101";
+        String PROGRAM_ID = "1101000100001";
         Image inputImage;
         Bitmap inputBitmap;
         int SWAPS = 300;

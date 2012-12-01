@@ -10,7 +10,7 @@ namespace ImageProcessing
 {
     class Decoding
     {
-
+        String PROGRAM_ID = "1101000100001";
         Image inputImage;
         Bitmap inputBitmap;
         int SWAPS = 300;
@@ -45,7 +45,7 @@ namespace ImageProcessing
         public int get_id()
         {
             String num_str = "";
-            for (int x =0 ; x < 10; x++)
+            for (int x = 0; x < PROGRAM_ID.Length; x++)
             {
                 Color tempPixel = inputBitmap.GetPixel(x, 0);
                 int avg_rgb = (tempPixel.R + tempPixel.G + tempPixel.B)/3;
