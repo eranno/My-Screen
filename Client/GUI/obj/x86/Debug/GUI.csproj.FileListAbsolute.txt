@@ -18,3 +18,16 @@ C:\Users\Noam Tzumie\Desktop\פרוייקטים\MyScreen\VCS\My-Screen\GUI\obj\x
 C:\Users\Noam Tzumie\Desktop\פרוייקטים\MyScreen\VCS\My-Screen\GUI\obj\x86\Debug\GUI.Properties.Resources.resources
 C:\Users\Noam Tzumie\Desktop\פרוייקטים\MyScreen\VCS\My-Screen\GUI\obj\x86\Debug\GenerateResource.read.1.tlog
 C:\Users\Noam Tzumie\Desktop\פרוייקטים\MyScreen\VCS\My-Screen\GUI\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Users\Noam Tzumie\Desktop\פרוייקטים\MyScreen\VCS\My-Screen\Client\GUI\bin\Debug\GUI.exe
+C:\Users\Noam Tzumie\Desktop\פרוייקטים\MyScreen\VCS\My-Screen\Client\GUI\bin\Debug\GUI.pdb
+C:\Users\Noam Tzumie\Desktop\פרוייקטים\MyScreen\VCS\My-Screen\Client\GUI\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Noam Tzumie\Desktop\פרוייקטים\MyScreen\VCS\My-Screen\Client\GUI\obj\x86\Debug\GUI.EncrypForm.resources
+C:\Users\Noam Tzumie\Desktop\פרוייקטים\MyScreen\VCS\My-Screen\Client\GUI\obj\x86\Debug\GUI.MainForm.resources
+C:\Users\Noam Tzumie\Desktop\פרוייקטים\MyScreen\VCS\My-Screen\Client\GUI\obj\x86\Debug\GUI.Properties.Resources.resources
+C:\Users\Noam Tzumie\Desktop\פרוייקטים\MyScreen\VCS\My-Screen\Client\GUI\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\Noam Tzumie\Desktop\פרוייקטים\MyScreen\VCS\My-Screen\Client\GUI\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Users\Noam Tzumie\Desktop\פרוייקטים\MyScreen\VCS\My-Screen\Client\GUI\obj\x86\Debug\GUI.exe
+C:\Users\Noam Tzumie\Desktop\פרוייקטים\MyScreen\VCS\My-Screen\Client\GUI\obj\x86\Debug\GUI.pdb
+C:\Users\Noam Tzumie\Desktop\פרוייקטים\MyScreen\VCS\My-Screen\Client\GUI\bin\Debug\DataHandler.dll
+C:\Users\Noam Tzumie\Desktop\פרוייקטים\MyScreen\VCS\My-Screen\Client\GUI\bin\Debug\DataHandler.pdb
+C:\Users\Noam Tzumie\Desktop\פרוייקטים\MyScreen\VCS\My-Screen\Client\GUI\obj\x86\Debug\GUI.AddFriend.resources

@@ -29,30 +29,24 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.ListViewItem listViewItem5 = new System.Windows.Forms.ListViewItem("Desert.jpg", 0);
-            System.Windows.Forms.ListViewItem listViewItem6 = new System.Windows.Forms.ListViewItem("Tulip.jpg", 1);
-            System.Windows.Forms.ListViewItem listViewItem7 = new System.Windows.Forms.ListViewItem("User.jpg", 2);
-            System.Windows.Forms.ListViewItem listViewItem8 = new System.Windows.Forms.ListViewItem("Doll.jpg", 3);
-            System.Windows.Forms.ListViewItem listViewItem9 = new System.Windows.Forms.ListViewItem("Sea.jpg", 4);
-            System.Windows.Forms.ListViewItem listViewItem10 = new System.Windows.Forms.ListViewItem("Flower.jpg", 5);
-            System.Windows.Forms.ListViewItem listViewItem11 = new System.Windows.Forms.ListViewItem("Penguins.jpg", 6);
-            System.Windows.Forms.ListViewItem listViewItem12 = new System.Windows.Forms.ListViewItem("Quala.jpg", 7);
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem(new string[] {
-            "Noam Tzumie"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.Empty, new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177))));
-            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem(new string[] {
-            "Ilan Ben Tal"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.Empty, new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177))));
-            System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem(new string[] {
-            "David Krantz"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.Empty, new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177))));
-            System.Windows.Forms.ListViewItem listViewItem4 = new System.Windows.Forms.ListViewItem(new string[] {
-            "Eran Naor"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.Empty, new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177))));
+            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem("Desert.jpg", 0);
+            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem("Tulip.jpg", 1);
+            System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem("User.jpg", 2);
+            System.Windows.Forms.ListViewItem listViewItem4 = new System.Windows.Forms.ListViewItem("Doll.jpg", 3);
+            System.Windows.Forms.ListViewItem listViewItem5 = new System.Windows.Forms.ListViewItem("Sea.jpg", 4);
+            System.Windows.Forms.ListViewItem listViewItem6 = new System.Windows.Forms.ListViewItem("Flower.jpg", 5);
+            System.Windows.Forms.ListViewItem listViewItem7 = new System.Windows.Forms.ListViewItem("Penguins.jpg", 6);
+            System.Windows.Forms.ListViewItem listViewItem8 = new System.Windows.Forms.ListViewItem("Quala.jpg", 7);
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btEncryptImage = new System.Windows.Forms.Button();
             this.btAddFriend = new System.Windows.Forms.Button();
             this.btDecrypt = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.lvImgs = new System.Windows.Forms.ListView();
+            this.lvFriends = new System.Windows.Forms.ListView();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.lvImgs = new System.Windows.Forms.ListView();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.btAddImage = new System.Windows.Forms.Button();
             this.lblFriend = new System.Windows.Forms.Label();
@@ -63,8 +57,8 @@
             this.statisticToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.btEncryptImage = new System.Windows.Forms.Button();
-            this.lvFriends = new System.Windows.Forms.ListView();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.syncWithServerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -89,6 +83,16 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Control";
             // 
+            // btEncryptImage
+            // 
+            this.btEncryptImage.Location = new System.Drawing.Point(95, 34);
+            this.btEncryptImage.Name = "btEncryptImage";
+            this.btEncryptImage.Size = new System.Drawing.Size(66, 53);
+            this.btEncryptImage.TabIndex = 2;
+            this.btEncryptImage.Text = "Encrypt Image";
+            this.btEncryptImage.UseVisualStyleBackColor = true;
+            this.btEncryptImage.Click += new System.EventHandler(this.btEncryptImage_Click);
+            // 
             // btAddFriend
             // 
             this.btAddFriend.Location = new System.Drawing.Point(12, 34);
@@ -97,6 +101,7 @@
             this.btAddFriend.TabIndex = 1;
             this.btAddFriend.Text = "Add Friend";
             this.btAddFriend.UseVisualStyleBackColor = true;
+            this.btAddFriend.Click += new System.EventHandler(this.btAddFriend_Click);
             // 
             // btDecrypt
             // 
@@ -119,31 +124,24 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Friends";
             // 
-            // lvImgs
+            // lvFriends
             // 
-            this.lvImgs.AllowDrop = true;
-            this.lvImgs.BackgroundImage = global::GUI.Properties.Resources.list_background;
-            this.lvImgs.BackgroundImageTiled = true;
-            this.lvImgs.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lvImgs.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            listViewItem5.Checked = true;
-            listViewItem5.StateImageIndex = 1;
-            this.lvImgs.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem5,
-            listViewItem6,
-            listViewItem7,
-            listViewItem8,
-            listViewItem9,
-            listViewItem10,
-            listViewItem11,
-            listViewItem12});
-            this.lvImgs.LargeImageList = this.imageList1;
-            this.lvImgs.Location = new System.Drawing.Point(3, 16);
-            this.lvImgs.Name = "lvImgs";
-            this.lvImgs.Size = new System.Drawing.Size(522, 446);
-            this.lvImgs.SmallImageList = this.imageList1;
-            this.lvImgs.TabIndex = 2;
-            this.lvImgs.UseCompatibleStateImageBehavior = false;
+            this.lvFriends.BackgroundImage = global::GUI.Properties.Resources.list_background;
+            this.lvFriends.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lvFriends.FullRowSelect = true;
+            this.lvFriends.GridLines = true;
+            this.lvFriends.Location = new System.Drawing.Point(3, 16);
+            this.lvFriends.MultiSelect = false;
+            this.lvFriends.Name = "lvFriends";
+            this.lvFriends.Size = new System.Drawing.Size(259, 379);
+            this.lvFriends.TabIndex = 1;
+            this.lvFriends.TileSize = new System.Drawing.Size(230, 30);
+            this.lvFriends.UseCompatibleStateImageBehavior = false;
+            this.lvFriends.View = System.Windows.Forms.View.Tile;
+            this.lvFriends.VirtualListSize = 2;
+            this.lvFriends.Click += new System.EventHandler(this.friendSelected);
+            this.lvFriends.DoubleClick += new System.EventHandler(this.friendDoubleSelected);
+            this.lvFriends.KeyDown += new System.Windows.Forms.KeyEventHandler(this.friendSelected);
             // 
             // imageList1
             // 
@@ -169,6 +167,34 @@
             this.groupBox3.TabIndex = 3;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Authorized Images";
+            // 
+            // lvImgs
+            // 
+            this.lvImgs.AllowDrop = true;
+            this.lvImgs.BackColor = System.Drawing.SystemColors.Window;
+            this.lvImgs.BackgroundImage = global::GUI.Properties.Resources.list_background1;
+            this.lvImgs.BackgroundImageTiled = true;
+            this.lvImgs.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lvImgs.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            listViewItem1.Checked = true;
+            listViewItem1.StateImageIndex = 1;
+            this.lvImgs.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
+            listViewItem1,
+            listViewItem2,
+            listViewItem3,
+            listViewItem4,
+            listViewItem5,
+            listViewItem6,
+            listViewItem7,
+            listViewItem8});
+            this.lvImgs.LargeImageList = this.imageList1;
+            this.lvImgs.Location = new System.Drawing.Point(3, 16);
+            this.lvImgs.Name = "lvImgs";
+            this.lvImgs.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lvImgs.Size = new System.Drawing.Size(522, 446);
+            this.lvImgs.SmallImageList = this.imageList1;
+            this.lvImgs.TabIndex = 2;
+            this.lvImgs.UseCompatibleStateImageBehavior = false;
             // 
             // groupBox4
             // 
@@ -201,9 +227,9 @@
             this.lblFriend.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.lblFriend.Location = new System.Drawing.Point(15, 16);
             this.lblFriend.Name = "lblFriend";
-            this.lblFriend.Size = new System.Drawing.Size(144, 25);
+            this.lblFriend.Size = new System.Drawing.Size(153, 25);
             this.lblFriend.TabIndex = 0;
-            this.lblFriend.Text = "Noam Tzumie";
+            this.lblFriend.Text = "Choose Friend";
             // 
             // splitContainer1
             // 
@@ -240,7 +266,8 @@
             // 
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.saveToolStripMenuItem,
-            this.statisticToolStripMenuItem});
+            this.statisticToolStripMenuItem,
+            this.syncWithServerToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(36, 20);
             this.fileToolStripMenuItem.Text = "File";
@@ -248,13 +275,13 @@
             // saveToolStripMenuItem
             // 
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
             this.saveToolStripMenuItem.Text = "Save";
             // 
             // statisticToolStripMenuItem
             // 
             this.statisticToolStripMenuItem.Name = "statisticToolStripMenuItem";
-            this.statisticToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
+            this.statisticToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
             this.statisticToolStripMenuItem.Text = "Statistic";
             // 
             // helpToolStripMenuItem
@@ -271,35 +298,17 @@
             this.aboutToolStripMenuItem.Size = new System.Drawing.Size(108, 22);
             this.aboutToolStripMenuItem.Text = "About";
             // 
-            // btEncryptImage
+            // openFileDialog1
             // 
-            this.btEncryptImage.Location = new System.Drawing.Point(95, 34);
-            this.btEncryptImage.Name = "btEncryptImage";
-            this.btEncryptImage.Size = new System.Drawing.Size(66, 53);
-            this.btEncryptImage.TabIndex = 2;
-            this.btEncryptImage.Text = "Encrypt Image";
-            this.btEncryptImage.UseVisualStyleBackColor = true;
-            this.btEncryptImage.Click += new System.EventHandler(this.btEncryptImage_Click);
+            this.openFileDialog1.FileName = "openFileDialog1";
+            this.openFileDialog1.Filter = "(*.jpg)|*jpg";
+            this.openFileDialog1.Multiselect = true;
             // 
-            // lvFriends
+            // syncWithServerToolStripMenuItem
             // 
-            this.lvFriends.BackgroundImage = global::GUI.Properties.Resources.list_background;
-            this.lvFriends.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lvFriends.FullRowSelect = true;
-            this.lvFriends.GridLines = true;
-            this.lvFriends.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem1,
-            listViewItem2,
-            listViewItem3,
-            listViewItem4});
-            this.lvFriends.Location = new System.Drawing.Point(3, 16);
-            this.lvFriends.Name = "lvFriends";
-            this.lvFriends.Size = new System.Drawing.Size(259, 379);
-            this.lvFriends.TabIndex = 1;
-            this.lvFriends.TileSize = new System.Drawing.Size(230, 30);
-            this.lvFriends.UseCompatibleStateImageBehavior = false;
-            this.lvFriends.View = System.Windows.Forms.View.Tile;
-            this.lvFriends.VirtualListSize = 2;
+            this.syncWithServerToolStripMenuItem.Name = "syncWithServerToolStripMenuItem";
+            this.syncWithServerToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
+            this.syncWithServerToolStripMenuItem.Text = "Sync with server";
             // 
             // MainForm
             // 
@@ -351,6 +360,8 @@
         private System.Windows.Forms.ToolStripMenuItem statisticToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private System.Windows.Forms.Button btEncryptImage;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.ToolStripMenuItem syncWithServerToolStripMenuItem;
 
     }
 }

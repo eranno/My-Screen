@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddFriend.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddFriend.Designer.cs">
+      <DependentUpon>AddFriend.cs</DependentUpon>
+    </Compile>
     <Compile Include="EncrypForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -60,6 +66,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AddFriend.resx">
+      <DependentUpon>AddFriend.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EncrypForm.resx">
       <DependentUpon>EncrypForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -91,6 +100,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\list_background.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\list_background1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DataHandler\DataHandler.csproj">
+      <Project>{F8595926-2A07-4782-B6F0-B0C087876D24}</Project>
+      <Name>DataHandler</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

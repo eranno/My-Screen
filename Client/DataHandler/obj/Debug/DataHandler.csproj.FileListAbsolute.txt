@@ -1,0 +1,5 @@
+C:\Users\Noam Tzumie\Desktop\פרוייקטים\MyScreen\VCS\My-Screen\Client\DataHandler\bin\Debug\DataHandler.dll
+C:\Users\Noam Tzumie\Desktop\פרוייקטים\MyScreen\VCS\My-Screen\Client\DataHandler\bin\Debug\DataHandler.pdb
+C:\Users\Noam Tzumie\Desktop\פרוייקטים\MyScreen\VCS\My-Screen\Client\DataHandler\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Noam Tzumie\Desktop\פרוייקטים\MyScreen\VCS\My-Screen\Client\DataHandler\obj\Debug\DataHandler.dll
+C:\Users\Noam Tzumie\Desktop\פרוייקטים\MyScreen\VCS\My-Screen\Client\DataHandler\obj\Debug\DataHandler.pdb

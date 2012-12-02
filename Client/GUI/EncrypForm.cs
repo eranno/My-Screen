@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.IO;
+using DataHandler;
 
 namespace GUI
 {
@@ -24,10 +25,19 @@ namespace GUI
                 string[] files = openFileDialog1.FileNames;
                 foreach (var imgFile in files)
                 {
-                    lbImgFiles.Items.Add(Path.GetFileName(imgFile));
+                    lbImgFiles.Items.Add(Path.GetFullPath(imgFile));
                 }
             }
         }
 
+        private void encryptNstore_Click(object sender, EventArgs e)
+        {
+            String[] images = new String[lbImgFiles.Items.Count];
+            for (int i = 0; i < images.Length; i++)
+            {
+                images[i] = (String) lbImgFiles.Items[i];
+            }
+            this.Close();
+        }
     }
 }
