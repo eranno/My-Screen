@@ -14,15 +14,15 @@ namespace ImageProcessing
 {
     class ImageFiltering
     {
-        String[] images;
+        Dictionary<String, String> images;
         String PROGRAM_ID = "1101000100001";
 
 
-        public ImageFiltering(String[] images)
+        public ImageFiltering(Dictionary<String,String> images)
         {
             this.images = images;
 
-            Parallel.For(0, this.images.Length, (i) =>
+            Parallel.For(0, this.images.Count, (i) =>
             {
                 //anlyse image id
                 check_id(i);
@@ -33,11 +33,16 @@ namespace ImageProcessing
         public void check_id(int index)
         {
             Bitmap imageBitmap;
-            imageBitmap = get_image_from_url(images[index]);
+            imageBitmap = get_image_from_url(images.ElementAt(index).Key);
             String id = get_id(imageBitmap);
             if (id == PROGRAM_ID)
             {
-                Decoding d = new Decoding(images[index], index.ToString());
+                // Decoding d = new Decoding(images[index], index.ToString());
+                images[images.ElementAt(index).Key] = "C:\\Users\\user\\pics\\stage\\output\\DecodedImage" + index + ".jpg";
+            }
+            else
+            {
+                images[images.ElementAt(index).Key] = null;
             }
 
            

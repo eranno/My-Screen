@@ -37,7 +37,7 @@ namespace ImageProcessing
             Decode_Image();
 
             //save encoded image
-            inputBitmap.Save("C:\\Users\\user\\pics\\stage\\DecodedImage" + imageIndex + ".jpg");
+            inputBitmap.Save("C:\\Users\\user\\pics\\stage\\output\\DecodedImage" + imageIndex + ".jpg");
 
 
         }

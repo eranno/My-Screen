@@ -20,7 +20,6 @@ namespace ImageProcessing
         int WIDTH = 400;
         int[,] path;
         String imageIndex;
-       
 
         public Encoding(String dir, string index)
         {
@@ -44,7 +43,7 @@ namespace ImageProcessing
             Encode_Image();
 
             //save encoded image
-            inputBitmap.Save("C:\\Users\\user\\pics\\stage\\EncodedImage" + imageIndex + ".jpg");
+            inputBitmap.Save("C:\\Users\\user\\pics\\stage\\input\\EncodedImage" + imageIndex + ".jpg");
 
         }
 
