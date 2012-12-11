@@ -18,13 +18,16 @@ namespace DataHandler
         public static String ENCRYPTED_IMAGES = "Encrypte Files\\EncryptedImages.xml";
         public static String FRIENDS_DATA = "Data\\FriendsData.xml";
         public static String FRIEND_AUTH_IMG = "Data\\FriendAuthImages.xml";
-        
+
+        public static Friends friends;
 
         public LocalData()
         {
             createLocalFolders();
             createDataFiles();
-            //fillData();
+            friends = new Friends();
+            friends.loadFriends();
+
         }
 
         private void createLocalFolders()
@@ -67,22 +70,6 @@ namespace DataHandler
             }
         }
 
-        public void fillData()
-        {
-            String[] fds = { "Noam Tzuime", "Ilan Ben Tal" };
-            XmlDocument doc = new XmlDocument();
-            doc.Load(FRIENDS_DATA);
-            foreach (String s in fds)
-            {
-                XmlNode friend = doc.CreateElement("Friend");
-                XmlNode name = doc.CreateElement("Name");
-                name.InnerText = s;
-                friend.AppendChild(name);
-                doc.DocumentElement.AppendChild(friend);
-            }
-            doc.Save(FRIENDS_DATA);
-        }
-
         public static bool addFriend(String name)
         {
             if (isFriendExist(name) || name.Equals(""))
@@ -96,9 +83,56 @@ namespace DataHandler
             friend.AppendChild(friendName);
             doc.DocumentElement.AppendChild(friend);
             doc.Save(FRIENDS_DATA);
+            friends.addFriend(name);
             return true;
 
         }
+        public static List<String> getImages(String name){
+            XmlDocument doc = new XmlDocument();
+            doc.Load(FRIENDS_DATA);
+            List<String> imgs = new List<String>();
+            foreach (XmlNode node in doc.SelectNodes("Friends/Friend"))
+            {
+                XmlNode childNode = node.SelectSingleNode("Name");
+                String friendName = childNode.InnerText;
+                friendName = friendName.ToLower();
+                name = name.ToLower();
+                if (name.Equals(friendName))
+                {
+                   
+                    foreach (XmlNode friendNode in childNode.SelectNodes("Friends/Friend/Image"))
+                    {
+                        imgs.Add(friendNode.InnerText);
+                    }
+                   
+                }
+            }
+            return imgs;
+        }
+
+        public static void addImages(String name, List<String> images)
+        {
+            XmlDocument doc = new XmlDocument();
+            doc.Load(FRIENDS_DATA);
+            foreach (XmlNode node in doc.SelectNodes("Friends/Friend"))
+            {
+                XmlNode childNode = node.SelectSingleNode("Name");
+                String friendName = childNode.InnerText;
+                friendName = friendName.ToLower();
+                name = name.ToLower();
+                if (name.Equals(friendName))
+                {
+                    foreach (String im in images)
+                    {
+                        XmlNode image = doc.CreateElement("Image");
+                        image.InnerText = im;
+                        node.AppendChild(image);
+                    }
+                    break;
+                }
+            }
+        }
+
         public static bool isFriendExist(String name)
         {
             XmlDocument doc = new XmlDocument();

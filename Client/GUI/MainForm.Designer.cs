@@ -29,15 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem("Desert.jpg", 0);
-            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem("Tulip.jpg", 1);
-            System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem("User.jpg", 2);
-            System.Windows.Forms.ListViewItem listViewItem4 = new System.Windows.Forms.ListViewItem("Doll.jpg", 3);
-            System.Windows.Forms.ListViewItem listViewItem5 = new System.Windows.Forms.ListViewItem("Sea.jpg", 4);
-            System.Windows.Forms.ListViewItem listViewItem6 = new System.Windows.Forms.ListViewItem("Flower.jpg", 5);
-            System.Windows.Forms.ListViewItem listViewItem7 = new System.Windows.Forms.ListViewItem("Penguins.jpg", 6);
-            System.Windows.Forms.ListViewItem listViewItem8 = new System.Windows.Forms.ListViewItem("Quala.jpg", 7);
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btEncryptImage = new System.Windows.Forms.Button();
             this.btAddFriend = new System.Windows.Forms.Button();
@@ -55,10 +46,11 @@
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statisticToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.syncWithServerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.syncWithServerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.alertImgsLbl = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -145,20 +137,14 @@
             // 
             // imageList1
             // 
-            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth32Bit;
+            this.imageList1.ImageSize = new System.Drawing.Size(80, 80);
             this.imageList1.Tag = "";
             this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageList1.Images.SetKeyName(0, "Desert.jpg");
-            this.imageList1.Images.SetKeyName(1, "Tulips.jpg");
-            this.imageList1.Images.SetKeyName(2, "user.jpg");
-            this.imageList1.Images.SetKeyName(3, "2.jpg");
-            this.imageList1.Images.SetKeyName(4, "Jellyfish.jpg");
-            this.imageList1.Images.SetKeyName(5, "Hydrangeas.jpg");
-            this.imageList1.Images.SetKeyName(6, "Penguins.jpg");
-            this.imageList1.Images.SetKeyName(7, "Koala.jpg");
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.alertImgsLbl);
             this.groupBox3.Controls.Add(this.lvImgs);
             this.groupBox3.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.groupBox3.Location = new System.Drawing.Point(0, 57);
@@ -176,17 +162,6 @@
             this.lvImgs.BackgroundImageTiled = true;
             this.lvImgs.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lvImgs.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            listViewItem1.Checked = true;
-            listViewItem1.StateImageIndex = 1;
-            this.lvImgs.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem1,
-            listViewItem2,
-            listViewItem3,
-            listViewItem4,
-            listViewItem5,
-            listViewItem6,
-            listViewItem7,
-            listViewItem8});
             this.lvImgs.LargeImageList = this.imageList1;
             this.lvImgs.Location = new System.Drawing.Point(3, 16);
             this.lvImgs.Name = "lvImgs";
@@ -284,6 +259,12 @@
             this.statisticToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
             this.statisticToolStripMenuItem.Text = "Statistic";
             // 
+            // syncWithServerToolStripMenuItem
+            // 
+            this.syncWithServerToolStripMenuItem.Name = "syncWithServerToolStripMenuItem";
+            this.syncWithServerToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
+            this.syncWithServerToolStripMenuItem.Text = "Sync with server";
+            // 
             // helpToolStripMenuItem
             // 
             this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -304,11 +285,18 @@
             this.openFileDialog1.Filter = "(*.jpg)|*jpg";
             this.openFileDialog1.Multiselect = true;
             // 
-            // syncWithServerToolStripMenuItem
+            // alertImgsLbl
             // 
-            this.syncWithServerToolStripMenuItem.Name = "syncWithServerToolStripMenuItem";
-            this.syncWithServerToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
-            this.syncWithServerToolStripMenuItem.Text = "Sync with server";
+            this.alertImgsLbl.AutoSize = true;
+            this.alertImgsLbl.BackColor = System.Drawing.Color.Transparent;
+            this.alertImgsLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.alertImgsLbl.ForeColor = System.Drawing.Color.Transparent;
+            this.alertImgsLbl.Image = global::GUI.Properties.Resources.list_background;
+            this.alertImgsLbl.Location = new System.Drawing.Point(112, 196);
+            this.alertImgsLbl.Name = "alertImgsLbl";
+            this.alertImgsLbl.Size = new System.Drawing.Size(301, 42);
+            this.alertImgsLbl.TabIndex = 3;
+            this.alertImgsLbl.Text = "Add New Images";
             // 
             // MainForm
             // 
@@ -326,6 +314,7 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             this.splitContainer1.Panel1.ResumeLayout(false);
@@ -362,6 +351,7 @@
         private System.Windows.Forms.Button btEncryptImage;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.ToolStripMenuItem syncWithServerToolStripMenuItem;
+        private System.Windows.Forms.Label alertImgsLbl;
 
     }
 }
