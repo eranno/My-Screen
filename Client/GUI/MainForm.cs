@@ -9,6 +9,8 @@ using System.Windows.Forms;
 using System.IO;
 using DataHandler;
 using System.Xml;
+using System.Net;
+using System.Collections.Specialized;
 
 namespace GUI
 {
@@ -91,6 +93,7 @@ namespace GUI
             lvImgsStatus(files.Count);
             foreach (var imgFile in files)
             {
+                //TODO: exception!
                 Image img = Image.FromFile(imgFile);
                 imageList1.Images.Add(img);
                 //TODO: move it to another thread.
@@ -127,8 +130,7 @@ namespace GUI
         }
 
         private void btAddFriend_Click(object sender, EventArgs e)
-        {
-            
+        { 
             AddFriend ad = new AddFriend();
             ad.ShowDialog(this);
             //Need to check if change ocurr in xml file.
@@ -140,8 +142,11 @@ namespace GUI
             btAddImage.Enabled = true;
 
             ListView.SelectedIndexCollection sel = lvFriends.SelectedIndices;
-            lblFriend.Text = lvFriends.Items[sel[0]].Text;
-            contextName = lvFriends.Items[sel[0]].Text;
+            if (sel.Count > 0)
+            {
+                lblFriend.Text = lvFriends.Items[sel[0]].Text;
+                contextName = lvFriends.Items[sel[0]].Text;
+            }
         }
 
     }
