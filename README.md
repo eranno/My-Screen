@@ -2,7 +2,7 @@ My-Screen
 =========
 
 Team:
-Noam Tzumie
-Eran Naor
-David Krantz
-Ilan Ben Tal
+* Noam Tzumie
+* Eran Naor
+* David Krantz
+* Ilan Ben Tal
