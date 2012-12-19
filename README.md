@@ -1,6 +1,8 @@
 My-Screen
 =========
 
-My Screen
-
-Test
+Team:
+Noam Tzumie
+Eran Naor
+David Krantz
+Ilan Ben Tal
