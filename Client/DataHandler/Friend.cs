@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using  System.Collections.Specialized;
+using System.Data;
 
 namespace DataHandler
 {
@@ -11,7 +12,21 @@ namespace DataHandler
         List<String> imageList;
         String name;
 
-        
+        DataTable myImages;
+
+        public DataTable getMyImages()
+        {
+            if (myImages == null)
+            {
+                DBHandler.getTable("SELECT name FROM Images WHERE Images.id=");
+            }
+            return myImages;
+        }
+
+        public void setMyImages(DataTable table)
+        {
+            myImages = table;
+        }
 
         public Friend(String friendName)
         {

@@ -29,19 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btEncryptImage = new System.Windows.Forms.Button();
-            this.btAddFriend = new System.Windows.Forms.Button();
-            this.btDecrypt = new System.Windows.Forms.Button();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.lvFriends = new System.Windows.Forms.ListView();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.lvImgs = new System.Windows.Forms.ListView();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.btAddImage = new System.Windows.Forms.Button();
-            this.lblFriend = new System.Windows.Forms.Label();
-            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -50,90 +38,39 @@
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.lvImgs = new System.Windows.Forms.ListView();
             this.alertImgsLbl = new System.Windows.Forms.Label();
-            this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.lblFriend = new System.Windows.Forms.Label();
+            this.btAddImage = new System.Windows.Forms.Button();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.lvFriends = new System.Windows.Forms.ListView();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btDecrypt = new System.Windows.Forms.Button();
+            this.btAddFriend = new System.Windows.Forms.Button();
+            this.btEncryptImage = new System.Windows.Forms.Button();
+            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.splitContainer2 = new System.Windows.Forms.SplitContainer();
+            this.splitContainer3 = new System.Windows.Forms.SplitContainer();
+            this.menuStrip1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
-            this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
+            this.splitContainer2.Panel1.SuspendLayout();
+            this.splitContainer2.Panel2.SuspendLayout();
+            this.splitContainer2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).BeginInit();
+            this.splitContainer3.Panel1.SuspendLayout();
+            this.splitContainer3.Panel2.SuspendLayout();
+            this.splitContainer3.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.btEncryptImage);
-            this.groupBox1.Controls.Add(this.btAddFriend);
-            this.groupBox1.Controls.Add(this.btDecrypt);
-            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.groupBox1.Location = new System.Drawing.Point(0, 0);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(265, 118);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Control";
-            // 
-            // btEncryptImage
-            // 
-            this.btEncryptImage.Location = new System.Drawing.Point(95, 34);
-            this.btEncryptImage.Name = "btEncryptImage";
-            this.btEncryptImage.Size = new System.Drawing.Size(66, 53);
-            this.btEncryptImage.TabIndex = 2;
-            this.btEncryptImage.Text = "Encrypt Image";
-            this.btEncryptImage.UseVisualStyleBackColor = true;
-            this.btEncryptImage.Click += new System.EventHandler(this.btEncryptImage_Click);
-            // 
-            // btAddFriend
-            // 
-            this.btAddFriend.Location = new System.Drawing.Point(12, 34);
-            this.btAddFriend.Name = "btAddFriend";
-            this.btAddFriend.Size = new System.Drawing.Size(66, 53);
-            this.btAddFriend.TabIndex = 1;
-            this.btAddFriend.Text = "Add Friend";
-            this.btAddFriend.UseVisualStyleBackColor = true;
-            this.btAddFriend.Click += new System.EventHandler(this.btAddFriend_Click);
-            // 
-            // btDecrypt
-            // 
-            this.btDecrypt.Location = new System.Drawing.Point(177, 34);
-            this.btDecrypt.Name = "btDecrypt";
-            this.btDecrypt.Size = new System.Drawing.Size(66, 53);
-            this.btDecrypt.TabIndex = 0;
-            this.btDecrypt.Text = "Start Decrypt";
-            this.btDecrypt.UseVisualStyleBackColor = true;
-            this.btDecrypt.Click += new System.EventHandler(this.btDecrypt_Click);
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.lvFriends);
-            this.groupBox2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.groupBox2.Location = new System.Drawing.Point(0, 124);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(265, 398);
-            this.groupBox2.TabIndex = 1;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Friends";
-            // 
-            // lvFriends
-            // 
-            this.lvFriends.BackgroundImage = global::GUI.Properties.Resources.list_background;
-            this.lvFriends.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lvFriends.FullRowSelect = true;
-            this.lvFriends.GridLines = true;
-            this.lvFriends.Location = new System.Drawing.Point(3, 16);
-            this.lvFriends.MultiSelect = false;
-            this.lvFriends.Name = "lvFriends";
-            this.lvFriends.Size = new System.Drawing.Size(259, 379);
-            this.lvFriends.TabIndex = 1;
-            this.lvFriends.TileSize = new System.Drawing.Size(230, 30);
-            this.lvFriends.UseCompatibleStateImageBehavior = false;
-            this.lvFriends.View = System.Windows.Forms.View.Tile;
-            this.lvFriends.VirtualListSize = 2;
-            this.lvFriends.Click += new System.EventHandler(this.friendSelected);
-            this.lvFriends.DoubleClick += new System.EventHandler(this.friendDoubleSelected);
-            this.lvFriends.KeyDown += new System.Windows.Forms.KeyEventHandler(this.friendSelected);
             // 
             // imageList1
             // 
@@ -141,89 +78,6 @@
             this.imageList1.ImageSize = new System.Drawing.Size(80, 80);
             this.imageList1.Tag = "";
             this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.alertImgsLbl);
-            this.groupBox3.Controls.Add(this.lvImgs);
-            this.groupBox3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.groupBox3.Location = new System.Drawing.Point(0, 57);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(528, 465);
-            this.groupBox3.TabIndex = 3;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Authorized Images";
-            // 
-            // lvImgs
-            // 
-            this.lvImgs.AllowDrop = true;
-            this.lvImgs.BackColor = System.Drawing.SystemColors.Window;
-            this.lvImgs.BackgroundImage = global::GUI.Properties.Resources.list_background1;
-            this.lvImgs.BackgroundImageTiled = true;
-            this.lvImgs.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lvImgs.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lvImgs.LargeImageList = this.imageList1;
-            this.lvImgs.Location = new System.Drawing.Point(3, 16);
-            this.lvImgs.Name = "lvImgs";
-            this.lvImgs.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lvImgs.Size = new System.Drawing.Size(522, 446);
-            this.lvImgs.SmallImageList = this.imageList1;
-            this.lvImgs.TabIndex = 2;
-            this.lvImgs.UseCompatibleStateImageBehavior = false;
-            // 
-            // groupBox4
-            // 
-            this.groupBox4.Controls.Add(this.btAddImage);
-            this.groupBox4.Controls.Add(this.lblFriend);
-            this.groupBox4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.groupBox4.Location = new System.Drawing.Point(0, 0);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Padding = new System.Windows.Forms.Padding(15, 3, 15, 7);
-            this.groupBox4.Size = new System.Drawing.Size(528, 51);
-            this.groupBox4.TabIndex = 4;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Friend";
-            // 
-            // btAddImage
-            // 
-            this.btAddImage.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btAddImage.Location = new System.Drawing.Point(434, 16);
-            this.btAddImage.Name = "btAddImage";
-            this.btAddImage.Size = new System.Drawing.Size(79, 28);
-            this.btAddImage.TabIndex = 1;
-            this.btAddImage.Text = "Add Image";
-            this.btAddImage.UseVisualStyleBackColor = true;
-            this.btAddImage.Click += new System.EventHandler(this.btAddImage_Click);
-            // 
-            // lblFriend
-            // 
-            this.lblFriend.AutoSize = true;
-            this.lblFriend.Dock = System.Windows.Forms.DockStyle.Left;
-            this.lblFriend.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.lblFriend.Location = new System.Drawing.Point(15, 16);
-            this.lblFriend.Name = "lblFriend";
-            this.lblFriend.Size = new System.Drawing.Size(153, 25);
-            this.lblFriend.TabIndex = 0;
-            this.lblFriend.Text = "Choose Friend";
-            // 
-            // splitContainer1
-            // 
-            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer1.Location = new System.Drawing.Point(0, 24);
-            this.splitContainer1.Name = "splitContainer1";
-            // 
-            // splitContainer1.Panel1
-            // 
-            this.splitContainer1.Panel1.Controls.Add(this.groupBox1);
-            this.splitContainer1.Panel1.Controls.Add(this.groupBox2);
-            // 
-            // splitContainer1.Panel2
-            // 
-            this.splitContainer1.Panel2.Controls.Add(this.groupBox4);
-            this.splitContainer1.Panel2.Controls.Add(this.groupBox3);
-            this.splitContainer1.Size = new System.Drawing.Size(797, 522);
-            this.splitContainer1.SplitterDistance = 265;
-            this.splitContainer1.TabIndex = 5;
             // 
             // menuStrip1
             // 
@@ -285,6 +139,36 @@
             this.openFileDialog1.Filter = "(*.jpg)|*jpg";
             this.openFileDialog1.Multiselect = true;
             // 
+            // groupBox3
+            // 
+            this.groupBox3.AutoSize = true;
+            this.groupBox3.Controls.Add(this.alertImgsLbl);
+            this.groupBox3.Controls.Add(this.lvImgs);
+            this.groupBox3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox3.Location = new System.Drawing.Point(0, 0);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(528, 465);
+            this.groupBox3.TabIndex = 3;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Authorized Images";
+            // 
+            // lvImgs
+            // 
+            this.lvImgs.AllowDrop = true;
+            this.lvImgs.BackColor = System.Drawing.SystemColors.Window;
+            this.lvImgs.BackgroundImage = global::GUI.Properties.Resources.list_background1;
+            this.lvImgs.BackgroundImageTiled = true;
+            this.lvImgs.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lvImgs.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.lvImgs.LargeImageList = this.imageList1;
+            this.lvImgs.Location = new System.Drawing.Point(3, 16);
+            this.lvImgs.Name = "lvImgs";
+            this.lvImgs.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lvImgs.Size = new System.Drawing.Size(522, 446);
+            this.lvImgs.SmallImageList = this.imageList1;
+            this.lvImgs.TabIndex = 2;
+            this.lvImgs.UseCompatibleStateImageBehavior = false;
+            // 
             // alertImgsLbl
             // 
             this.alertImgsLbl.AutoSize = true;
@@ -292,11 +176,177 @@
             this.alertImgsLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.alertImgsLbl.ForeColor = System.Drawing.Color.Transparent;
             this.alertImgsLbl.Image = global::GUI.Properties.Resources.list_background;
-            this.alertImgsLbl.Location = new System.Drawing.Point(112, 196);
+            this.alertImgsLbl.Location = new System.Drawing.Point(106, 179);
             this.alertImgsLbl.Name = "alertImgsLbl";
             this.alertImgsLbl.Size = new System.Drawing.Size(301, 42);
             this.alertImgsLbl.TabIndex = 3;
             this.alertImgsLbl.Text = "Add New Images";
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.AutoSize = true;
+            this.groupBox4.Controls.Add(this.btAddImage);
+            this.groupBox4.Controls.Add(this.lblFriend);
+            this.groupBox4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox4.Location = new System.Drawing.Point(0, 0);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Padding = new System.Windows.Forms.Padding(15, 3, 15, 7);
+            this.groupBox4.Size = new System.Drawing.Size(528, 53);
+            this.groupBox4.TabIndex = 4;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Friend";
+            // 
+            // lblFriend
+            // 
+            this.lblFriend.AutoSize = true;
+            this.lblFriend.Dock = System.Windows.Forms.DockStyle.Left;
+            this.lblFriend.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.lblFriend.Location = new System.Drawing.Point(15, 16);
+            this.lblFriend.Name = "lblFriend";
+            this.lblFriend.Size = new System.Drawing.Size(153, 25);
+            this.lblFriend.TabIndex = 0;
+            this.lblFriend.Text = "Choose Friend";
+            // 
+            // btAddImage
+            // 
+            this.btAddImage.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btAddImage.Location = new System.Drawing.Point(434, 16);
+            this.btAddImage.Name = "btAddImage";
+            this.btAddImage.Size = new System.Drawing.Size(79, 30);
+            this.btAddImage.TabIndex = 1;
+            this.btAddImage.Text = "Add Image";
+            this.btAddImage.UseVisualStyleBackColor = true;
+            this.btAddImage.Click += new System.EventHandler(this.btAddImage_Click);
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.AutoSize = true;
+            this.groupBox2.Controls.Add(this.lvFriends);
+            this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox2.Location = new System.Drawing.Point(0, 0);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(265, 406);
+            this.groupBox2.TabIndex = 1;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Friends";
+            // 
+            // lvFriends
+            // 
+            this.lvFriends.BackgroundImage = global::GUI.Properties.Resources.list_background;
+            this.lvFriends.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lvFriends.FullRowSelect = true;
+            this.lvFriends.GridLines = true;
+            this.lvFriends.Location = new System.Drawing.Point(3, 16);
+            this.lvFriends.MultiSelect = false;
+            this.lvFriends.Name = "lvFriends";
+            this.lvFriends.Size = new System.Drawing.Size(259, 387);
+            this.lvFriends.TabIndex = 1;
+            this.lvFriends.TileSize = new System.Drawing.Size(230, 30);
+            this.lvFriends.UseCompatibleStateImageBehavior = false;
+            this.lvFriends.View = System.Windows.Forms.View.Tile;
+            this.lvFriends.VirtualListSize = 2;
+            this.lvFriends.Click += new System.EventHandler(this.friendSelected);
+            this.lvFriends.DoubleClick += new System.EventHandler(this.friendDoubleSelected);
+            this.lvFriends.KeyDown += new System.Windows.Forms.KeyEventHandler(this.friendSelected);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.AutoSize = true;
+            this.groupBox1.Controls.Add(this.btEncryptImage);
+            this.groupBox1.Controls.Add(this.btAddFriend);
+            this.groupBox1.Controls.Add(this.btDecrypt);
+            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox1.Location = new System.Drawing.Point(0, 0);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(265, 112);
+            this.groupBox1.TabIndex = 0;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Control";
+            // 
+            // btDecrypt
+            // 
+            this.btDecrypt.Location = new System.Drawing.Point(177, 34);
+            this.btDecrypt.Name = "btDecrypt";
+            this.btDecrypt.Size = new System.Drawing.Size(66, 53);
+            this.btDecrypt.TabIndex = 0;
+            this.btDecrypt.Text = "Start Decrypt";
+            this.btDecrypt.UseVisualStyleBackColor = true;
+            this.btDecrypt.Click += new System.EventHandler(this.btDecrypt_Click);
+            // 
+            // btAddFriend
+            // 
+            this.btAddFriend.Location = new System.Drawing.Point(12, 34);
+            this.btAddFriend.Name = "btAddFriend";
+            this.btAddFriend.Size = new System.Drawing.Size(66, 53);
+            this.btAddFriend.TabIndex = 1;
+            this.btAddFriend.Text = "Add Friend";
+            this.btAddFriend.UseVisualStyleBackColor = true;
+            this.btAddFriend.Click += new System.EventHandler(this.btAddFriend_Click);
+            // 
+            // btEncryptImage
+            // 
+            this.btEncryptImage.Location = new System.Drawing.Point(95, 34);
+            this.btEncryptImage.Name = "btEncryptImage";
+            this.btEncryptImage.Size = new System.Drawing.Size(66, 53);
+            this.btEncryptImage.TabIndex = 2;
+            this.btEncryptImage.Text = "Encrypt Image";
+            this.btEncryptImage.UseVisualStyleBackColor = true;
+            this.btEncryptImage.Click += new System.EventHandler(this.btEncryptImage_Click);
+            // 
+            // splitContainer1
+            // 
+            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer1.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
+            this.splitContainer1.IsSplitterFixed = true;
+            this.splitContainer1.Location = new System.Drawing.Point(0, 24);
+            this.splitContainer1.Name = "splitContainer1";
+            // 
+            // splitContainer1.Panel1
+            // 
+            this.splitContainer1.Panel1.Controls.Add(this.splitContainer3);
+            // 
+            // splitContainer1.Panel2
+            // 
+            this.splitContainer1.Panel2.Controls.Add(this.splitContainer2);
+            this.splitContainer1.Size = new System.Drawing.Size(797, 522);
+            this.splitContainer1.SplitterDistance = 265;
+            this.splitContainer1.TabIndex = 5;
+            // 
+            // splitContainer2
+            // 
+            this.splitContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer2.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer2.Name = "splitContainer2";
+            this.splitContainer2.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            // 
+            // splitContainer2.Panel1
+            // 
+            this.splitContainer2.Panel1.Controls.Add(this.groupBox4);
+            // 
+            // splitContainer2.Panel2
+            // 
+            this.splitContainer2.Panel2.Controls.Add(this.groupBox3);
+            this.splitContainer2.Size = new System.Drawing.Size(528, 522);
+            this.splitContainer2.SplitterDistance = 53;
+            this.splitContainer2.TabIndex = 5;
+            // 
+            // splitContainer3
+            // 
+            this.splitContainer3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer3.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer3.Name = "splitContainer3";
+            this.splitContainer3.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            // 
+            // splitContainer3.Panel1
+            // 
+            this.splitContainer3.Panel1.Controls.Add(this.groupBox1);
+            // 
+            // splitContainer3.Panel2
+            // 
+            this.splitContainer3.Panel2.Controls.Add(this.groupBox2);
+            this.splitContainer3.Size = new System.Drawing.Size(265, 522);
+            this.splitContainer3.SplitterDistance = 112;
+            this.splitContainer3.TabIndex = 2;
             // 
             // MainForm
             // 
@@ -306,23 +356,33 @@
             this.ClientSize = new System.Drawing.Size(797, 546);
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.menuStrip1);
-            this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(813, 584);
             this.MinimumSize = new System.Drawing.Size(813, 584);
             this.Name = "MainForm";
             this.Text = "My Screen";
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox2.ResumeLayout(false);
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
+            this.splitContainer2.Panel1.ResumeLayout(false);
+            this.splitContainer2.Panel1.PerformLayout();
+            this.splitContainer2.Panel2.ResumeLayout(false);
+            this.splitContainer2.Panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
+            this.splitContainer2.ResumeLayout(false);
+            this.splitContainer3.Panel1.ResumeLayout(false);
+            this.splitContainer3.Panel1.PerformLayout();
+            this.splitContainer3.Panel2.ResumeLayout(false);
+            this.splitContainer3.Panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).EndInit();
+            this.splitContainer3.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -330,28 +390,30 @@
 
         #endregion
 
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button btAddFriend;
-        private System.Windows.Forms.Button btDecrypt;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.ListView lvFriends;
-        private System.Windows.Forms.ListView lvImgs;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.Button btAddImage;
-        private System.Windows.Forms.Label lblFriend;
         private System.Windows.Forms.ImageList imageList1;
-        private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem statisticToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
-        private System.Windows.Forms.Button btEncryptImage;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.ToolStripMenuItem syncWithServerToolStripMenuItem;
+        private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Label alertImgsLbl;
+        private System.Windows.Forms.ListView lvImgs;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.Button btAddImage;
+        private System.Windows.Forms.Label lblFriend;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.ListView lvFriends;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button btEncryptImage;
+        private System.Windows.Forms.Button btAddFriend;
+        private System.Windows.Forms.Button btDecrypt;
+        private System.Windows.Forms.SplitContainer splitContainer1;
+        private System.Windows.Forms.SplitContainer splitContainer2;
+        private System.Windows.Forms.SplitContainer splitContainer3;
 
     }
 }

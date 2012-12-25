@@ -27,7 +27,7 @@ namespace DataHandler
             createDataFiles();
             friends = new Friends();
             friends.loadFriends();
-
+            DBHandler.initDB();
         }
 
         private void createLocalFolders()
@@ -147,5 +147,10 @@ namespace DataHandler
             }
             return false;
         }
+
+        public void addElement() { }
+        public void getElement() { }
+
+
     }
 }

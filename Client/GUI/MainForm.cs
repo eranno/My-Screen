@@ -26,6 +26,7 @@ namespace GUI
         {
             InitializeComponent();
             isDecrypt = false;
+            
             //Important localData before populateFriends.
             ld = new LocalData();
 
@@ -89,16 +90,34 @@ namespace GUI
         {
             lvImgs.Items.Clear();
             imageList1.Images.Clear();
+            imageList1.ImageSize = new System.Drawing.Size(150, 150);
             List<String> files = currFriend.getImageList();
             lvImgsStatus(files.Count);
+            ProgressBar pb = new ProgressBar();
+            pb.Show();
+            //long start = DateTime.Now.Ticks / TimeSpan.TicksPerMillisecond;
             foreach (var imgFile in files)
             {
-                //TODO: exception!
-                Image img = Image.FromFile(imgFile);
-                imageList1.Images.Add(img);
-                //TODO: move it to another thread.
-                lvImgs.Items.Add(new ListViewItem(Path.GetFileName(imgFile), imageList1.Images.Count - 1));
-                lvImgs.Refresh();
+                
+                    using (FileStream fs = new FileStream(imgFile, FileMode.Open, FileAccess.Read))
+                    {
+                        using (Image img = Image.FromStream(fs))
+                        {
+                            imageList1.Images.Add(img);
+                        }
+                    }
+                    //TODO: exception!
+             
+            }
+            long end = DateTime.Now.Ticks / TimeSpan.TicksPerMillisecond;
+            //MessageBox.Show("Total : " + (end-start));
+            lvImgs.LargeImageList = imageList1;
+            for (int i = 0; i < imageList1.Images.Count; i++)
+            {
+                  //TODO: move it to another thread.
+                ListViewItem lvi = new ListViewItem(Path.GetFileName(files[i]), i);
+                lvImgs.Items.Add(lvi);
+                 lvImgs.Refresh();
             }
         }
 
@@ -147,6 +166,11 @@ namespace GUI
                 lblFriend.Text = lvFriends.Items[sel[0]].Text;
                 contextName = lvFriends.Items[sel[0]].Text;
             }
+        }
+
+        private void friendSelected(object sender, KeyEventArgs e)
+        {
+
         }
 
     }
