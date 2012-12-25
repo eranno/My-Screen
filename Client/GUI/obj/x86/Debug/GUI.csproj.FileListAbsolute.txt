@@ -31,3 +31,5 @@ C:\Users\Noam Tzumie\Desktop\פרוייקטים\MyScreen\VCS\My-Screen\Client\GU
 C:\Users\Noam Tzumie\Desktop\פרוייקטים\MyScreen\VCS\My-Screen\Client\GUI\bin\Debug\DataHandler.dll
 C:\Users\Noam Tzumie\Desktop\פרוייקטים\MyScreen\VCS\My-Screen\Client\GUI\bin\Debug\DataHandler.pdb
 C:\Users\Noam Tzumie\Desktop\פרוייקטים\MyScreen\VCS\My-Screen\Client\GUI\obj\x86\Debug\GUI.AddFriend.resources
+C:\Users\Noam Tzumie\Desktop\פרוייקטים\MyScreen\VCS\My-Screen\Client\GUI\obj\x86\Debug\GUI.ShowDB.resources
+C:\Users\Noam Tzumie\Desktop\פרוייקטים\MyScreen\VCS\My-Screen\Client\GUI\obj\x86\Debug\GUI.AddImage.resources

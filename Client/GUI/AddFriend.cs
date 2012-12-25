@@ -14,34 +14,20 @@ namespace GUI
 {
     public partial class AddFriend : Form
     {
-        public AddFriend()
+        Friends friends;
+        public AddFriend(Friends friends)
         {
             InitializeComponent();
+            this.friends = friends;
         }
 
         private void addBtn_Click(object sender, EventArgs e)
         {
-            if (!LocalData.addFriend(nameTxt.Text))
-                MessageBox.Show("Friend name already exist!");
-            else
-            {
-                 using (var wb = new WebClient())
-            {
-                var data = new NameValueCollection();
-                data["email"] = "noam185@gmail.com";
-                data["password"] = "1234";
-                data["femail"] = nameTxt.Text;
+            string email = txtEmail.Text;
+            string name = txtName.Text;
 
-                var response = wb.UploadValues("http://myscreen.cu.cc/act/add_contact.php", "POST", data);
-                String body = Encoding.UTF8.GetString(response);
-                char code = body[0];
-                     if(code == '0')
-                        MessageBox.Show("Success code: " + code);
-                     else
-                         MessageBox.Show("Error code: " + code);
-            }
-                this.Close();
-            }
+            friends.addFriend(email, name);
+            this.Close();
         }
 
         private void cancelBtn_Click(object sender, EventArgs e)

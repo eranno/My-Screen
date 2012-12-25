@@ -54,15 +54,15 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(348, 206);
+            this.panel1.Size = new System.Drawing.Size(476, 265);
             this.panel1.TabIndex = 0;
             // 
             // lbImgFiles
             // 
             this.lbImgFiles.FormattingEnabled = true;
-            this.lbImgFiles.Location = new System.Drawing.Point(166, 70);
+            this.lbImgFiles.Location = new System.Drawing.Point(186, 70);
             this.lbImgFiles.Name = "lbImgFiles";
-            this.lbImgFiles.Size = new System.Drawing.Size(155, 108);
+            this.lbImgFiles.Size = new System.Drawing.Size(249, 121);
             this.lbImgFiles.TabIndex = 4;
             // 
             // label1
@@ -71,7 +71,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.label1.ForeColor = System.Drawing.Color.GhostWhite;
-            this.label1.Location = new System.Drawing.Point(81, 18);
+            this.label1.Location = new System.Drawing.Point(128, 20);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(203, 31);
             this.label1.TabIndex = 3;
@@ -79,7 +79,7 @@
             // 
             // encryptNstore
             // 
-            this.encryptNstore.Location = new System.Drawing.Point(30, 124);
+            this.encryptNstore.Location = new System.Drawing.Point(30, 137);
             this.encryptNstore.Name = "encryptNstore";
             this.encryptNstore.Size = new System.Drawing.Size(113, 54);
             this.encryptNstore.TabIndex = 1;
@@ -101,7 +101,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(348, 206);
+            this.ClientSize = new System.Drawing.Size(476, 265);
             this.Controls.Add(this.panel1);
             this.Name = "EncrypForm";
             this.Text = "Form1";

@@ -25,7 +25,7 @@ namespace GUI
                 string[] files = openFileDialog1.FileNames;
                 foreach (var imgFile in files)
                 {
-                    lbImgFiles.Items.Add(Path.GetFullPath(imgFile));
+                    lbImgFiles.Items.Add(Path.GetFileName(imgFile));
                 }
             }
         }
