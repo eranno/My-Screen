@@ -1,9 +1,0 @@
-C:\Users\Noam Tzumie\Desktop\פרוייקטים\MyScreen\VCS\My-Screen\Client\MyScreen\TestProject1\bin\Debug\TestProject1.dll
-C:\Users\Noam Tzumie\Desktop\פרוייקטים\MyScreen\VCS\My-Screen\Client\MyScreen\TestProject1\bin\Debug\TestProject1.pdb
-C:\Users\Noam Tzumie\Desktop\פרוייקטים\MyScreen\VCS\My-Screen\Client\MyScreen\TestProject1\bin\Debug\DataHandler.dll
-C:\Users\Noam Tzumie\Desktop\פרוייקטים\MyScreen\VCS\My-Screen\Client\MyScreen\TestProject1\bin\Debug\GUI.exe
-C:\Users\Noam Tzumie\Desktop\פרוייקטים\MyScreen\VCS\My-Screen\Client\MyScreen\TestProject1\bin\Debug\DataHandler.pdb
-C:\Users\Noam Tzumie\Desktop\פרוייקטים\MyScreen\VCS\My-Screen\Client\MyScreen\TestProject1\bin\Debug\GUI.pdb
-C:\Users\Noam Tzumie\Desktop\פרוייקטים\MyScreen\VCS\My-Screen\Client\MyScreen\TestProject1\obj\Debug\ResolveAssemblyReference.cache
-C:\Users\Noam Tzumie\Desktop\פרוייקטים\MyScreen\VCS\My-Screen\Client\MyScreen\TestProject1\obj\Debug\TestProject1.dll
-C:\Users\Noam Tzumie\Desktop\פרוייקטים\MyScreen\VCS\My-Screen\Client\MyScreen\TestProject1\obj\Debug\TestProject1.pdb
