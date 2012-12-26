@@ -1,0 +1,7 @@
+C:\Users\Noam Tzumie\Desktop\פרוייקטים\MyScreen\VCS\My-Screen\Client\MyScreen\TestProject2\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Noam Tzumie\Desktop\פרוייקטים\MyScreen\VCS\My-Screen\Client\MyScreen\TestProject2\bin\Debug\TestProject2.dll
+C:\Users\Noam Tzumie\Desktop\פרוייקטים\MyScreen\VCS\My-Screen\Client\MyScreen\TestProject2\bin\Debug\TestProject2.pdb
+C:\Users\Noam Tzumie\Desktop\פרוייקטים\MyScreen\VCS\My-Screen\Client\MyScreen\TestProject2\bin\Debug\DataHandler.dll
+C:\Users\Noam Tzumie\Desktop\פרוייקטים\MyScreen\VCS\My-Screen\Client\MyScreen\TestProject2\bin\Debug\DataHandler.pdb
+C:\Users\Noam Tzumie\Desktop\פרוייקטים\MyScreen\VCS\My-Screen\Client\MyScreen\TestProject2\obj\Debug\TestProject2.dll
+C:\Users\Noam Tzumie\Desktop\פרוייקטים\MyScreen\VCS\My-Screen\Client\MyScreen\TestProject2\obj\Debug\TestProject2.pdb

@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="ed861272-e265-4d38-a320-88f54ebaacfc" name="Noam Tzumie@NOAMTZUMIE-PC 2012-12-26 22:21:12" runUser="NoamTzumie-PC\Noam Tzumie" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestSettings name="Local" id="0684b95b-a8b5-418e-a34c-d04e607d37b6">
+    <Description>These are default test settings for a local test run.</Description>
+    <Deployment enabled="false" runDeploymentRoot="Noam Tzumie_NOAMTZUMIE-PC 2012-12-26 22_21_12">
+      <DeploymentItem filename="C:\Users\Noam Tzumie\Desktop\פרוייקטים\MyScreen\VCS\My-Screen\Client\DataHandler\bin\Debug\DataHandler.dll" />
+    </Deployment>
+    <Execution>
+      <TestTypeSpecific />
+      <AgentRule name="Execution Agents">
+      </AgentRule>
+    </Execution>
+  </TestSettings>
+  <Times creation="2012-12-26T22:21:12.7871801+02:00" queuing="2012-12-26T22:21:12.7991808+02:00" start="2012-12-26T22:21:12.8281825+02:00" finish="2012-12-26T22:21:13.5972265+02:00" />
+  <ResultSummary outcome="Failed">
+    <Counters total="2" executed="2" error="0" failed="2" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" passed="0" completed="0" inProgress="0" pending="0" />
+  </ResultSummary>
+  <TestDefinitions>
+    <UnitTest name="TestMethod1" storage="c:\users\noam tzumie\desktop\פרוייקטים\myscreen\vcs\my-screen\client\myscreen\testproject2\bin\debug\testproject2.dll" id="b96f2172-51f7-3767-573a-01ebaf3120be">
+      <Execution id="099bb704-a33d-4bb8-8c4a-ccabbda1cb05" />
+      <TestMethod codeBase="C:/Users/Noam Tzumie/Desktop/פרוייקטים/MyScreen/VCS/My-Screen/Client/MyScreen/TestProject2/bin/Debug/TestProject2.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestProject2.UnitTest1, TestProject2, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="TestMethod1" />
+    </UnitTest>
+    <UnitTest name="TestMethod2" storage="c:\users\noam tzumie\desktop\פרוייקטים\myscreen\vcs\my-screen\client\myscreen\testproject2\bin\debug\testproject2.dll" id="762813a8-6a9a-e8e5-34d5-f448a5291c4a">
+      <Execution id="6b2519d4-9fbe-4463-b3d1-ceb1420abcb3" />
+      <TestMethod codeBase="C:/Users/Noam Tzumie/Desktop/פרוייקטים/MyScreen/VCS/My-Screen/Client/MyScreen/TestProject2/bin/Debug/TestProject2.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestProject2.UnitTest1, TestProject2, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="TestMethod2" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="762813a8-6a9a-e8e5-34d5-f448a5291c4a" executionId="6b2519d4-9fbe-4463-b3d1-ceb1420abcb3" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="b96f2172-51f7-3767-573a-01ebaf3120be" executionId="099bb704-a33d-4bb8-8c4a-ccabbda1cb05" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="6b2519d4-9fbe-4463-b3d1-ceb1420abcb3" testId="762813a8-6a9a-e8e5-34d5-f448a5291c4a" testName="TestMethod2" computerName="NOAMTZUMIE-PC" duration="00:00:00.0714002" startTime="2012-12-26T22:21:12.8381831+02:00" endTime="2012-12-26T22:21:13.1201992+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="6b2519d4-9fbe-4463-b3d1-ceb1420abcb3">
+      <Output>
+        <ErrorInfo>
+          <Message>Assert.AreEqual failed. Expected:&lt;test2&gt;. Actual:&lt;test1&gt;. </Message>
+          <StackTrace>   at TestProject2.UnitTest1.TestMethod2() in C:\Users\Noam Tzumie\Desktop\פרוייקטים\MyScreen\VCS\My-Screen\Client\MyScreen\TestProject2\UnitTest1.cs:line 99
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="099bb704-a33d-4bb8-8c4a-ccabbda1cb05" testId="b96f2172-51f7-3767-573a-01ebaf3120be" testName="TestMethod1" computerName="NOAMTZUMIE-PC" duration="00:00:00.1551473" startTime="2012-12-26T22:21:13.1241994+02:00" endTime="2012-12-26T22:21:13.2852086+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="099bb704-a33d-4bb8-8c4a-ccabbda1cb05">
+      <Output>
+        <ErrorInfo>
+          <Message>Test method TestProject2.UnitTest1.TestMethod1 threw exception: 
+System.IndexOutOfRangeException: There is no row at position 0.</Message>
+          <StackTrace>    at System.Data.RBTree`1.GetNodeByIndex(Int32 userIndex)
+   at System.Data.DataRowCollection.get_Item(Int32 index)
+   at TestProject2.UnitTest1.TestMethod1() in C:\Users\Noam Tzumie\Desktop\פרוייקטים\MyScreen\VCS\My-Screen\Client\MyScreen\TestProject2\UnitTest1.cs:line 74
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+  </Results>
+</TestRun>
