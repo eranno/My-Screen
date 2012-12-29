@@ -34,6 +34,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.encryptNstore = new System.Windows.Forms.Button();
             this.btLoadImg = new System.Windows.Forms.Button();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -54,7 +55,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(476, 265);
+            this.panel1.Size = new System.Drawing.Size(478, 266);
             this.panel1.TabIndex = 0;
             // 
             // lbImgFiles
@@ -97,11 +98,16 @@
             this.btLoadImg.UseVisualStyleBackColor = true;
             this.btLoadImg.Click += new System.EventHandler(this.btLoadImg_Click);
             // 
+            // backgroundWorker1
+            // 
+            this.backgroundWorker1.WorkerReportsProgress = true;
+            this.backgroundWorker1.WorkerSupportsCancellation = true;
+            // 
             // EncrypForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(476, 265);
+            this.ClientSize = new System.Drawing.Size(478, 266);
             this.Controls.Add(this.panel1);
             this.Name = "EncrypForm";
             this.Text = "Form1";
@@ -119,5 +125,6 @@
         private System.Windows.Forms.Button btLoadImg;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.ListBox lbImgFiles;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }
 }

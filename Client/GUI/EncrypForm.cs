@@ -8,14 +8,18 @@ using System.Text;
 using System.Windows.Forms;
 using System.IO;
 using DataHandler;
+using System.Threading;
 
 namespace GUI
 {
     public partial class EncrypForm : Form
     {
+        List<string> imgFiles;
+
         public EncrypForm()
         {
             InitializeComponent();
+            imgFiles = new List<string>();
         }
 
         private void btLoadImg_Click(object sender, EventArgs e)
@@ -23,8 +27,9 @@ namespace GUI
             if (openFileDialog1.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
                 string[] files = openFileDialog1.FileNames;
-                foreach (var imgFile in files)
+                foreach (string imgFile in files)
                 {
+                    imgFiles.Add(imgFile);
                     lbImgFiles.Items.Add(Path.GetFileName(imgFile));
                 }
             }
@@ -32,12 +37,15 @@ namespace GUI
 
         private void encryptNstore_Click(object sender, EventArgs e)
         {
-            String[] images = new String[lbImgFiles.Items.Count];
-            for (int i = 0; i < images.Length; i++)
+            if (imgFiles.Count == 0)
             {
-                images[i] = (String) lbImgFiles.Items[i];
+                MessageBox.Show("Load some images first");
+                return;
             }
+            LocalData.createThumb(imgFiles);
             this.Close();
         }
+
+
     }
 }

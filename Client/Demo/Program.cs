@@ -224,7 +224,6 @@ namespace Demo
             Fiddler.FiddlerApplication.BeforeResponse += delegate(Fiddler.Session oSession)
             {
                 list.Add(oSession.fullUrl);
-                
                 // Console.WriteLine("{0}:HTTP {1} for {2}", oS.id, oS.responseCode, oS.fullUrl);
                 
                 // Uncomment the following two statements to decompress/unchunk the
@@ -235,14 +234,15 @@ namespace Demo
                 //oS.utilDecodeResponse(); oS.utilReplaceInResponse("Microsoft", "Bayden");
             };
 
-            //Fiddler.FiddlerApplication.AfterSessionComplete += delegate(Fiddler.Session oS)
-            //{
-            //    //Console.WriteLine("Finished session:\t" + oS.fullUrl); 
-            //    if (bUpdateTitle)
-            //    {
-            //        Console.Title = ("Session list contains: " + oAllSessions.Count.ToString() + " sessions");
-            //    }
-            //};
+            Fiddler.FiddlerApplication.AfterSessionComplete += delegate(Fiddler.Session oS)
+            {
+                Console.WriteLine("Session Complete");
+                //Console.WriteLine("Finished session:\t" + oS.fullUrl); 
+                //if (bUpdateTitle)
+                //{
+                //    Console.Title = ("Session list contains: " + oAllSessions.Count.ToString() + " sessions");
+                //}
+            };
 
             // Tell the system console to handle CTRL+C by calling our method that
             // gracefully shuts down the FiddlerCore.

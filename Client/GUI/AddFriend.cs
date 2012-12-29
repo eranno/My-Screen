@@ -26,8 +26,9 @@ namespace GUI
             string email = txtEmail.Text;
             string name = txtName.Text;
 
-            friends.addFriend(email, name);
-            this.Close();
+            bool isAdded = friends.addFriend(email, name);
+            if (isAdded)
+                this.Close();
         }
 
         private void cancelBtn_Click(object sender, EventArgs e)

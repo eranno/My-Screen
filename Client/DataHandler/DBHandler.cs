@@ -16,8 +16,11 @@ namespace DataHandler
 
         public static void initDB()
         {
+            if (!Directory.Exists("Thumbnails"))
+                 Directory.CreateDirectory("Thumbnails");
             bool isDbExist = File.Exists(dbName);
             sqliteCon = new SQLiteConnection(connectionString);
+            sqliteCon.Open();
             if(!isDbExist)
                 createTables();
         }
@@ -56,7 +59,7 @@ namespace DataHandler
                  ")";
 
 
-            sqliteCon.Open();
+            
 
             using (SQLiteTransaction sqlTransaction = sqliteCon.BeginTransaction())
             {
@@ -81,18 +84,14 @@ namespace DataHandler
                 sqlTransaction.Commit();
             } // end using
 
-            // Close the database connection
-            sqliteCon.Close();
         }
 
         public static DataTable getTable(string query)
         {
-                sqliteCon.Open();
                 using (SQLiteDataAdapter adapter = new SQLiteDataAdapter(query, sqliteCon))
                 {
                     DataTable table = new DataTable();
-                    adapter.Fill(table);
-                    sqliteCon.Close();   
+                    adapter.Fill(table); 
                     return table;
                 }
                      
@@ -100,7 +99,6 @@ namespace DataHandler
 
         public static void updateTable(DataTable table , string query)
         {
-            sqliteCon.Open();
             using (SQLiteTransaction txn = sqliteCon.BeginTransaction())
             {
                 using (SQLiteDataAdapter dbAdapter = new SQLiteDataAdapter(query, sqliteCon))
@@ -110,12 +108,10 @@ namespace DataHandler
                 }
                 txn.Commit();
             }
-            sqliteCon.Close();
         }
 
         public static String executeCmd(string query)
         {
-            sqliteCon.Open();
             using (SQLiteTransaction txn = sqliteCon.BeginTransaction())
             {
                 SQLiteCommand cmd = new SQLiteCommand(query, sqliteCon);
@@ -127,11 +123,9 @@ namespace DataHandler
                 catch (SQLiteException e)
                 {
                     cmd.Dispose();
-                    sqliteCon.Close();
                     return e.ToString();
                 }
             }
-            sqliteCon.Close();
             return null;
         }
 
@@ -208,19 +202,19 @@ namespace DataHandler
             dump.Add("INSERT INTO Friends(email , name) VALUES('ilan@gmail.com' , 'Ilan Ben Tal')");
             dump.Add("INSERT INTO Friends(email , name) VALUES('eran@gmail.com' , 'Eran Naor')");
 
-            dump.Add("INSERT INTO Images(idx , name , key , type , pathEncrypted , pathThumb , pathOriginal) VALUES('index 1' , 'Desert' , '#$%2fffwe4533' , 'jpg' ,'c:\\cmyImages\\' , 'C:\\Users\\Public\\Pictures\\Sample Pictures\\thumbs\\Hydrangeas.png' , 'c:\\originalPath\\')");
-            dump.Add("INSERT INTO Images(idx , name , key , type , pathEncrypted , pathThumb , pathOriginal) "
-                + "VALUES('index 2' , 'Island' , '#$%2fffwe4533' , 'jpg' ,'c:\\myImages\\' , 'C:\\Users\\Public\\Pictures\\Sample Pictures\\thumbs\\Chrysanthemum.png' , 'c:\\originalPath\\')");
-            dump.Add("INSERT INTO Images(idx , name , key , type , pathEncrypted , pathThumb , pathOriginal) "
-                + "VALUES('index 3' , 'boy' , '#$%2fffwe4533' , 'jpg' ,'c:\\myImages\\' , 'C:\\Users\\Public\\Pictures\\Sample Pictures\\thumbs\\Desert.png' , 'c:\\originalPath\\')");
+            //dump.Add("INSERT INTO Images(idx , name , key , type , pathEncrypted , pathThumb , pathOriginal) VALUES('index 1' , 'Desert' , '#$%2fffwe4533' , 'jpg' ,'c:\\cmyImages\\' , 'C:\\Users\\Public\\Pictures\\Sample Pictures\\thumbs\\Hydrangeas.png' , 'c:\\originalPath\\')");
+            //dump.Add("INSERT INTO Images(idx , name , key , type , pathEncrypted , pathThumb , pathOriginal) "
+            //    + "VALUES('index 2' , 'Island' , '#$%2fffwe4533' , 'jpg' ,'c:\\myImages\\' , 'C:\\Users\\Public\\Pictures\\Sample Pictures\\thumbs\\Chrysanthemum.png' , 'c:\\originalPath\\')");
+            //dump.Add("INSERT INTO Images(idx , name , key , type , pathEncrypted , pathThumb , pathOriginal) "
+            //    + "VALUES('index 3' , 'boy' , '#$%2fffwe4533' , 'jpg' ,'c:\\myImages\\' , 'C:\\Users\\Public\\Pictures\\Sample Pictures\\thumbs\\Desert.png' , 'c:\\originalPath\\')");
 
-            dump.Add("INSERT INTO AuthImages(imageId , friendId) VALUES('1', 'eran@gmail.com')");
-            dump.Add("INSERT INTO AuthImages(imageId , friendId) VALUES('2', 'eran@gmail.com')");
-            dump.Add("INSERT INTO AuthImages(imageId , friendId) VALUES('3', 'eran@gmail.com')");
-            dump.Add("INSERT INTO AuthImages(imageId , friendId) VALUES('1', 'noam185@gmail.com')");
-            dump.Add("INSERT INTO AuthImages(imageId , friendId) VALUES('2', 'noam185@gmail.com')");
-            dump.Add("INSERT INTO AuthImages(imageId , friendId) VALUES('3', 'ilan@gmail.com')");
-            dump.Add("INSERT INTO AuthImages(imageId , friendId) VALUES('1', 'ilan@gmail.com')");
+            //dump.Add("INSERT INTO AuthImages(imageId , friendId) VALUES('1', 'eran@gmail.com')");
+            //dump.Add("INSERT INTO AuthImages(imageId , friendId) VALUES('2', 'eran@gmail.com')");
+            //dump.Add("INSERT INTO AuthImages(imageId , friendId) VALUES('3', 'eran@gmail.com')");
+            //dump.Add("INSERT INTO AuthImages(imageId , friendId) VALUES('1', 'noam185@gmail.com')");
+            //dump.Add("INSERT INTO AuthImages(imageId , friendId) VALUES('2', 'noam185@gmail.com')");
+            //dump.Add("INSERT INTO AuthImages(imageId , friendId) VALUES('3', 'ilan@gmail.com')");
+            //dump.Add("INSERT INTO AuthImages(imageId , friendId) VALUES('1', 'ilan@gmail.com')");
 
 
             dump.Add("INSERT INTO UserProperties(email , name , password , securityCode) VALUES('myComp@gmail.com', 'localhost' , '123456' , '187365543208213678653094')");

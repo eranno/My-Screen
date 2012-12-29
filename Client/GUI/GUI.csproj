@@ -34,8 +34,13 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="FiddlerCore">
+      <HintPath>..\Demo\bin\Debug\FiddlerCore.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.SQLite, Version=1.0.82.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=x86" />
+    <Reference Include="System.Transactions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -52,17 +57,17 @@
     <Compile Include="AddFriend.Designer.cs">
       <DependentUpon>AddFriend.cs</DependentUpon>
     </Compile>
-    <Compile Include="AddImage.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AddImage.Designer.cs">
-      <DependentUpon>AddImage.cs</DependentUpon>
-    </Compile>
     <Compile Include="EncrypForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="EncrypForm.Designer.cs">
       <DependentUpon>EncrypForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddImage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddImage.Designer.cs">
+      <DependentUpon>AddImage.cs</DependentUpon>
     </Compile>
     <Compile Include="Friend.cs" />
     <Compile Include="Friends.cs" />
@@ -72,6 +77,7 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Messages.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ShowDB.cs">
@@ -80,14 +86,21 @@
     <Compile Include="ShowDB.Designer.cs">
       <DependentUpon>ShowDB.cs</DependentUpon>
     </Compile>
+    <Compile Include="TrafficFollow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TrafficFollow.Designer.cs">
+      <DependentUpon>TrafficFollow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TrafficHandler.cs" />
     <EmbeddedResource Include="AddFriend.resx">
       <DependentUpon>AddFriend.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AddImage.resx">
-      <DependentUpon>AddImage.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="EncrypForm.resx">
       <DependentUpon>EncrypForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddImage.resx">
+      <DependentUpon>AddImage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
@@ -104,6 +117,9 @@
     </Compile>
     <EmbeddedResource Include="ShowDB.resx">
       <DependentUpon>ShowDB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TrafficFollow.resx">
+      <DependentUpon>TrafficFollow.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

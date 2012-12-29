@@ -48,9 +48,13 @@ namespace GUI
             {
                 btDecrypt.Text = "Start Decrypt";
                 isDecrypt = false;
+                TrafficHandler.terminate();
+                MessageBox.Show("Traffic observer terminated");
             }
             else
             {
+                MessageBox.Show("Traffic observer activated");
+                TrafficHandler.activate();
                 btDecrypt.Text = "Stop Decrypt";
                 isDecrypt = true;
             }
@@ -68,18 +72,33 @@ namespace GUI
             //Clear all the items in list view.
             lvImgs.Items.Clear();
             //Getting image list of selected friend
-            ImageList il = friends.getMyImages(currFriendId);
+            Dictionary<DataRow,Image> map = friends.getMyImages(currFriendId);
+            ImageList il = fillImgList(map);
             //Hide\Show the Alert label ("Add New Images")
             lvImgsStatus(il.Images.Count);
-
             lvImgs.LargeImageList = il;
             for (int i = 0; i < il.Images.Count; i++)
             {
-                  //TODO: move it to another thread.
-                ListViewItem lvi = new ListViewItem("", i);
+                DataRow row = map.Keys.ElementAt(i);
+                ListViewItem lvi = new ListViewItem(row["name"].ToString(), i);
+                lvi.Tag = row;
                 lvImgs.Items.Add(lvi);
                 //lvImgs.Refresh();
             }
+        }
+
+        private ImageList fillImgList(Dictionary<DataRow,Image> map)
+        {
+            ImageList myImages = new ImageList();
+            myImages.ImageSize = new System.Drawing.Size(80, 80);
+            myImages.ColorDepth = ColorDepth.Depth32Bit;
+
+            foreach (var entry in map)
+            {
+                myImages.Images.Add(entry.Value);
+            }
+
+            return myImages;
         }
 
         private void lvImgsStatus(int size)
@@ -137,17 +156,24 @@ namespace GUI
 
         private void btnRemoveImgs_Click(object sender, EventArgs e)
         {
-
             foreach (ListViewItem lvi in lvImgs.SelectedItems)
             {
-                
+                DataRow row = lvi.Tag as DataRow;
+                DBHandler.executeCmd("DELETE FROM AuthImages WHERE imageId=" + row["id"].ToString() + " AND friendId=" + "'" + currFriendId +"'");
                 lvi.Remove();
             }
         }
 
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            TrafficHandler.terminate();
+        }
 
- 
-
-
+        private void followAfterTrafficToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Messages.init();
+            TrafficFollow form = new TrafficFollow();
+            form.Show();
+        }
     }
 }

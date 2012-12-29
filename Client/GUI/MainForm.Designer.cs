@@ -55,6 +55,7 @@
             this.splitContainer3 = new System.Windows.Forms.SplitContainer();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.followAfterTrafficToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -118,7 +119,8 @@
             // 
             this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.aboutToolStripMenuItem,
-            this.showTablesToolStripMenuItem});
+            this.showTablesToolStripMenuItem,
+            this.followAfterTrafficToolStripMenuItem});
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
             this.helpToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
             this.helpToolStripMenuItem.Text = "Help";
@@ -162,7 +164,7 @@
             this.lblalertImgs.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.lblalertImgs.ForeColor = System.Drawing.Color.Transparent;
             this.lblalertImgs.Image = global::GUI.Properties.Resources.list_background;
-            this.lblalertImgs.Location = new System.Drawing.Point(106, 179);
+            this.lblalertImgs.Location = new System.Drawing.Point(112, 217);
             this.lblalertImgs.Name = "lblalertImgs";
             this.lblalertImgs.Size = new System.Drawing.Size(301, 42);
             this.lblalertImgs.TabIndex = 3;
@@ -364,6 +366,13 @@
             this.imageList1.Tag = "";
             this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
             // 
+            // followAfterTrafficToolStripMenuItem
+            // 
+            this.followAfterTrafficToolStripMenuItem.Name = "followAfterTrafficToolStripMenuItem";
+            this.followAfterTrafficToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
+            this.followAfterTrafficToolStripMenuItem.Text = "Follow after traffic";
+            this.followAfterTrafficToolStripMenuItem.Click += new System.EventHandler(this.followAfterTrafficToolStripMenuItem_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -375,6 +384,7 @@
             this.MinimumSize = new System.Drawing.Size(813, 584);
             this.Name = "MainForm";
             this.Text = "My Screen";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.groupBox3.ResumeLayout(false);
@@ -432,6 +442,7 @@
         private System.Windows.Forms.ListBox friendsList;
         private System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.Button btnRemoveImgs;
+        private System.Windows.Forms.ToolStripMenuItem followAfterTrafficToolStripMenuItem;
 
     }
 }

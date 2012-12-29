@@ -6,36 +6,61 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using DataHandler;
 
 namespace GUI
 {
     public partial class AddImage : Form
     {
-        string  friendId;
+        string friendId;
         Friends friends;
         public AddImage(Friends friends , string friendId)
         {
             InitializeComponent();
-            checkedListBox1.DataSource = friends.getFriendImagesSource(friendId);
-            checkedListBox1.DisplayMember = "name";
+            dataGridView1.DataSource = friends.getFriendImagesSource(friendId);
+            foreach (DataGridViewColumn cl in dataGridView1.Columns)
+            {
+                if (cl.Name.Equals("name"))
+                {
+                    cl.Visible = true;
+                    cl.MinimumWidth = dataGridView1.Width;
+                }
+                else
+                {
+                    cl.Visible = false;
+                }
+            }
             this.friendId = friendId;
             this.friends = friends;
         }
 
-        private void btnCancel_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
+        {
+            int size = dataGridView1.SelectedRows.Count;
+            if (size == 0)
+            {
+                MessageBox.Show("Select images first");
+                return;
+            }
+            for (int i = 0; i < size; i++)
+            {
+                DataRowView row = dataGridView1.SelectedRows[i].DataBoundItem as DataRowView;
+                string id = row["id"].ToString();
+                string path = row["pathThumb"].ToString();
+                friends.addImageToFriend(friendId, id, path);
+            }
+            this.Close();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void btnSelect_Click(object sender, EventArgs e)
+        private void dataGridView1_SizeChanged(object sender, EventArgs e)
         {
-            for (int i = 0; i < checkedListBox1.CheckedItems.Count; i++)
-            {
-                string id = ((DataRowView)checkedListBox1.CheckedItems[i])["id"].ToString();
-                string path = ((DataRowView)checkedListBox1.CheckedItems[i])["pathThumb"].ToString();
-                friends.addImageToFriend(friendId, id , path);
-            }
-            this.Close();
+            dataGridView1.Columns["name"].Width = dataGridView1.Width;
         }
+
     }
 }

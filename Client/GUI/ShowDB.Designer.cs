@@ -93,7 +93,7 @@
             this.richTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.richTextBox1.Location = new System.Drawing.Point(0, 0);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(664, 312);
+            this.richTextBox1.Size = new System.Drawing.Size(664, 313);
             this.richTextBox1.TabIndex = 6;
             this.richTextBox1.Text = "Press on \'Show DB\' to show to view all DB Tables.\n";
             // 
@@ -108,7 +108,7 @@
             // 
             this.splitContainer1.Panel2.Controls.Add(this.richTextBox1);
             this.splitContainer1.Size = new System.Drawing.Size(664, 419);
-            this.splitContainer1.SplitterDistance = 103;
+            this.splitContainer1.SplitterDistance = 102;
             this.splitContainer1.TabIndex = 7;
             // 
             // ShowDB

@@ -33,3 +33,7 @@ C:\Users\Noam Tzumie\Desktop\פרוייקטים\MyScreen\VCS\My-Screen\Client\GU
 C:\Users\Noam Tzumie\Desktop\פרוייקטים\MyScreen\VCS\My-Screen\Client\GUI\obj\x86\Debug\GUI.AddFriend.resources
 C:\Users\Noam Tzumie\Desktop\פרוייקטים\MyScreen\VCS\My-Screen\Client\GUI\obj\x86\Debug\GUI.ShowDB.resources
 C:\Users\Noam Tzumie\Desktop\פרוייקטים\MyScreen\VCS\My-Screen\Client\GUI\obj\x86\Debug\GUI.AddImage.resources
+C:\Users\Noam Tzumie\Desktop\פרוייקטים\MyScreen\VCS\My-Screen\Client\GUI\bin\Debug\FiddlerCore.dll
+C:\Users\Noam Tzumie\Desktop\פרוייקטים\MyScreen\VCS\My-Screen\Client\GUI\bin\Debug\FiddlerCore.pdb
+C:\Users\Noam Tzumie\Desktop\פרוייקטים\MyScreen\VCS\My-Screen\Client\GUI\bin\Debug\FiddlerCore.xml
+C:\Users\Noam Tzumie\Desktop\פרוייקטים\MyScreen\VCS\My-Screen\Client\GUI\obj\x86\Debug\GUI.TrafficFollow.resources
