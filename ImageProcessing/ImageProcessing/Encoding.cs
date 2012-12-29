@@ -9,7 +9,7 @@ using System.Net;
 namespace ImageProcessing
 {
 
-    class Encoding
+    public class Encoding
     {
 
         String PROGRAM_ID = "1101000100001";
@@ -43,7 +43,7 @@ namespace ImageProcessing
             Encode_Image();
 
             //save encoded image
-            inputBitmap.Save("C:\\Users\\user\\pics\\stage\\input\\EncodedImage" + imageIndex + ".jpg");
+            inputBitmap.Save("C:\\Users\\Public\\EncodedImage" + imageIndex + ".jpg");
 
         }
 
@@ -74,7 +74,7 @@ namespace ImageProcessing
 
         void Save_Path()
         {
-            System.IO.StreamWriter file = new System.IO.StreamWriter("C:\\Users\\user\\pics\\stage\\path" + imageIndex + ".txt");
+            System.IO.StreamWriter file = new System.IO.StreamWriter("C:\\Users\\Public\\path" + imageIndex + ".txt");
             for (int j = 0; j < SWAPS; j++)
             {
                 for (int k = 0; k < 2; k++)

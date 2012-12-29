@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="9edb6c05-64e2-4de1-bc89-fe1569ec9ab1" name="ilanbe@CUDA-2 2012-12-28 08:38:49" runUser="ACADEMY\ilanbe" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestSettings name="Local" id="a169f4f3-4d18-4c21-aaf4-dc6ad19a3f27">
+    <Description>These are default test settings for a local test run.</Description>
+    <Deployment enabled="false" runDeploymentRoot="ilanbe_CUDA-2 2012-12-28 08_38_49">
+      <DeploymentItem filename="C:\Users\ilanbe.ACADEMY\Desktop\My-Screen-master\ImageProcessing\ImageProcessing\bin\Debug\ImageProcessing.exe" />
+    </Deployment>
+    <Execution>
+      <TestTypeSpecific />
+      <AgentRule name="Execution Agents">
+      </AgentRule>
+    </Execution>
+  </TestSettings>
+  <Times creation="2012-12-28T08:38:49.9810358+02:00" queuing="2012-12-28T08:38:50.0210398+02:00" start="2012-12-28T08:38:50.0290406+02:00" finish="2012-12-28T08:38:50.2500627+02:00" />
+  <ResultSummary outcome="Completed">
+    <Counters total="1" executed="1" passed="1" error="0" failed="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+  </ResultSummary>
+  <TestDefinitions>
+    <UnitTest name="TestMethod3" storage="c:\users\ilanbe.academy\desktop\my-screen-master\imageprocessing\imageprocessing.tests\bin\debug\imageprocessing.tests.dll" id="9700f2c6-8c6c-962a-e261-61c7fa067ec4">
+      <Execution id="9e158fcb-0403-4fc2-aee4-bf6015554b3e" />
+      <TestMethod codeBase="C:/Users/ilanbe.ACADEMY/Desktop/My-Screen-master/ImageProcessing/ImageProcessing.Tests/bin/Debug/ImageProcessing.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="ImageProcessing.Tests.ImageProcessing, ImageProcessing.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="TestMethod3" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="9700f2c6-8c6c-962a-e261-61c7fa067ec4" executionId="9e158fcb-0403-4fc2-aee4-bf6015554b3e" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="9e158fcb-0403-4fc2-aee4-bf6015554b3e" testId="9700f2c6-8c6c-962a-e261-61c7fa067ec4" testName="TestMethod3" computerName="CUDA-2" duration="00:00:00.0271149" startTime="2012-12-28T08:38:50.0320409+02:00" endTime="2012-12-28T08:38:50.2370614+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="9e158fcb-0403-4fc2-aee4-bf6015554b3e">
+    </UnitTestResult>
+  </Results>
+</TestRun>

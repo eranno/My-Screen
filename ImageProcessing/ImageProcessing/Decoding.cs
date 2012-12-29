@@ -8,7 +8,7 @@ using System.Net;
 
 namespace ImageProcessing
 {
-    class Decoding
+    public class Decoding
     {
         String PROGRAM_ID = "1101000100001";
         Image inputImage;
@@ -37,8 +37,7 @@ namespace ImageProcessing
             Decode_Image();
 
             //save encoded image
-            inputBitmap.Save("C:\\Users\\user\\pics\\stage\\output\\DecodedImage" + imageIndex + ".jpg");
-
+            inputBitmap.Save("C:\\Users\\Public\\DecodedImage" + imageIndex + ".jpg");
 
         }
 
@@ -86,7 +85,7 @@ namespace ImageProcessing
 
         public void Decoding_Path_reader()
         {
-            StreamReader sr = new StreamReader("C:\\Users\\user\\pics\\stage\\path" + imageIndex + ".txt");
+            StreamReader sr = new StreamReader("C:\\Users\\Public\\path" + imageIndex + ".txt");
             string[] words = sr.ReadToEnd().Split(' ');
 
             for (int i = 0; i < SWAPS * 2; i = i + 2)

@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="9e41a428-b158-46ca-ac53-c726e6f83b40" name="Noam Tzumie@NOAMTZUMIE-PC 2012-12-30 01:34:28" runUser="NoamTzumie-PC\Noam Tzumie" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestSettings name="Local" id="a169f4f3-4d18-4c21-aaf4-dc6ad19a3f27">
+    <Description>These are default test settings for a local test run.</Description>
+    <Deployment enabled="false" runDeploymentRoot="Noam Tzumie_NOAMTZUMIE-PC 2012-12-30 01_34_28">
+      <DeploymentItem filename="C:\Users\Noam Tzumie\Desktop\פרוייקטים\MyScreen\VCS\My-Screen\ImageProcessing\ImageProcessing\bin\Debug\ImageProcessing.exe" />
+    </Deployment>
+    <Execution>
+      <TestTypeSpecific />
+      <AgentRule name="Execution Agents">
+      </AgentRule>
+    </Execution>
+  </TestSettings>
+  <Times creation="2012-12-30T01:34:28.0835831+02:00" queuing="2012-12-30T01:34:28.0895835+02:00" start="2012-12-30T01:34:28.1055844+02:00" finish="2012-12-30T01:34:28.5226082+02:00" />
+  <ResultSummary outcome="Failed">
+    <Counters total="1" executed="1" error="0" failed="1" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" passed="0" completed="0" inProgress="0" pending="0" />
+  </ResultSummary>
+  <TestDefinitions>
+    <UnitTest name="TestMethod4" storage="c:\users\noam tzumie\desktop\פרוייקטים\myscreen\vcs\my-screen\imageprocessing\imageprocessing.tests\bin\debug\imageprocessing.tests.dll" id="c292938e-d06f-2699-3bef-d314b7ba09f4">
+      <Execution id="7779be3c-c186-47e2-a0c1-1174bbd03076" />
+      <TestMethod codeBase="C:/Users/Noam Tzumie/Desktop/פרוייקטים/MyScreen/VCS/My-Screen/ImageProcessing/ImageProcessing.Tests/bin/Debug/ImageProcessing.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="ImageProcessing.Tests.ImageProcessing, ImageProcessing.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="TestMethod4" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="c292938e-d06f-2699-3bef-d314b7ba09f4" executionId="7779be3c-c186-47e2-a0c1-1174bbd03076" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="7779be3c-c186-47e2-a0c1-1174bbd03076" testId="c292938e-d06f-2699-3bef-d314b7ba09f4" testName="TestMethod4" computerName="NOAMTZUMIE-PC" duration="00:00:00.1150658" startTime="2012-12-30T01:34:28.1445866+02:00" endTime="2012-12-30T01:34:28.5046072+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="7779be3c-c186-47e2-a0c1-1174bbd03076">
+      <Output>
+        <ErrorInfo>
+          <Message>Assert.AreEqual failed. Expected:&lt;System.Drawing.Bitmap&gt;. Actual:&lt;System.Drawing.Bitmap&gt;. </Message>
+          <StackTrace>   at ImageProcessing.Tests.ImageProcessing.TestMethod4() in C:\Users\Noam Tzumie\Desktop\פרוייקטים\MyScreen\VCS\My-Screen\ImageProcessing\ImageProcessing.Tests\ImageProcessing.cs:line 87
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+  </Results>
+</TestRun>

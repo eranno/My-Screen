@@ -1,0 +1,21 @@
+C:\Users\jbt\Desktop\My-Screen-master\ImageProcessing\ImageProcessing.Tests\bin\Debug\ImageProcessing.Tests.dll
+C:\Users\jbt\Desktop\My-Screen-master\ImageProcessing\ImageProcessing.Tests\bin\Debug\ImageProcessing.Tests.pdb
+C:\Users\jbt\Desktop\My-Screen-master\ImageProcessing\ImageProcessing.Tests\bin\Debug\ImageProcessing.exe
+C:\Users\jbt\Desktop\My-Screen-master\ImageProcessing\ImageProcessing.Tests\bin\Debug\ImageProcessing.pdb
+C:\Users\jbt\Desktop\My-Screen-master\ImageProcessing\ImageProcessing.Tests\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\jbt\Desktop\My-Screen-master\ImageProcessing\ImageProcessing.Tests\obj\Debug\ImageProcessing.Tests.dll
+C:\Users\jbt\Desktop\My-Screen-master\ImageProcessing\ImageProcessing.Tests\obj\Debug\ImageProcessing.Tests.pdb
+C:\Users\ilanbe.ACADEMY\Desktop\My-Screen-master\ImageProcessing\ImageProcessing.Tests\bin\Debug\ImageProcessing.Tests.dll
+C:\Users\ilanbe.ACADEMY\Desktop\My-Screen-master\ImageProcessing\ImageProcessing.Tests\bin\Debug\ImageProcessing.Tests.pdb
+C:\Users\ilanbe.ACADEMY\Desktop\My-Screen-master\ImageProcessing\ImageProcessing.Tests\bin\Debug\ImageProcessing.exe
+C:\Users\ilanbe.ACADEMY\Desktop\My-Screen-master\ImageProcessing\ImageProcessing.Tests\bin\Debug\ImageProcessing.pdb
+C:\Users\ilanbe.ACADEMY\Desktop\My-Screen-master\ImageProcessing\ImageProcessing.Tests\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\ilanbe.ACADEMY\Desktop\My-Screen-master\ImageProcessing\ImageProcessing.Tests\obj\Debug\ImageProcessing.Tests.dll
+C:\Users\ilanbe.ACADEMY\Desktop\My-Screen-master\ImageProcessing\ImageProcessing.Tests\obj\Debug\ImageProcessing.Tests.pdb
+C:\Users\Noam Tzumie\Desktop\פרוייקטים\MyScreen\VCS\My-Screen\ImageProcessing\ImageProcessing.Tests\bin\Debug\ImageProcessing.Tests.dll
+C:\Users\Noam Tzumie\Desktop\פרוייקטים\MyScreen\VCS\My-Screen\ImageProcessing\ImageProcessing.Tests\bin\Debug\ImageProcessing.Tests.pdb
+C:\Users\Noam Tzumie\Desktop\פרוייקטים\MyScreen\VCS\My-Screen\ImageProcessing\ImageProcessing.Tests\bin\Debug\ImageProcessing.exe
+C:\Users\Noam Tzumie\Desktop\פרוייקטים\MyScreen\VCS\My-Screen\ImageProcessing\ImageProcessing.Tests\bin\Debug\ImageProcessing.pdb
+C:\Users\Noam Tzumie\Desktop\פרוייקטים\MyScreen\VCS\My-Screen\ImageProcessing\ImageProcessing.Tests\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Noam Tzumie\Desktop\פרוייקטים\MyScreen\VCS\My-Screen\ImageProcessing\ImageProcessing.Tests\obj\Debug\ImageProcessing.Tests.dll
+C:\Users\Noam Tzumie\Desktop\פרוייקטים\MyScreen\VCS\My-Screen\ImageProcessing\ImageProcessing.Tests\obj\Debug\ImageProcessing.Tests.pdb

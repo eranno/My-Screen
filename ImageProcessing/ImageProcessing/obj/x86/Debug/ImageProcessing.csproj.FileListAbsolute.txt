@@ -13,3 +13,18 @@ C:\Users\user\Documents\GitHub\My-Screen\ImageProcessing\ImageProcessing\obj\x86
 C:\Users\user\Documents\GitHub\My-Screen\ImageProcessing\ImageProcessing\bin\Debug\ImageProcessing.exe
 C:\Users\user\Documents\GitHub\My-Screen\ImageProcessing\ImageProcessing\bin\Debug\ImageProcessing.pdb
 C:\Users\user\Documents\GitHub\My-Screen\ImageProcessing\ImageProcessing\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\jbt\Desktop\My-Screen-master\ImageProcessing\ImageProcessing\obj\x86\Debug\ImageProcessing.exe
+C:\Users\jbt\Desktop\My-Screen-master\ImageProcessing\ImageProcessing\obj\x86\Debug\ImageProcessing.pdb
+C:\Users\jbt\Desktop\My-Screen-master\ImageProcessing\ImageProcessing\bin\Debug\ImageProcessing.exe
+C:\Users\jbt\Desktop\My-Screen-master\ImageProcessing\ImageProcessing\bin\Debug\ImageProcessing.pdb
+C:\Users\jbt\Desktop\My-Screen-master\ImageProcessing\ImageProcessing\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\ilanbe.ACADEMY\Desktop\My-Screen-master\ImageProcessing\ImageProcessing\obj\x86\Debug\ImageProcessing.exe
+C:\Users\ilanbe.ACADEMY\Desktop\My-Screen-master\ImageProcessing\ImageProcessing\obj\x86\Debug\ImageProcessing.pdb
+C:\Users\ilanbe.ACADEMY\Desktop\My-Screen-master\ImageProcessing\ImageProcessing\bin\Debug\ImageProcessing.exe
+C:\Users\ilanbe.ACADEMY\Desktop\My-Screen-master\ImageProcessing\ImageProcessing\bin\Debug\ImageProcessing.pdb
+C:\Users\ilanbe.ACADEMY\Desktop\My-Screen-master\ImageProcessing\ImageProcessing\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Noam Tzumie\Desktop\פרוייקטים\MyScreen\VCS\My-Screen\ImageProcessing\ImageProcessing\obj\x86\Debug\ImageProcessing.exe
+C:\Users\Noam Tzumie\Desktop\פרוייקטים\MyScreen\VCS\My-Screen\ImageProcessing\ImageProcessing\obj\x86\Debug\ImageProcessing.pdb
+C:\Users\Noam Tzumie\Desktop\פרוייקטים\MyScreen\VCS\My-Screen\ImageProcessing\ImageProcessing\bin\Debug\ImageProcessing.exe
+C:\Users\Noam Tzumie\Desktop\פרוייקטים\MyScreen\VCS\My-Screen\ImageProcessing\ImageProcessing\bin\Debug\ImageProcessing.pdb
+C:\Users\Noam Tzumie\Desktop\פרוייקטים\MyScreen\VCS\My-Screen\ImageProcessing\ImageProcessing\obj\x86\Debug\ResolveAssemblyReference.cache

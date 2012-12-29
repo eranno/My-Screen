@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="022539e8-074f-4fbc-abb2-92144b78a5ef" name="ilanbe@CUDA-2 2012-12-28 08:42:55" runUser="ACADEMY\ilanbe" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestSettings name="Local" id="a169f4f3-4d18-4c21-aaf4-dc6ad19a3f27">
+    <Description>These are default test settings for a local test run.</Description>
+    <Deployment enabled="false" runDeploymentRoot="ilanbe_CUDA-2 2012-12-28 08_42_55">
+      <DeploymentItem filename="C:\Users\ilanbe.ACADEMY\Desktop\My-Screen-master\ImageProcessing\ImageProcessing\bin\Debug\ImageProcessing.exe" />
+    </Deployment>
+    <Execution>
+      <TestTypeSpecific />
+      <AgentRule name="Execution Agents">
+      </AgentRule>
+    </Execution>
+  </TestSettings>
+  <Times creation="2012-12-28T08:42:55.0555408+02:00" queuing="2012-12-28T08:42:55.0935446+02:00" start="2012-12-28T08:42:55.0975450+02:00" finish="2012-12-28T08:43:00.9231275+02:00" />
+  <ResultSummary outcome="Failed">
+    <Counters total="4" executed="4" passed="2" error="0" failed="2" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+  </ResultSummary>
+  <TestDefinitions>
+    <UnitTest name="TestMethod4" storage="c:\users\ilanbe.academy\desktop\my-screen-master\imageprocessing\imageprocessing.tests\bin\debug\imageprocessing.tests.dll" id="c292938e-d06f-2699-3bef-d314b7ba09f4">
+      <Execution id="7028b146-00da-49e0-afcf-80949430d50f" />
+      <TestMethod codeBase="C:/Users/ilanbe.ACADEMY/Desktop/My-Screen-master/ImageProcessing/ImageProcessing.Tests/bin/Debug/ImageProcessing.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="ImageProcessing.Tests.ImageProcessing, ImageProcessing.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="TestMethod4" />
+    </UnitTest>
+    <UnitTest name="TestMethod1" storage="c:\users\ilanbe.academy\desktop\my-screen-master\imageprocessing\imageprocessing.tests\bin\debug\imageprocessing.tests.dll" id="5ef819e5-048b-c8c2-6a4e-00a4f8e405a9">
+      <Execution id="59f1b847-df27-4497-8cb5-3b4188e721e1" />
+      <TestMethod codeBase="C:/Users/ilanbe.ACADEMY/Desktop/My-Screen-master/ImageProcessing/ImageProcessing.Tests/bin/Debug/ImageProcessing.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="ImageProcessing.Tests.ImageProcessing, ImageProcessing.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="TestMethod1" />
+    </UnitTest>
+    <UnitTest name="TestMethod2" storage="c:\users\ilanbe.academy\desktop\my-screen-master\imageprocessing\imageprocessing.tests\bin\debug\imageprocessing.tests.dll" id="c95d2c90-c809-05cd-cb49-630546b57d85">
+      <Execution id="f220a90b-cb96-45db-a802-7d5dfde7b1fe" />
+      <TestMethod codeBase="C:/Users/ilanbe.ACADEMY/Desktop/My-Screen-master/ImageProcessing/ImageProcessing.Tests/bin/Debug/ImageProcessing.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="ImageProcessing.Tests.ImageProcessing, ImageProcessing.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="TestMethod2" />
+    </UnitTest>
+    <UnitTest name="TestMethod3" storage="c:\users\ilanbe.academy\desktop\my-screen-master\imageprocessing\imageprocessing.tests\bin\debug\imageprocessing.tests.dll" id="9700f2c6-8c6c-962a-e261-61c7fa067ec4">
+      <Execution id="928d634c-be00-439c-977a-efc7843ef2f3" />
+      <TestMethod codeBase="C:/Users/ilanbe.ACADEMY/Desktop/My-Screen-master/ImageProcessing/ImageProcessing.Tests/bin/Debug/ImageProcessing.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="ImageProcessing.Tests.ImageProcessing, ImageProcessing.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="TestMethod3" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="5ef819e5-048b-c8c2-6a4e-00a4f8e405a9" executionId="59f1b847-df27-4497-8cb5-3b4188e721e1" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="9700f2c6-8c6c-962a-e261-61c7fa067ec4" executionId="928d634c-be00-439c-977a-efc7843ef2f3" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="c292938e-d06f-2699-3bef-d314b7ba09f4" executionId="7028b146-00da-49e0-afcf-80949430d50f" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="c95d2c90-c809-05cd-cb49-630546b57d85" executionId="f220a90b-cb96-45db-a802-7d5dfde7b1fe" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="59f1b847-df27-4497-8cb5-3b4188e721e1" testId="5ef819e5-048b-c8c2-6a4e-00a4f8e405a9" testName="TestMethod1" computerName="CUDA-2" duration="00:00:00.4131072" startTime="2012-12-28T08:42:55.1025455+02:00" endTime="2012-12-28T08:42:55.6946047+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="59f1b847-df27-4497-8cb5-3b4188e721e1">
+    </UnitTestResult>
+    <UnitTestResult executionId="928d634c-be00-439c-977a-efc7843ef2f3" testId="9700f2c6-8c6c-962a-e261-61c7fa067ec4" testName="TestMethod3" computerName="CUDA-2" duration="00:00:00.0163064" startTime="2012-12-28T08:42:55.6976050+02:00" endTime="2012-12-28T08:42:55.7166069+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="928d634c-be00-439c-977a-efc7843ef2f3">
+    </UnitTestResult>
+    <UnitTestResult executionId="7028b146-00da-49e0-afcf-80949430d50f" testId="c292938e-d06f-2699-3bef-d314b7ba09f4" testName="TestMethod4" computerName="CUDA-2" duration="00:00:00.0273155" startTime="2012-12-28T08:42:55.7206073+02:00" endTime="2012-12-28T08:42:55.7496102+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="7028b146-00da-49e0-afcf-80949430d50f">
+      <Output>
+        <ErrorInfo>
+          <Message>Assert.AreEqual failed. Expected:&lt;System.Drawing.Bitmap&gt;. Actual:&lt;System.Drawing.Bitmap&gt;. </Message>
+          <StackTrace>   at ImageProcessing.Tests.ImageProcessing.TestMethod4() in C:\Users\ilanbe.ACADEMY\Desktop\My-Screen-master\ImageProcessing\ImageProcessing.Tests\ImageProcessing.cs:line 87
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="f220a90b-cb96-45db-a802-7d5dfde7b1fe" testId="c95d2c90-c809-05cd-cb49-630546b57d85" testName="TestMethod2" computerName="CUDA-2" duration="00:00:05.1530666" startTime="2012-12-28T08:42:55.7536106+02:00" endTime="2012-12-28T08:43:00.9091261+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="f220a90b-cb96-45db-a802-7d5dfde7b1fe">
+      <Output>
+        <StdOut>6689</StdOut>
+        <ErrorInfo>
+          <Message>Test method ImageProcessing.Tests.ImageProcessing.TestMethod2 threw exception: 
+System.Runtime.InteropServices.ExternalException: A generic error occurred in GDI+.</Message>
+          <StackTrace>    at System.Drawing.Image.Save(String filename, ImageCodecInfo encoder, EncoderParameters encoderParams)
+   at System.Drawing.Image.Save(String filename, ImageFormat format)
+   at System.Drawing.Image.Save(String filename)
+   at ImageProcessing.Decoding..ctor(String url, String index) in C:\Users\ilanbe.ACADEMY\Desktop\My-Screen-master\ImageProcessing\ImageProcessing\Decoding.cs:line 40
+   at ImageProcessing.Tests.ImageProcessing.TestMethod2() in C:\Users\ilanbe.ACADEMY\Desktop\My-Screen-master\ImageProcessing\ImageProcessing.Tests\ImageProcessing.cs:line 43
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+  </Results>
+</TestRun>
