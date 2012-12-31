@@ -63,66 +63,6 @@ class server
 		
     }
 
-/*
-    public function intersect()
-    {
-		//foreach ($arr as $value) {
-		//	$value = $value * 2;
-		//}
-		return array_intersect_key($json, $act);
-    }
-
-	public function action()
-    {
-		foreach ($arr as &$key => &$value) {
-			//$value = $value * 2;
-			switch ($key) {
-				case "add_contact":
-					echo "add_contact";
-					add_contact($value);
-					break;
-				case "add_image":
-					echo "add_image";
-					add_image($value);
-					break;
-				case "add_permission":
-					echo "add_permission";
-					add_permission($value);
-					break;
-				case "change_password":
-					echo "change_password";
-					change_password($value);
-					break;
-				case "login":
-					echo "login";
-					login($value);
-					break;
-				case "recover_password":
-					echo "recover_password";
-					recover_password($value);
-					break;
-				case "remove_contact":
-					echo "remove_contact";
-					remove_contact($value);
-					break;
-				case "remove_image":
-					echo "remove_image";
-					remove_image($value);
-					break;
-				case "remove_permission":
-					echo "remove_permission";
-					remove_permission($value);
-					break;
-				case "signup":
-					echo "signup";
-					signup($value);
-					break;
-			}
-		}
-		
-    }
-*/
-
 	public function user($arr)
     {
 		$this->email 	= $arr["email"];
