@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="2b0816eb-69b7-4403-ac6a-41d3369bc6f9" name="Noam Tzumie@NOAMTZUMIE-PC 2012-12-30 01:39:54" runUser="NoamTzumie-PC\Noam Tzumie" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestSettings name="Local" id="0684b95b-a8b5-418e-a34c-d04e607d37b6">
+    <Description>These are default test settings for a local test run.</Description>
+    <Deployment enabled="false" runDeploymentRoot="Noam Tzumie_NOAMTZUMIE-PC 2012-12-30 01_39_54">
+      <DeploymentItem filename="C:\Users\Noam Tzumie\Desktop\פרוייקטים\MyScreen\VCS\My-Screen\Client\DataHandler\bin\Debug\DataHandler.dll" />
+    </Deployment>
+    <Execution>
+      <TestTypeSpecific />
+      <AgentRule name="Execution Agents">
+      </AgentRule>
+    </Execution>
+  </TestSettings>
+  <Times creation="2012-12-30T01:39:54.8742745+02:00" queuing="2012-12-30T01:39:55.3233002+02:00" start="2012-12-30T01:39:55.3783033+02:00" finish="2012-12-30T01:39:55.7543248+02:00" />
+  <ResultSummary outcome="Completed">
+    <Counters total="1" executed="1" passed="1" error="0" failed="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+  </ResultSummary>
+  <TestDefinitions>
+    <UnitTest name="TestMethod1" storage="c:\users\noam tzumie\desktop\פרוייקטים\myscreen\vcs\my-screen\client\myscreen\testproject2\bin\debug\testproject2.dll" id="b96f2172-51f7-3767-573a-01ebaf3120be">
+      <Execution id="b343b0f6-49f7-437a-b8f2-ec3ca47f6ed0" />
+      <TestMethod codeBase="C:/Users/Noam Tzumie/Desktop/פרוייקטים/MyScreen/VCS/My-Screen/Client/MyScreen/TestProject2/bin/Debug/TestProject2.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestProject2.UnitTest1, TestProject2, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="TestMethod1" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="b96f2172-51f7-3767-573a-01ebaf3120be" executionId="b343b0f6-49f7-437a-b8f2-ec3ca47f6ed0" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="b343b0f6-49f7-437a-b8f2-ec3ca47f6ed0" testId="b96f2172-51f7-3767-573a-01ebaf3120be" testName="TestMethod1" computerName="NOAMTZUMIE-PC" duration="00:00:00.0683487" startTime="2012-12-30T01:39:55.3953043+02:00" endTime="2012-12-30T01:39:55.7263232+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="b343b0f6-49f7-437a-b8f2-ec3ca47f6ed0">
+    </UnitTestResult>
+  </Results>
+</TestRun>

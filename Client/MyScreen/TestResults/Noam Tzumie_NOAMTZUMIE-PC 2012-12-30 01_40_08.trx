@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="10ab0371-e19b-4e15-85fc-446981a81314" name="Noam Tzumie@NOAMTZUMIE-PC 2012-12-30 01:40:08" runUser="NoamTzumie-PC\Noam Tzumie" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestSettings name="Local" id="0684b95b-a8b5-418e-a34c-d04e607d37b6">
+    <Description>These are default test settings for a local test run.</Description>
+    <Deployment enabled="false" runDeploymentRoot="Noam Tzumie_NOAMTZUMIE-PC 2012-12-30 01_40_08">
+      <DeploymentItem filename="C:\Users\Noam Tzumie\Desktop\פרוייקטים\MyScreen\VCS\My-Screen\Client\DataHandler\bin\Debug\DataHandler.dll" />
+    </Deployment>
+    <Execution>
+      <TestTypeSpecific />
+      <AgentRule name="Execution Agents">
+      </AgentRule>
+    </Execution>
+  </TestSettings>
+  <Times creation="2012-12-30T01:40:08.4950535+02:00" queuing="2012-12-30T01:40:08.5030540+02:00" start="2012-12-30T01:40:08.5230551+02:00" finish="2012-12-30T01:40:08.8140718+02:00" />
+  <ResultSummary outcome="Failed">
+    <Counters total="1" executed="1" error="0" failed="1" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" passed="0" completed="0" inProgress="0" pending="0" />
+  </ResultSummary>
+  <TestDefinitions>
+    <UnitTest name="TestMethod2" storage="c:\users\noam tzumie\desktop\פרוייקטים\myscreen\vcs\my-screen\client\myscreen\testproject2\bin\debug\testproject2.dll" id="762813a8-6a9a-e8e5-34d5-f448a5291c4a">
+      <Execution id="d8a2bea0-26ab-4fef-87b4-e12f67863c77" />
+      <TestMethod codeBase="C:/Users/Noam Tzumie/Desktop/פרוייקטים/MyScreen/VCS/My-Screen/Client/MyScreen/TestProject2/bin/Debug/TestProject2.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestProject2.UnitTest1, TestProject2, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="TestMethod2" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="762813a8-6a9a-e8e5-34d5-f448a5291c4a" executionId="d8a2bea0-26ab-4fef-87b4-e12f67863c77" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="d8a2bea0-26ab-4fef-87b4-e12f67863c77" testId="762813a8-6a9a-e8e5-34d5-f448a5291c4a" testName="TestMethod2" computerName="NOAMTZUMIE-PC" duration="00:00:00.0493133" startTime="2012-12-30T01:40:08.5310556+02:00" endTime="2012-12-30T01:40:08.7990709+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="d8a2bea0-26ab-4fef-87b4-e12f67863c77">
+      <Output>
+        <ErrorInfo>
+          <Message>Test method TestProject2.UnitTest1.TestMethod2 threw exception: 
+System.NullReferenceException: Object reference not set to an instance of an object.</Message>
+          <StackTrace>    at DataHandler.DBHandler.executeCmd(String query) in C:\Users\Noam Tzumie\Desktop\פרוייקטים\MyScreen\VCS\My-Screen\Client\DataHandler\DBHandler.cs:line 115
+   at DataHandler.DBHandler.insert(String query) in C:\Users\Noam Tzumie\Desktop\פרוייקטים\MyScreen\VCS\My-Screen\Client\DataHandler\DBHandler.cs:line 134
+   at TestProject2.UnitTest1.TestMethod2() in C:\Users\Noam Tzumie\Desktop\פרוייקטים\MyScreen\VCS\My-Screen\Client\MyScreen\TestProject2\UnitTest1.cs:line 92
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+  </Results>
+</TestRun>

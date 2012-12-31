@@ -39,7 +39,7 @@ namespace ImageProcessing.Tests
         [TestMethod]
         public void TestMethod2()
         {
-
+            
             Decoding d = new Decoding("http://sphotos-e.ak.fbcdn.net/hphotos-ak-ash3/425478_10152387860320595_1102652424_n.jpg", "0");
             Image inputImage = Image.FromFile("C:\\Users\\Public\\DecodedImage0.jpg");
             Bitmap inputBitmap = new Bitmap(inputImage);
