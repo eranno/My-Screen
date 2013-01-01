@@ -1,7 +1,7 @@
 <?php
 $json = '{	
 	"login":
-	{
+	{//
 		"id":"1",
 		"email":"eran@gmail.com",
 		"password":"1234"
@@ -63,8 +63,21 @@ $json = '{
 }';
 
 
-$s = new server($json);
-$s->action();
+
+
+try
+{
+    $s = new server($json);
+    $s->action();
+}
+catch ( Exception $e)
+{
+    //die($e->getMessage());
+    echo 'Caught exception: ',  $e->getMessage(), "\n";
+}
+
+
+
 
 class server
 {
@@ -72,8 +85,10 @@ class server
 	private $ip;
 	private $now;
 
-	//user inputs
-	private $json;	//json input
+	//json input
+	private $json;
+
+	//user connection details
 	private	$id;
 	private	$email;
 	private $pass;
@@ -97,7 +112,9 @@ class server
     {
 		//set input
         $this->json = json_decode($arr);
-		//http://stackoverflow.com/questions/6815520/cannot-use-object-of-type-stdclass-as-array
+        if($this->json === null) {
+			throw new Exception("Bad json input");
+		}
 
 		//save extra info
 		$this->ip 	= $_SERVER['REMOTE_ADDR']; if ($ip=='') $ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
@@ -106,13 +123,15 @@ class server
 		//set arrays
 		$this->sql 	= array();
 		$this->mail	= array();
+
+		//set user connection details
+		$this->user($this->json->login);
     }
 
 	//call for all $act methods
 	public function action()
     {
 		foreach ($this->act as $key => &$value) {
-			echo $key . "<br />";
 			if ( array_key_exists($key, $this->json) ){
 				$a = "\$this->$key(\$this->json->$key);";
 				eval($a);
@@ -123,19 +142,17 @@ class server
 
 	public function user($arr)
     {
-		$this->id 		= $arr["id"];
-		$this->email 	= $arr["email"];
-		$this->pass 	= $arr["password"];
+		$this->id 		= $arr->id;
+		$this->email 	= $arr->email;
+		$this->pass 	= $arr->password;
 		return 0;
     }
 
 	public function login($arr)
     {
-		print_r($arr);
 		$this->sql[] = "UPDATE `users` u
 				SET u.`t_last`='$this->now', u.`ip`='$this->ip'
 				WHERE u.`email`='$arr->email' AND BINARY u.`pass`='$arr->password'";
-		print_r($this->sql);
 		return 0;
     }
 
