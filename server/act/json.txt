@@ -1,0 +1,85 @@
+//json validator: http://jsonlint.com/
+
+//this is a json input example
+//of course you must remove all comments or else json is not valid
+
+$json = '{	
+	//login details. must be on every connnection
+	"login":
+	{
+		"id":"1",
+		"password":"1234"
+	},
+	
+	
+	//### optional values ###//
+	
+	//add by emails - only members will be signed
+	"add_contacts":
+	{
+		"0":"ilan@gmail.com",
+		"1":"krantz@gmail.com"
+	},
+	
+	//add images - encrypted images name
+	"add_images":
+	{
+		"0":"duygkiu76576445twdtg",
+		"1":"trdcfujhkhgfuy3465457"
+	},
+	
+	//add permission to friends by image for each user
+	"add_permissions":
+	{
+		"user":"ilan@gmail.com",
+		"images":
+		{
+			"0":"duygkiu76576445twdtg",
+			"1":"trdcfujhkhgfuy3465457"
+		}
+	},
+	"add_permissions":{
+		"user":"krantz@gmail.com",
+		"images":
+		{
+			"0":"duygkiu76576445twdtg",
+			"1":"trdcfujhkhgfuy3465457"
+		}
+	},
+
+
+	//## removes are the same as adds
+
+	//remove by emails - only members will be signed
+	"remove_contacts":
+	{
+		"0":"ilan@gmail.com",
+		"1":"krantz@gmail.com"
+	},
+	
+	//remove images - encrypted images name
+	"remove_images":
+	{
+		"0":"duygkiu76576445twdtg",
+		"1":"trdcfujhkhgfuy3465457"
+	},
+	
+	//remove permission to friends by image for each user
+	"remove_permissions":
+	{
+		"user":"ilan@gmail.com",
+		"images":
+		{
+			"0":"duygkiu76576445twdtg",
+			"1":"trdcfujhkhgfuy3465457"
+		}
+	},
+	"remove_permissions":{
+		"user":"krantz@gmail.com",
+		"images":
+		{
+			"0":"duygkiu76576445twdtg",
+			"1":"trdcfujhkhgfuy3465457"
+		}
+	}
+}';

@@ -1,86 +1,67 @@
 <?php
 $json = '{	
-			//login details. must be on every connnection
-			"login":
-			{
-				"id":"1",
-				"password":"1234"
-			},
-			
-			
-			//### optional values ###//
-			
-			//add by emails - only members will be signed
-			"add_contacts":
-			{
-				"ilan@gmail.com",
-				"krantz@gmail.com"
-			},
-			
-			//add images - encrypted images name
-			"add_images":
-			{
-				"duygkiu76576445twdtg",
-				"trdcfujhkhgfuy3465457"
-			},
-			
-			//add permission to friends by image for each user
-			"add_permissions":
-			{
-				"user":"ilan@gmail.com",
-				"images":
-				{
-					"duygkiu76576445twdtg",
-					"trdcfujhkhgfuy3465457"
-				}
-			},
-			"add_permissions":{
-				"user":"krantz@gmail.com",
-				"images":
-				{
-					"duygkiu76576445twdtg",
-					"trdcfujhkhgfuy3465457"
-				}
-			},
+	"login":
+	{
+		"id":"1",
+		"password":"1234"
+	},
+	"add_contacts":
+	{
+		"0":"ilan@gmail.com",
+		"1":"krantz@gmail.com"
+	},
+	"add_images":
+	{
+		"0":"duygkiu76576445twdtg",
+		"1":"trdcfujhkhgfuy3465457"
+	},
+	"add_permissions":
+	{
+		"user":"ilan@gmail.com",
+		"images":
+		{
+			"0":"duygkiu76576445twdtg",
+			"1":"trdcfujhkhgfuy3465457"
+		}
+	},
+	"add_permissions":{
+		"user":"krantz@gmail.com",
+		"images":
+		{
+			"0":"duygkiu76576445twdtg",
+			"1":"trdcfujhkhgfuy3465457"
+		}
+	},
+	"remove_contacts":
+	{
+		"0":"ilan@gmail.com",
+		"1":"krantz@gmail.com"
+	},
+	"remove_images":
+	{
+		"0":"duygkiu76576445twdtg",
+		"1":"trdcfujhkhgfuy3465457"
+	},
+	"remove_permissions":
+	{
+		"user":"ilan@gmail.com",
+		"images":
+		{
+			"0":"duygkiu76576445twdtg",
+			"1":"trdcfujhkhgfuy3465457"
+		}
+	},
+	"remove_permissions":{
+		"user":"krantz@gmail.com",
+		"images":
+		{
+			"0":"duygkiu76576445twdtg",
+			"1":"trdcfujhkhgfuy3465457"
+		}
+	}
+}';
 
 
-			//## removes are the same as adds
-
-			//remove by emails - only members will be signed
-			"remove_contacts":
-			{
-				"ilan@gmail.com",
-				"krantz@gmail.com"
-			},
-			
-			//remove images - encrypted images name
-			"remove_images":
-			{
-				"duygkiu76576445twdtg",
-				"trdcfujhkhgfuy3465457"
-			},
-			
-			//remove permission to friends by image for each user
-			"remove_permissions":
-			{
-				"user":"ilan@gmail.com",
-				"images":
-				{
-					"duygkiu76576445twdtg",
-					"trdcfujhkhgfuy3465457"
-				}
-			},
-			"remove_permissions":{
-				"user":"krantz@gmail.com",
-				"images":
-				{
-					"duygkiu76576445twdtg",
-					"trdcfujhkhgfuy3465457"
-				}
-			}
-
-		}';
-			
 $s = new server($json);
 $s->action();
 
@@ -102,13 +83,13 @@ class server
 
 	//possible actions
 	private $act = array(
-		"login" 				=> 0,	//zero is counter, for future use.
+		"login" 			=> 0,	//zero is counter, for future use.
 		"add_contacts" 			=> 0,
 		"add_images" 			=> 0,
 		"add_permissions" 		=> 0,
 		"remove_contacts" 		=> 0,
 		"remove_images" 		=> 0,
-		"remove_permissions" 	=> 0
+		"remove_permissions" 		=> 0
 	);
 
     public function __construct($arr)
@@ -123,9 +104,10 @@ class server
 
 		//set arrays
 		$this->sql 	= array();
-		$this->mail = array();
+		$this->mail	= array();
     }
 
+	//call for all $act methods
 	public function action()
     {
 		foreach ($this->act as $key => &$value) {
@@ -150,7 +132,8 @@ class server
     {
 		$this->sql[] = "UPDATE `users` u
 				SET u.`t_last`='$this->now', u.`ip`='$this->ip'
-				WHERE u.`email`='$this->email' AND BINARY u.`pass`='$this->pass'";
+				WHERE u.`email`='$arr->email' AND BINARY u.`pass`='$arr->pass'";
+		print_r($this->sql);
 		return 0;
     }
 
@@ -169,6 +152,9 @@ class server
 		return 0;
     }
 	
+	//Reminder:
+	//when removing contact remove all of it's images permissions as well
+	//
 	public function remove_contact($arr)
     {
 		return 0;
