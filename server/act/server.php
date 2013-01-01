@@ -3,6 +3,7 @@ $json = '{
 	"login":
 	{
 		"id":"1",
+		"email":"eran@gmail.com",
 		"password":"1234"
 	},
 	"add_contacts":
@@ -130,9 +131,10 @@ class server
 
 	public function login($arr)
     {
+		print_r($arr);
 		$this->sql[] = "UPDATE `users` u
 				SET u.`t_last`='$this->now', u.`ip`='$this->ip'
-				WHERE u.`email`='$arr->email' AND BINARY u.`pass`='$arr->pass'";
+				WHERE u.`email`='$arr->email' AND BINARY u.`pass`='$arr->password'";
 		print_r($this->sql);
 		return 0;
     }
@@ -155,17 +157,17 @@ class server
 	//Reminder:
 	//when removing contact remove all of it's images permissions as well
 	//
-	public function remove_contact($arr)
+	public function remove_contacts($arr)
     {
 		return 0;
     }
 	
-	public function remove_image($arr)
+	public function remove_images($arr)
     {
 		return 0;
     }
 	
-	public function remove_permission($arr)
+	public function remove_permissions($arr)
     {
 		return 0;
     }

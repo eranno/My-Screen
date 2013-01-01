@@ -8,6 +8,7 @@ $json = '{
 	"login":
 	{
 		"id":"1",
+		"email":"eran@gmail.com",
 		"password":"1234"
 	},
 	
