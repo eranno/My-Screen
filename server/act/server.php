@@ -1,7 +1,7 @@
 <?php
 $json = '{	
 	"login":
-	{//
+	{
 		"id":"1",
 		"email":"eran@gmail.com",
 		"password":"1234"
@@ -67,13 +67,13 @@ $json = '{
 
 try
 {
-    $s = new server($json);
-    $s->action();
+	$s = new server($json);
+	$s->action();
 }
 catch ( Exception $e)
 {
-    //die($e->getMessage());
-    echo 'Caught exception: ',  $e->getMessage(), "\n";
+	//die($e->getMessage());
+	echo 'Caught exception: ',  $e->getMessage(), "\n";
 }
 
 
@@ -99,20 +99,20 @@ class server
 
 	//possible actions
 	private $act = array(
-		"login" 			=> 0,	//zero is counter, for future use.
-		"add_contacts" 			=> 0,
-		"add_images" 			=> 0,
-		"add_permissions" 		=> 0,
-		"remove_contacts" 		=> 0,
-		"remove_images" 		=> 0,
-		"remove_permissions" 		=> 0
+		"login" 		=> 0,	//zero is counter, for future use.
+		"add_contacts" 		=> 0,
+		"add_images" 		=> 0,
+		"add_permissions" 	=> 0,
+		"remove_contacts" 	=> 0,
+		"remove_images" 	=> 0,
+		"remove_permissions" 	=> 0
 	);
 
-    public function __construct($arr)
-    {
-		//set input
+	public function __construct($arr)
+	{
+	//set input
         $this->json = json_decode($arr);
-        if($this->json === null) {
+		if($this->json === null) {
 			throw new Exception("Bad json input");
 		}
 
@@ -126,67 +126,66 @@ class server
 
 		//set user connection details
 		$this->user($this->json->login);
-    }
+	}
 
 	//call for all $act methods
 	public function action()
-    {
+	{
 		foreach ($this->act as $key => &$value) {
 			if ( array_key_exists($key, $this->json) ){
 				$a = "\$this->$key(\$this->json->$key);";
 				eval($a);
 			}
 		}
-		
-    }
+	}
 
 	public function user($arr)
-    {
-		$this->id 		= $arr->id;
+	{
+		$this->id 	= $arr->id;
 		$this->email 	= $arr->email;
 		$this->pass 	= $arr->password;
 		return 0;
-    }
+	}
 
 	public function login($arr)
-    {
+	{
 		$this->sql[] = "UPDATE `users` u
 				SET u.`t_last`='$this->now', u.`ip`='$this->ip'
 				WHERE u.`email`='$arr->email' AND BINARY u.`pass`='$arr->password'";
 		return 0;
-    }
+	}
 
 	public function add_contacts($arr)
-    {
+	{
 		return 0;
-    }
+	}
 	
 	public function add_images($arr)
-    {
+	{
 		return 0;
-    }
+	}
 	
 	public function add_permissions($arr)
-    {
+	{
 		return 0;
-    }
+	}
 	
 	//Reminder:
 	//when removing contact remove all of it's images permissions as well
 	//
 	public function remove_contacts($arr)
-    {
+	{
 		return 0;
-    }
+	}
 	
 	public function remove_images($arr)
-    {
+	{
 		return 0;
-    }
+	}
 	
 	public function remove_permissions($arr)
-    {
+	{
 		return 0;
-    }
+	}
 }
 ?>
