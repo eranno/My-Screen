@@ -30,7 +30,7 @@ $rsa	= $_POST['rsa'];
 //connect to db
 require('../inc/conn.php');
 
-//add the new contact
+//add the new image
 $sql = "INSERT INTO `images` (`serial`, `rsa`, `owner`)
 		SELECT '$serial', '$rsa', u.`id`
 		FROM `users` as u

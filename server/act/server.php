@@ -1,84 +1,4 @@
 <?php
-$json = '{	
-	"login":
-	{
-		"id":"1",
-		"email":"eran@gmail.com",
-		"password":"1234"
-	},
-	"add_contacts":
-	{
-		"0":"ilan@gmail.com",
-		"1":"krantz@gmail.com"
-	},
-	"add_images":
-	{
-		"0":"duygkiu76576445twdtg",
-		"1":"trdcfujhkhgfuy3465457"
-	},
-	"add_permissions":
-	{
-		"user":"ilan@gmail.com",
-		"images":
-		{
-			"0":"duygkiu76576445twdtg",
-			"1":"trdcfujhkhgfuy3465457"
-		}
-	},
-	"add_permissions":{
-		"user":"krantz@gmail.com",
-		"images":
-		{
-			"0":"duygkiu76576445twdtg",
-			"1":"trdcfujhkhgfuy3465457"
-		}
-	},
-	"remove_contacts":
-	{
-		"0":"ilan@gmail.com",
-		"1":"krantz@gmail.com"
-	},
-	"remove_images":
-	{
-		"0":"duygkiu76576445twdtg",
-		"1":"trdcfujhkhgfuy3465457"
-	},
-	"remove_permissions":
-	{
-		"user":"ilan@gmail.com",
-		"images":
-		{
-			"0":"duygkiu76576445twdtg",
-			"1":"trdcfujhkhgfuy3465457"
-		}
-	},
-	"remove_permissions":{
-		"user":"krantz@gmail.com",
-		"images":
-		{
-			"0":"duygkiu76576445twdtg",
-			"1":"trdcfujhkhgfuy3465457"
-		}
-	}
-}';
-
-
-
-
-try
-{
-	$s = new server($json);
-	$s->action();
-}
-catch ( Exception $e)
-{
-	//die($e->getMessage());
-	echo 'Caught exception: ',  $e->getMessage(), "\n";
-}
-
-
-
-
 class server
 {
 	//user extra info
@@ -129,20 +49,23 @@ class server
 	}
 
 	//call for all $act methods
-	public function action()
+	public function action($count=0)
 	{
 		foreach ($this->act as $key => &$value) {
 			if ( array_key_exists($key, $this->json) ){
+				$count++;
 				$a = "\$this->$key(\$this->json->$key);";
 				eval($a);
 			}
 		}
+
+		return $count;
 	}
 
 	public function user($arr)
 	{
 		$this->id 	= $arr->id;
-		$this->email 	= $arr->email;
+		$this->email 	= strtolower($arr->email);
 		$this->pass 	= $arr->password;
 		return 0;
 	}
@@ -152,22 +75,85 @@ class server
 		$this->sql[] = "UPDATE `users` u
 				SET u.`t_last`='$this->now', u.`ip`='$this->ip'
 				WHERE u.`email`='$arr->email' AND BINARY u.`pass`='$arr->password'";
-		return 0;
 	}
 
 	public function add_contacts($arr)
 	{
-		return 0;
+		//start sql
+		$temp_sql = 	"INSERT INTO `contacts` (`user`, `friend`)
+				SELECT u1.`id`, u2.`id`
+				FROM `users` as u1
+				INNER JOIN `users` u2
+				ON";
+
+		//loop contacts
+		foreach ($arr as &$value) {
+			$temp_sql .= " u2.`email`='$value' OR";
+		}
+		$temp_sql = substr($temp_sql, 0, -3);  //cut the " OR" characters
+
+		//end sql
+		$temp_sql .= "\nWHERE u1.email = '$this->email' AND BINARY u1.`pass`='$this->pass'";
+
+		//save it
+		$this->sql[] = $temp_sql;
 	}
 	
 	public function add_images($arr)
 	{
-		return 0;
+		//start sql
+		$temp_sql = 	"INSERT INTO `images` (`serial`, `cipher`, `owner`)
+				VALUES";
+
+		//loop images
+		foreach ($arr as $key => &$value) {
+			$temp_sql .= "\n('$key', '$value', '$this->id'),";
+		}
+		$temp_sql = substr($temp_sql, 0, -1);  //cut the "," character
+
+		//save it
+		$this->sql[] = $temp_sql;
 	}
 	
 	public function add_permissions($arr)
 	{
-		return 0;
+/*
+	"add_permissions":
+	{
+		"user":"ilan@gmail.com",
+		"images":
+		{
+			"0":"duygkiu76576445twdtg",
+			"1":"trdcfujhkhgfuy3465457"
+		}
+	},
+*/
+
+		//start sql
+		$temp_sql = 	"INSERT INTO `permissions` (`image`, `user`)
+				SELECT i.`id`, u2.`id`
+				FROM `users` as u1
+					INNER JOIN `users` u2
+					ON u2.`email`='$femail'
+					INNER JOIN `contacts` c
+					ON c.`user`=u1.`id` AND c.`friend`=u2.`id`
+					INNER JOIN `images` i
+					ON i.`owner`=u2.`id` AND i.`serial`='$serial'
+				WHERE u1.email = '$email' AND BINARY u1.`pass`='$pass'";
+
+		//loop contacts
+		foreach ($arr as &$value) {
+			$temp_sql .= " u2.`email`='$value' OR";
+		}
+		$temp_sql = substr($temp_sql, 0, -3);  //cut the " OR" characters
+
+		//end sql
+		$temp_sql .= "\nWHERE u1.email = '$this->email' AND BINARY u1.`pass`='$this->pass'";
+
+		//save it
+		$this->sql[] = $temp_sql;
+
+
 	}
 	
 	//Reminder:
