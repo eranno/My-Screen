@@ -3,7 +3,7 @@
 file: signup.php
 receive email address and sign it up to service.
 
-input: email, password
+input: email, activation code
 output: send activation to this email
 0 - success
 1 - no input \ no email
