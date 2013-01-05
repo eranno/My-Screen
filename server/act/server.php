@@ -129,36 +129,34 @@ class server
 	},
 */
 
+
+
 		//start sql
 		$temp_sql = 	"INSERT INTO `permissions` (`image`, `user`)
 				SELECT i.`id`, u2.`id`
 				FROM `users` as u1
 					INNER JOIN `users` u2
-					ON u2.`email`='$femail'
+					ON u2.`email`='$arr->user'
 					INNER JOIN `contacts` c
 					ON c.`user`=u1.`id` AND c.`friend`=u2.`id`
 					INNER JOIN `images` i
-					ON i.`owner`=u2.`id` AND i.`serial`='$serial'
-				WHERE u1.email = '$email' AND BINARY u1.`pass`='$pass'";
+					ON i.`owner`=u2.`id` AND (";
 
-		//loop contacts
-		foreach ($arr as &$value) {
-			$temp_sql .= " u2.`email`='$value' OR";
+		//loop images
+		foreach ($arr->images as &$value) {
+			$temp_sql .= "i.`serial`='$value' OR ";
 		}
-		$temp_sql = substr($temp_sql, 0, -3);  //cut the " OR" characters
+		$temp_sql = substr($temp_sql, 0, -4) . ')';  //cut the " OR" characters
 
 		//end sql
 		$temp_sql .= "\nWHERE u1.email = '$this->email' AND BINARY u1.`pass`='$this->pass'";
 
 		//save it
 		$this->sql[] = $temp_sql;
-
-
 	}
 	
 	//Reminder:
 	//when removing contact remove all of it's images permissions as well
-	//
 	public function remove_contacts($arr)
 	{
 		return 0;

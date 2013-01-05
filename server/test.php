@@ -1,20 +1,18 @@
 <?php
 
-
-
-
 require_once('./simpletest/autorun.php');
 require_once('./act/server.php');
 
 class TestOfLogging extends UnitTestCase {
+	function __construct() {
+		parent::__construct('Server test');
+	}
+
 	function testFirstLogMessagesCreatesFileIfNonexistent() {
-		//@unlink(dirname(__FILE__) . '/../temp/test.log');
-		//$log = new Log(dirname(__FILE__) . '/../temp/test.log');
-		//$log->message('Should write this to a file');
-		//$this->assertTrue(file_exists(dirname(__FILE__) . '/../temp/test.log'));
+		//$this->expectException();
+		//$s = new server(null);
 		
-		
-		$json = '{	
+	$json = '{	
 	"login":
 	{
 		"id":"1",
@@ -95,12 +93,4 @@ class TestOfLogging extends UnitTestCase {
 	}
 }
 
-/*
- class TestOfServer extends UnitTestCase {
-    function testServer() {
-      $this->assertTrue(add(1,1) == 2);
-      $this->assertTrue(add(2,2) == 4);
-      $this->assertTrue(add(1,1,1) == 3);
-    }
-    * */
 ?>
