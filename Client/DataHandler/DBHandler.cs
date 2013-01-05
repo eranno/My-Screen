@@ -29,7 +29,7 @@ namespace DataHandler
         {
             string FriendsTableSQL = "CREATE TABLE [Friends] (" +
                "[email] TEXT PRIMARY KEY," +
-               "[userId] TEXT PRIMARY KEY," +
+               "[userId] TEXT NULL," +
                "[name] TEXT NULL" +
                ")";
 
