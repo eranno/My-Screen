@@ -29,13 +29,14 @@ namespace DataHandler
         {
             string FriendsTableSQL = "CREATE TABLE [Friends] (" +
                "[email] TEXT PRIMARY KEY," +
+               "[userId] TEXT PRIMARY KEY," +
                "[name] TEXT NULL" +
                ")";
 
             string ImagesTableSQL = "CREATE TABLE [Images] (" +
                 "[id] INTEGER PRIMARY KEY AUTOINCREMENT," +
-                "[idx] TEXT  NULL," +
                 "[name] TEXT NULL," +
+                "[idx] TEXT  NULL," +//The id of the encrypted image
                 "[key] TEXT  NULL," +
                 "[type] TEXT  NULL," +
                 "[pathEncrypted] TEXT NULL," +
@@ -53,6 +54,7 @@ namespace DataHandler
 
             string userPropertiesTable = "CREATE TABLE [UserProperties] (" +
                  "[email] TEXT PRIMARY KEY," +
+                 "[userId] TEXT NULL," +
                  "[name] TEXT NULL," +
                  "[password] TEXT NOT NULL," +
                  "[securityCode] TEXT NULL" +
