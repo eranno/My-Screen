@@ -22,14 +22,16 @@ namespace DataHandler
             List<string> imgFiles = files as List<string>;
             foreach (String fileName in imgFiles)
             {
-                Image image = Image.FromFile(fileName);
-                Image thumb = image.GetThumbnailImage(120, 120, () => false, IntPtr.Zero);
-                string newFile = Path.ChangeExtension(fileName, "thumb");
-                string loc = "Thumbnails\\" + Path.GetFileName(newFile);
-                thumb.Save(loc);
-                string name = Path.GetFileNameWithoutExtension(fileName);
-                string type = Path.GetExtension(fileName);
-                DBHandler.insert("INSERT INTO Images(name , pathThumb , pathOriginal , type) VALUES(" + "'" + name + "'" + ", " + "'" + loc + "'" + " , " + "'" + fileName + "'" + " , " +  "'" + type + "'"+ ")");
+                using (Image image = Image.FromFile(fileName))
+                {
+                    Image thumb = image.GetThumbnailImage(120, 120, () => false, IntPtr.Zero);
+                    string newFile = Path.ChangeExtension(fileName, "thumb");
+                    string loc = "Thumbnails\\" + Path.GetFileName(newFile);
+                    thumb.Save(loc);
+                    string name = Path.GetFileNameWithoutExtension(fileName);
+                    string type = Path.GetExtension(fileName);
+                    DBHandler.insert("INSERT INTO Images(name , pathThumb , pathOriginal , type) VALUES(" + "'" + name + "'" + ", " + "'" + loc + "'" + " , " + "'" + fileName + "'" + " , " + "'" + type + "'" + ")");
+                }
             }
         }
     }
