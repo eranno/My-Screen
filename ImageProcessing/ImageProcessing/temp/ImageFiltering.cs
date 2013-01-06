@@ -1,17 +1,17 @@
-﻿using System.Threading;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Diagnostics;
 using GUI;
 using System.Collections.Specialized;
-using System;
 
  
  
 namespace ImageProcessing
 {
-
+    class ImageFiltering
     public static class ImageFiltering
     {
+        Dictionary<String, String> images;
         String PROGRAM_ID = "1101000100001";
         
         public static String PROGRAM_ID = "1101000100001";
