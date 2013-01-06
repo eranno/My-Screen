@@ -23,3 +23,10 @@ C:\Users\Noam Tzumie\Desktop\פרוייקטים\MyScreen\VCS\My-Screen\ImageProc
 C:\Users\Noam Tzumie\Desktop\פרוייקטים\MyScreen\VCS\My-Screen\ImageProcessing\ImageProcessing\bin\Debug\ImageProcessing.exe
 C:\Users\Noam Tzumie\Desktop\פרוייקטים\MyScreen\VCS\My-Screen\ImageProcessing\ImageProcessing\bin\Debug\ImageProcessing.pdb
 C:\Users\Noam Tzumie\Desktop\פרוייקטים\MyScreen\VCS\My-Screen\ImageProcessing\ImageProcessing\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Noam Tzumie\Desktop\פרוייקטים\MyScreen\VCS\My-Screen\ImageProcessing\ImageProcessing\bin\Debug\DataHandler.dll
+C:\Users\Noam Tzumie\Desktop\פרוייקטים\MyScreen\VCS\My-Screen\ImageProcessing\ImageProcessing\bin\Debug\GUI.exe
+C:\Users\Noam Tzumie\Desktop\פרוייקטים\MyScreen\VCS\My-Screen\ImageProcessing\ImageProcessing\bin\Debug\FiddlerCore.dll
+C:\Users\Noam Tzumie\Desktop\פרוייקטים\MyScreen\VCS\My-Screen\ImageProcessing\ImageProcessing\bin\Debug\DataHandler.pdb
+C:\Users\Noam Tzumie\Desktop\פרוייקטים\MyScreen\VCS\My-Screen\ImageProcessing\ImageProcessing\bin\Debug\GUI.pdb
+C:\Users\Noam Tzumie\Desktop\פרוייקטים\MyScreen\VCS\My-Screen\ImageProcessing\ImageProcessing\bin\Debug\FiddlerCore.pdb
+C:\Users\Noam Tzumie\Desktop\פרוייקטים\MyScreen\VCS\My-Screen\ImageProcessing\ImageProcessing\bin\Debug\FiddlerCore.xml
