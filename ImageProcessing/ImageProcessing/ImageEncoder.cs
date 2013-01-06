@@ -21,10 +21,10 @@ namespace ImageProcessing
         {
             Image inputImage;
             Bitmap inputBitmap;
-            int[,] path;
+            int[,] path = new int[SWAPS, 2];
             String ImageKey;
 
-            path = new int[SWAPS, 2];
+
 
             //retreving image from directory
             inputImage = Image.FromFile(dir);

@@ -4,6 +4,10 @@ using System.Diagnostics;
 using GUI;
 using System.Collections.Specialized;
 using System;
+using System.Drawing;
+using System.Net;
+using System.IO;
+using System.Text;
 
  
  
@@ -12,8 +16,6 @@ namespace ImageProcessing
 
     public static class ImageFiltering
     {
-        String PROGRAM_ID = "1101000100001";
-        
         public static String PROGRAM_ID = "1101000100001";
 
         public static void ImageFilter()
@@ -77,7 +79,7 @@ namespace ImageProcessing
                 if (permission[0] == 0)//check with eran
                 {
                     //Decode
-                    ImageDecoder.decode_image(image);
+                    ImageDecoder.decode_image(image, user_id,image_id);
                 }
 
              }
@@ -131,7 +133,7 @@ namespace ImageProcessing
             return id;
         }
 
-        private static int get_program_id(Bitmap inputBitmap)
+        private static int get_program_id(Bitmap image)
         {
             String str_id = "";
             int pos;
@@ -149,9 +151,9 @@ namespace ImageProcessing
                     str_id += "1";
                 }
             }
- 
 
-            int id = Convert.ToInt32(num_str, 2);
+
+            int id = Convert.ToInt32(str_id, 2);
             return id;
         }
  
