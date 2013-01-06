@@ -90,7 +90,7 @@ namespace GUI
         private ImageList fillImgList(Dictionary<DataRow,Image> map)
         {
             ImageList myImages = new ImageList();
-            myImages.ImageSize = new System.Drawing.Size(80, 80);
+            myImages.ImageSize = new System.Drawing.Size(107, 80);
             myImages.ColorDepth = ColorDepth.Depth32Bit;
 
             foreach (var entry in map)
@@ -159,7 +159,7 @@ namespace GUI
             foreach (ListViewItem lvi in lvImgs.SelectedItems)
             {
                 DataRow row = lvi.Tag as DataRow;
-                DBHandler.executeCmd("DELETE FROM AuthImages WHERE imageId=" + row["id"].ToString() + " AND friendId=" + "'" + currFriendId +"'");
+                LocalData.removeImageFromFriend(row["id"].ToString() , currFriendId);
                 lvi.Remove();
             }
         }

@@ -59,6 +59,9 @@ local.properties
 *.tli
 *.tlh
 *.tmp
+*.dll
+*.exe
+*.csproj
 *.vspscc
 *.thumb
 .builds

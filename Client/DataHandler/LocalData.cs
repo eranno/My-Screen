@@ -6,6 +6,7 @@ using System.Drawing;
 using System.IO;
 using System.ComponentModel;
 using System.Threading;
+using System.Data;
 
 namespace DataHandler
 {
@@ -33,6 +34,28 @@ namespace DataHandler
                     DBHandler.insert("INSERT INTO Images(name , pathThumb , pathOriginal , type) VALUES(" + "'" + name + "'" + ", " + "'" + loc + "'" + " , " + "'" + fileName + "'" + " , " + "'" + type + "'" + ")");
                 }
             }
+        }
+
+        public static void removeImageFromFriend(string imageId , string friendId)
+        {
+            DBHandler.executeCmd("DELETE FROM AuthImages WHERE imageId=" + imageId + " AND friendId=" + "'" + friendId + "'");
+        }
+
+        public static void insertEncryptedImage(EncryptedImage encryptedImage)
+        {
+            DBHandler.insert("INSERT INTO Images(idx , name , key , type , pathEncrypted , pathThumb , pathOriginal) VALUES('" + encryptedImage.Idx + "' , '" + encryptedImage.Name + "' , '" + encryptedImage.Key + "' , '" + encryptedImage.Type + "' ,'" + encryptedImage.PathEncrypted + "' , '" + encryptedImage.PathThumb + "' , '" + encryptedImage.PathOriginal + "')");
+        }
+
+        public static User getUserProperties()
+        {
+            DataRow row = DBHandler.getTable("SELECT * FROM UserProperties").Rows[0];
+            User user = new User();
+            user.Email = row["email"].ToString();
+            user.UserId = row["userId"].ToString();
+            user.Name = row["name"].ToString();
+            user.Password = row["password"].ToString();
+            user.SecurityCode = row["securityCode"].ToString();
+            return user;
         }
     }
 

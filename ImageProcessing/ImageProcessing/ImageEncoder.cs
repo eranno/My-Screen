@@ -6,6 +6,7 @@ using System.Drawing;
 using System.IO;
 using System.Net;
 using System.Collections.Specialized;
+using DataHandler;
 
 namespace ImageProcessing
 {
@@ -58,7 +59,7 @@ namespace ImageProcessing
         public static void make_user_id(Bitmap inputBitmap)
         {
             String USER_ID = "00000000000000000000000000000000";
-            //String USER_ID = DBHandler.executeCmd("Select userId From userPropertiesTable");
+            //String USER_ID = LocalData.getUserProperties().UserId;
             if (USER_ID != null)
             {
                 int pos;
