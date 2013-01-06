@@ -15,7 +15,7 @@ namespace DataHandler
     {
         List<String> imageList;
         DataRow details;
-
+            
         ImageList myImages = null;
 
         public ImageList getMyImages()

@@ -36,7 +36,13 @@ namespace ImageProcessing
                 thumb.Save(loc);
                 string name = Path.GetFileNameWithoutExtension(fileName);
                 string type = Path.GetExtension(fileName);
-                DBHandler.insert("INSERT INTO Images(name , pathThumb , pathOriginal , type) VALUES(" + "'" + name + "'" + ", " + "'" + loc + "'" + " , " + "'" + fileName + "'" + " , " + "'" + type + "'" + ")");
+
+                EncryptedImage encryptedImage = new EncryptedImage();
+                encryptedImage.Name = name;
+                encryptedImage.PathThumb = loc;
+                encryptedImage.PathOriginal = fileName;
+                encryptedImage.Type = type;
+                LocalData.insertEncryptedImage(encryptedImage);
 
                 ImageEncoder.EncodeImage(fileName);
             }
