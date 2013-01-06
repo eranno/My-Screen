@@ -17,7 +17,7 @@ namespace ImageProcessing
         public static int HIGHT = 300;
         public static int WIDTH = 400;
 
-        public static void decode_image(Bitmap image, String user_id, String image_id)
+        public static void decode_image(Bitmap image, int user_id, int image_id)
         {
             int[,] path = new int[SWAPS, 2];
 
