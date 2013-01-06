@@ -199,7 +199,7 @@ namespace DataHandler
 
         public static String fillWithDump()
         {
-            List<string> dump = new List<string>();
+            List<string> dump = new List<string>(); 
             dump.Add("INSERT INTO Friends(email , name , userId) VALUES('noam185@gmail.com' ,'Noam Tzumie' , '12345')");
             dump.Add("INSERT INTO Friends(email , name , userId) VALUES('david@gmail.com' ,'David krantz' , '7890')");
             dump.Add("INSERT INTO Friends(email , name , userId) VALUES('ilan@gmail.com' , 'Ilan Ben Tal' , '534535')");
