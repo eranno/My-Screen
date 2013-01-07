@@ -9,7 +9,6 @@
 * Fiddler.RequiredVersionAttribute on your assembly, or your transcoders will be 
 * ignored.
 */
-
 using System;
 using Fiddler;
 using System.Collections.Generic;

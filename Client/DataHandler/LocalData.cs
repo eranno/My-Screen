@@ -48,7 +48,7 @@ namespace DataHandler
 
         public static void updateEncryptedImage(EncryptedImage encryptedImage)
         {
-            StringBuilder sb = new StringBuilder();
+            StringBuilder sb = new StringBuilder();  
             sb.Append("idx='" + encryptedImage.Idx + "',");
             sb.Append("name='" + encryptedImage.Name + "',");
             sb.Append("key='" + encryptedImage.Key + "',");
@@ -62,7 +62,7 @@ namespace DataHandler
         public static User getUserProperties()
         {
             DataRow row = DBHandler.getTable("SELECT * FROM UserProperties").Rows[0];
-            User user = new User();
+            User user = new User(); 
             user.Email = row["email"].ToString();
             user.UserId = row["userId"].ToString();
             user.Name = row["name"].ToString();
@@ -71,6 +71,10 @@ namespace DataHandler
             return user;
         }
 
+        public static void addUser(User user)
+        {
+            DBHandler.insert("INSERT INTO UserProperties(email , name , userId , password , securityCode) VALUES('" + user.Email + "' , '" + user.Name + "' , '" + user.UserId +  "' ,'" + user.Password + "' , '" + user.SecurityCode + "')");
+        }
     }
 
 }

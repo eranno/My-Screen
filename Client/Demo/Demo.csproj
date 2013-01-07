@@ -74,7 +74,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="FiddlerCore">
-      <HintPath>..\FiddlerCore.dll</HintPath>
+      <HintPath>..\dependencies\FiddlerCore.dll</HintPath>
     </Reference>
     <Reference Include="System" />
   </ItemGroup>
