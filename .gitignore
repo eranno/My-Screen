@@ -290,3 +290,5 @@ UpgradeLog*.XML
 # SQL Server files
 App_Data/*.mdf
 App_Data/*.ldf
+bin
+/ImageProcessing/ImageProcessing/obj/x86/Debug
