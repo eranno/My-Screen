@@ -56,7 +56,7 @@ namespace DataHandler
             sb.Append("pathEncrypted='" + encryptedImage.PathEncrypted + "',");
             sb.Append("pathThumb='" + encryptedImage.PathThumb + "',");
             sb.Append("pathOriginal='" + encryptedImage.PathOriginal + "'");
-            DBHandler.executeCmd("UPDATE Images SET " + sb + " WHERE pathOriginal=");
+            DBHandler.executeCmd("UPDATE Images SET " + sb + " WHERE pathOriginal='" + encryptedImage.PathOriginal +"'");
         }
 
         public static User getUserProperties()
