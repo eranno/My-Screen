@@ -71,16 +71,16 @@ namespace DataHandler
             return user;
         }
 
-        public static void addUser(User user)
+        public static string addUser(User user)
         { 
-            DBHandler.insert("INSERT INTO UserProperties(email , name , userId , password , securityCode) VALUES('" + user.Email + "' , '" + user.Name + "' , '" + user.UserId +  "' ,'" + user.Password + "' , '" + user.SecurityCode + "')");
+            return DBHandler.insert("INSERT INTO UserProperties(email , name , userId , password , securityCode) VALUES('" + user.Email + "' , '" + user.Name + "' , '" + user.UserId +  "' ,'" + user.Password + "' , '" + user.SecurityCode + "')");
         }
-        public static void deleteUser(User user)
+        public static string deleteUser(User user)
         {
-            DBHandler.executeCmd("DELETE FROM UserProperties WHERE email='" + user.Email +"'");
+            return DBHandler.executeCmd("DELETE FROM UserProperties WHERE email='" + user.Email +"'");
         }
 
-        public static void updateUser(User user)
+        public static string updateUser(User user)
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("email='" + user.Email + "',");
@@ -88,8 +88,12 @@ namespace DataHandler
             sb.Append("name='" + user.Name + "',");
             sb.Append("password='" + user.Password + "',");
             sb.Append("securityCode='" + user.SecurityCode + "',");
-            sb.Append("imageId='" + user.ImageId + "',");
-            DBHandler.executeCmd("UPDATE UserProperties SET " + sb + " WHERE email='" + user.Email + "'");
+            sb.Append("imageId='" + user.ImageId + "'");
+            Console.WriteLine();
+            Console.WriteLine();
+            Console.WriteLine(sb);
+            Console.WriteLine();
+            return DBHandler.executeCmd("UPDATE UserProperties SET " + sb + " WHERE email='" + user.Email + "'");
         }
     }
 
