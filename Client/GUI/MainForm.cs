@@ -175,5 +175,10 @@ namespace GUI
             TrafficFollow form = new TrafficFollow();
             form.Show();
         }
+
+        private void syncWithServerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(DataHandler.Server.buildJson());
+        }
     }
 }

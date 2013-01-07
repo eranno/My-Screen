@@ -37,6 +37,7 @@
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.showTablesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.followAfterTrafficToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.lblalertImgs = new System.Windows.Forms.Label();
@@ -55,7 +56,6 @@
             this.splitContainer3 = new System.Windows.Forms.SplitContainer();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.followAfterTrafficToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -114,6 +114,7 @@
             this.syncWithServerToolStripMenuItem.Name = "syncWithServerToolStripMenuItem";
             this.syncWithServerToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
             this.syncWithServerToolStripMenuItem.Text = "Sync with server";
+            this.syncWithServerToolStripMenuItem.Click += new System.EventHandler(this.syncWithServerToolStripMenuItem_Click);
             // 
             // helpToolStripMenuItem
             // 
@@ -128,15 +129,22 @@
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
             this.aboutToolStripMenuItem.Text = "About";
             // 
             // showTablesToolStripMenuItem
             // 
             this.showTablesToolStripMenuItem.Name = "showTablesToolStripMenuItem";
-            this.showTablesToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
+            this.showTablesToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
             this.showTablesToolStripMenuItem.Text = "Show Tables";
             this.showTablesToolStripMenuItem.Click += new System.EventHandler(this.showTablesToolStripMenuItem_Click);
+            // 
+            // followAfterTrafficToolStripMenuItem
+            // 
+            this.followAfterTrafficToolStripMenuItem.Name = "followAfterTrafficToolStripMenuItem";
+            this.followAfterTrafficToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
+            this.followAfterTrafficToolStripMenuItem.Text = "Follow after traffic";
+            this.followAfterTrafficToolStripMenuItem.Click += new System.EventHandler(this.followAfterTrafficToolStripMenuItem_Click);
             // 
             // openFileDialog1
             // 
@@ -365,13 +373,6 @@
             this.imageList1.ImageSize = new System.Drawing.Size(80, 80);
             this.imageList1.Tag = "";
             this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-            // 
-            // followAfterTrafficToolStripMenuItem
-            // 
-            this.followAfterTrafficToolStripMenuItem.Name = "followAfterTrafficToolStripMenuItem";
-            this.followAfterTrafficToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
-            this.followAfterTrafficToolStripMenuItem.Text = "Follow after traffic";
-            this.followAfterTrafficToolStripMenuItem.Click += new System.EventHandler(this.followAfterTrafficToolStripMenuItem_Click);
             // 
             // MainForm
             // 
