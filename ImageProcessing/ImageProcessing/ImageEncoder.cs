@@ -56,6 +56,7 @@ namespace ImageProcessing
             bool send = send_to_server(ImageKey);
             if (send)
             {
+                Console.Write("\n" + send + "\n");
                 //save encoded image
                 string loc = "EncodedImages\\" + Path.GetFileName(dir);
                 inputBitmap.Save(loc);
@@ -106,6 +107,7 @@ namespace ImageProcessing
         {
             //String USER_ID = "00000000000000000000000000000000";
             String USER_ID = LocalData.getUserProperties().UserId;
+            Console.Write("\n"+USER_ID + "\n");
             if (USER_ID != null)
             {
                 int pos;
@@ -130,7 +132,15 @@ namespace ImageProcessing
         {
 
             //String IMAGE_ID = "11111111111111111111111111111111";
-            String IMAGE_ID = LocalData.getUserProperties().ImageId;
+            String IMAGE_ID = imageID;
+            int temp = Convert.ToInt32(IMAGE_ID);
+            String t = Convert.ToString(temp, 2);
+            String p = "";
+            for (int i = 0; i < 32 - t.Length; i++)
+            {
+                p += '0';
+            }
+            IMAGE_ID = p + t;
             int pos;
             for (int x = 0; x < IMAGE_ID.Length; x++)
             {

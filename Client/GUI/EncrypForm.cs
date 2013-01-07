@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using System.IO;
 using DataHandler;
 using System.Threading;
+using ImageProcessing;
 
 namespace GUI
 {
@@ -42,7 +43,8 @@ namespace GUI
                 MessageBox.Show("Load some images first");
                 return;
             }
-            LocalData.createThumb(imgFiles);
+            ImageHandler.createThumb(imgFiles);
+            //LocalData.createThumb(imgFiles);
             this.Close();
         }
 

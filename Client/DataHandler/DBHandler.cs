@@ -18,6 +18,8 @@ namespace DataHandler
         {
             if (!Directory.Exists("Thumbnails"))
                  Directory.CreateDirectory("Thumbnails");
+            if (!Directory.Exists("EncodedImages"))
+                Directory.CreateDirectory("EncodedImages");
             bool isDbExist = File.Exists(dbName);
             sqliteCon = new SQLiteConnection(connectionString);
             sqliteCon.Open();

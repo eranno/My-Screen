@@ -59,10 +59,6 @@
       <Project>{f8595926-2a07-4782-b6f0-b0c087876d24}</Project>
       <Name>DataHandler</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Client\GUI\GUI.csproj">
-      <Project>{7f4cb9ec-00a0-4191-97b9-baba7b18810b}</Project>
-      <Name>GUI</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
