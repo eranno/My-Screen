@@ -52,6 +52,7 @@
     <Compile Include="DBHandler.cs" />
     <Compile Include="EncryptedImage.cs" />
     <Compile Include="LocalData.cs" />
+    <Compile Include="Messages.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="User.cs" />
   </ItemGroup>

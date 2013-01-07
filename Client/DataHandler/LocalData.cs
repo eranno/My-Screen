@@ -46,6 +46,19 @@ namespace DataHandler
             DBHandler.insert("INSERT INTO Images(idx , name , key , type , pathEncrypted , pathThumb , pathOriginal) VALUES('" + encryptedImage.Idx + "' , '" + encryptedImage.Name + "' , '" + encryptedImage.Key + "' , '" + encryptedImage.Type + "' ,'" + encryptedImage.PathEncrypted + "' , '" + encryptedImage.PathThumb + "' , '" + encryptedImage.PathOriginal + "')");
         }
 
+        public static void updateEncryptedImage(EncryptedImage encryptedImage)
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.Append("idx='" + encryptedImage.Idx + "',");
+            sb.Append("name='" + encryptedImage.Name + "',");
+            sb.Append("key='" + encryptedImage.Key + "',");
+            sb.Append("type='" + encryptedImage.Type + "',");
+            sb.Append("pathEncrypted='" + encryptedImage.PathEncrypted + "',");
+            sb.Append("pathThumb='" + encryptedImage.PathThumb + "',");
+            sb.Append("pathOriginal='" + encryptedImage.PathOriginal + "'");
+            DBHandler.executeCmd("UPDATE Images SET " + sb + " WHERE pathOriginal");
+        }
+
         public static User getUserProperties()
         {
             DataRow row = DBHandler.getTable("SELECT * FROM UserProperties").Rows[0];
@@ -57,6 +70,7 @@ namespace DataHandler
             user.SecurityCode = row["securityCode"].ToString();
             return user;
         }
+
     }
 
 }
