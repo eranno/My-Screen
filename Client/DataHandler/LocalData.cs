@@ -62,7 +62,7 @@ namespace DataHandler
         public static User getUserProperties()
         {
             DataRow row = DBHandler.getTable("SELECT * FROM UserProperties").Rows[0];
-            User user = new User();
+            User user = new User(); 
             user.Email = row["email"].ToString();
             user.UserId = row["userId"].ToString();
             user.Name = row["name"].ToString();
