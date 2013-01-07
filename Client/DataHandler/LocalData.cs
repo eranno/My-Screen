@@ -75,6 +75,22 @@ namespace DataHandler
         { 
             DBHandler.insert("INSERT INTO UserProperties(email , name , userId , password , securityCode) VALUES('" + user.Email + "' , '" + user.Name + "' , '" + user.UserId +  "' ,'" + user.Password + "' , '" + user.SecurityCode + "')");
         }
+        public static void deleteUser(User user)
+        {
+            DBHandler.executeCmd("DELETE FROM UserProperties WHERE email='" + user.Email +"'");
+        }
+
+        public static void updateUser(User user)
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.Append("email='" + user.Email + "',");
+            sb.Append("userId='" + user.UserId + "',");
+            sb.Append("name='" + user.Name + "',");
+            sb.Append("password='" + user.Password + "',");
+            sb.Append("securityCode='" + user.SecurityCode + "',");
+            sb.Append("imageId='" + user.ImageId + "',");
+            DBHandler.executeCmd("UPDATE UserProperties SET " + sb + " WHERE email='" + user.Email + "'");
+        }
     }
 
 }
