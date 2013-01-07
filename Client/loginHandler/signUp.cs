@@ -52,8 +52,13 @@ namespace loginHandler
                 return;
             }
 
+<<<<<<< HEAD
             String confCode = validEmail(email.Text, password.Text);
             if (confCode == null )
+=======
+            String id = validEmail(email.Text, password.Text);
+            if (id == null)
+>>>>>>> c3b3579d67b99a1e5fff5fcab49b2bbbcf6a58b4
             {
                 error.Text = EMAIL_NOT_VALID;
                 error.Visible = true;
@@ -63,18 +68,35 @@ namespace loginHandler
             //set new values in user's properties table.
             //
             Boolean success = setProperties(name.Text, email.Text,
+<<<<<<< HEAD
                 password.Text, confCode);
             //Boolean success = setProperties("name.Text", "email.Text",
             //    "password.Text", "confCode");
             //
             if (success) MessageBox.Show("Login successfull!\ncontinue to MyScreen");
+=======
+                password.Text, id);
+            //Boolean success = setProperties("name.Text", "email.Text",
+            //    "password.Text", "confCode");
+            //
+            if (success)
+            {
+                //MessageBox.Show("Login successfull!\ncontinue to MyScreen");
+            }
+>>>>>>> c3b3579d67b99a1e5fff5fcab49b2bbbcf6a58b4
             else
             {
                 return;
             }
+<<<<<<< HEAD
             MainForm MainForm = new MainForm();
             this.Hide();
             MainForm.Show();
+=======
+            confirmation confirmation = new confirmation();
+            this.Hide();
+            confirmation.Show();
+>>>>>>> c3b3579d67b99a1e5fff5fcab49b2bbbcf6a58b4
         }
 
         //checks if email is valid
@@ -106,14 +128,22 @@ namespace loginHandler
                 }
                 else
                 {
+<<<<<<< HEAD
                     MessageBox.Show("Success code: " + code);
+=======
+                    MessageBox.Show("Success code: " + body);
+>>>>>>> c3b3579d67b99a1e5fff5fcab49b2bbbcf6a58b4
                     return body;
                 }
             }
         }
         //insert user's properties
         private Boolean setProperties(String name, String email,
+<<<<<<< HEAD
                                         String password, String securityCode)
+=======
+                                        String password, String userId)
+>>>>>>> c3b3579d67b99a1e5fff5fcab49b2bbbcf6a58b4
         {
             String sql;
             //TODO. connect to user's DB and update
@@ -124,10 +154,18 @@ namespace loginHandler
             DBHandler.executeCmd(sql);
             //end tester
             //**************************
+<<<<<<< HEAD
             sql = "INSERT INTO UserProperties"
                             + "(email , name , password , securityCode)"
                             + "VALUES('"+email+"and','"+name+"','"+password+"','"
                             +securityCode+"')";
+=======
+            userId = userId.Substring(0, 20);
+            sql = "INSERT INTO UserProperties"
+                            + "(email , name , password , userId)"
+                            + "VALUES('"+email+"and','"+name+"','"+password+"','"
+                            + userId + "')";
+>>>>>>> c3b3579d67b99a1e5fff5fcab49b2bbbcf6a58b4
             /*
             sql = "INSERT INTO UserProperties(email , name , password , securityCode)"
             +"VALUES('myComp@gmail.com', 'localhost' , '123456' ,"
@@ -135,7 +173,11 @@ namespace loginHandler
             */
             MessageBox.Show(DBHandler.insert(sql));
             
+<<<<<<< HEAD
             MessageBox.Show(DBHandler.showTables());
+=======
+            //MessageBox.Show(DBHandler.showTables());
+>>>>>>> c3b3579d67b99a1e5fff5fcab49b2bbbcf6a58b4
             return true;
         }
     }
