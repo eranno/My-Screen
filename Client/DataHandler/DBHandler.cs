@@ -9,7 +9,7 @@ using System.IO;
 namespace DataHandler
 {
     public class DBHandler
-    {
+    { 
         private static SQLiteConnection sqliteCon;
         private static String dbName = "myScreen.s3db";
         private static String connectionString = @"Data Source=" + dbName;
