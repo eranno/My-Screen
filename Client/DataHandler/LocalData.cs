@@ -48,7 +48,7 @@ namespace DataHandler
 
         public static void updateEncryptedImage(EncryptedImage encryptedImage)
         {
-            StringBuilder sb = new StringBuilder();
+            StringBuilder sb = new StringBuilder();  
             sb.Append("idx='" + encryptedImage.Idx + "',");
             sb.Append("name='" + encryptedImage.Name + "',");
             sb.Append("key='" + encryptedImage.Key + "',");
