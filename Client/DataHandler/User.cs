@@ -12,6 +12,7 @@ namespace DataHandler
         private string _Password;
         private string _SecurityCode;
         private string _UserId;
+        private string _ImageId;
 
         public string Email
         {
@@ -38,6 +39,11 @@ namespace DataHandler
         {
             set { this._UserId = value; }
             get { return this._UserId; }
+        }
+        public string ImageId
+        {
+            set { this._ImageId = value; }
+            get { return this._ImageId; }
         }
     }
 }

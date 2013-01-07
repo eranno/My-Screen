@@ -57,7 +57,8 @@ namespace DataHandler
                  "[userId] TEXT NULL," +
                  "[name] TEXT NULL," +
                  "[password] TEXT NOT NULL," +
-                 "[securityCode] TEXT NULL" +
+                 "[securityCode] TEXT NULL," +
+                 "[imageId] TEXT NULL" +
                  ")";
 
 
@@ -190,7 +191,8 @@ namespace DataHandler
                     + " | name: " + row["name"].ToString()
                     + " | password: " + row["password"].ToString()
                     + " | securityCode: " + row["securityCode"].ToString()
-                    + " | userId: " + row["userId"].ToString());
+                    + " | userId: " + row["userId"].ToString()
+                    + " | imageId: " + row["imageId"].ToString());
             }
             sb.AppendLine();
             sb.AppendLine("******** End ! Show Tables *************");

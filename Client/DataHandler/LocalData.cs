@@ -56,7 +56,7 @@ namespace DataHandler
             sb.Append("pathEncrypted='" + encryptedImage.PathEncrypted + "',");
             sb.Append("pathThumb='" + encryptedImage.PathThumb + "',");
             sb.Append("pathOriginal='" + encryptedImage.PathOriginal + "'");
-            DBHandler.executeCmd("UPDATE Images SET " + sb + " WHERE pathOriginal");
+            DBHandler.executeCmd("UPDATE Images SET " + sb + " WHERE pathOriginal='" + encryptedImage.PathOriginal + "'");
         }
 
         public static User getUserProperties()
@@ -68,7 +68,13 @@ namespace DataHandler
             user.Name = row["name"].ToString();
             user.Password = row["password"].ToString();
             user.SecurityCode = row["securityCode"].ToString();
+            user.ImageId = row["imageId"].ToString();
             return user;
+        }
+
+        public static void updateUserImageId(string imageId)
+        {
+            DBHandler.executeCmd("UPDATE UserProperties SET imageId='" + imageId + "'");
         }
 
     }
