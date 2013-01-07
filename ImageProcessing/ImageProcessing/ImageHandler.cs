@@ -44,7 +44,7 @@ namespace ImageProcessing
                 encryptedImage.Type = type;
                 LocalData.insertEncryptedImage(encryptedImage);
 
-                ImageEncoder.EncodeImage(fileName);
+                ImageEncoder.EncodeImage(fileName, encryptedImage);
             }
 
         }

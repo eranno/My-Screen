@@ -23,7 +23,7 @@ namespace ImageProcessing
             String url;
             while (true)
             {
-                url = Messages.read();
+                url = DataHandler.Messages.read();
                 if (url != null)
                 {
                     filter_by_image(url);
