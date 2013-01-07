@@ -10,3 +10,10 @@ C:\Users\user\Documents\GitHub\My-Screen\Client\DataHandler\bin\Debug\System.Dat
 C:\Users\user\Documents\GitHub\My-Screen\Client\DataHandler\obj\Debug\DataHandler.csprojResolveAssemblyReference.cache
 C:\Users\user\Documents\GitHub\My-Screen\Client\DataHandler\obj\Debug\DataHandler.dll
 C:\Users\user\Documents\GitHub\My-Screen\Client\DataHandler\obj\Debug\DataHandler.pdb
+C:\Users\David\Documents\GitHub\My-Screen\Client\DataHandler\bin\Debug\DataHandler.dll
+C:\Users\David\Documents\GitHub\My-Screen\Client\DataHandler\bin\Debug\DataHandler.pdb
+C:\Users\David\Documents\GitHub\My-Screen\Client\DataHandler\bin\Debug\System.Data.SQLite.dll
+C:\Users\David\Documents\GitHub\My-Screen\Client\DataHandler\bin\Debug\System.Data.SQLite.Linq.dll
+C:\Users\David\Documents\GitHub\My-Screen\Client\DataHandler\obj\Debug\DataHandler.csprojResolveAssemblyReference.cache
+C:\Users\David\Documents\GitHub\My-Screen\Client\DataHandler\obj\Debug\DataHandler.dll
+C:\Users\David\Documents\GitHub\My-Screen\Client\DataHandler\obj\Debug\DataHandler.pdb

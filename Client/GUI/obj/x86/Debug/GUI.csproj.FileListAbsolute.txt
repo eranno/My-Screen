@@ -56,3 +56,5 @@ C:\Users\user\Documents\GitHub\My-Screen\Client\GUI\obj\x86\Debug\GUI.Properties
 C:\Users\user\Documents\GitHub\My-Screen\Client\GUI\obj\x86\Debug\GUI.ShowDB.resources
 C:\Users\user\Documents\GitHub\My-Screen\Client\GUI\obj\x86\Debug\GUI.TrafficFollow.resources
 C:\Users\user\Documents\GitHub\My-Screen\Client\GUI\obj\x86\Debug\GUI.csproj.GenerateResource.Cache
+C:\Users\David\Documents\GitHub\My-Screen\Client\GUI\obj\x86\Debug\GUI.exe
+C:\Users\David\Documents\GitHub\My-Screen\Client\GUI\obj\x86\Debug\GUI.pdb

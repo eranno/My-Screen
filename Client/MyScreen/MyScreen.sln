@@ -1,6 +1,6 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Express 2012 for Windows Desktop
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GUI", "..\GUI\GUI.csproj", "{7F4CB9EC-00A0-4191-97B9-BABA7B18810B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo", "..\Demo\Demo.csproj", "{B4436616-28A2-4B98-9C39-3DA4AC95537E}"
@@ -17,6 +17,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestProject2", "TestProject2\TestProject2.csproj", "{62A3E0A9-E59B-4940-BB7E-7AFA9C548E27}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageProcessing", "..\..\ImageProcessing\ImageProcessing\ImageProcessing.csproj", "{CAE08220-8260-466F-9C63-8ABBFA627DDB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "loginHandler", "..\loginHandler\loginHandler.csproj", "{24115FAC-7BB2-4A70-B66E-7F9F2E013F76}"
 EndProject
 Global
 	GlobalSection(TestCaseManagementSettings) = postSolution
@@ -109,6 +111,21 @@ Global
 		{CAE08220-8260-466F-9C63-8ABBFA627DDB}.Release-Plus|Mixed Platforms.Build.0 = Release|x86
 		{CAE08220-8260-466F-9C63-8ABBFA627DDB}.Release-Plus|x86.ActiveCfg = Release|x86
 		{CAE08220-8260-466F-9C63-8ABBFA627DDB}.Release-Plus|x86.Build.0 = Release|x86
+		{24115FAC-7BB2-4A70-B66E-7F9F2E013F76}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{24115FAC-7BB2-4A70-B66E-7F9F2E013F76}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{24115FAC-7BB2-4A70-B66E-7F9F2E013F76}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{24115FAC-7BB2-4A70-B66E-7F9F2E013F76}.Debug|x86.ActiveCfg = Debug|x86
+		{24115FAC-7BB2-4A70-B66E-7F9F2E013F76}.Debug|x86.Build.0 = Debug|x86
+		{24115FAC-7BB2-4A70-B66E-7F9F2E013F76}.Release|Any CPU.ActiveCfg = Release|x86
+		{24115FAC-7BB2-4A70-B66E-7F9F2E013F76}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{24115FAC-7BB2-4A70-B66E-7F9F2E013F76}.Release|Mixed Platforms.Build.0 = Release|x86
+		{24115FAC-7BB2-4A70-B66E-7F9F2E013F76}.Release|x86.ActiveCfg = Release|x86
+		{24115FAC-7BB2-4A70-B66E-7F9F2E013F76}.Release|x86.Build.0 = Release|x86
+		{24115FAC-7BB2-4A70-B66E-7F9F2E013F76}.Release-Plus|Any CPU.ActiveCfg = Release|x86
+		{24115FAC-7BB2-4A70-B66E-7F9F2E013F76}.Release-Plus|Mixed Platforms.ActiveCfg = Release|x86
+		{24115FAC-7BB2-4A70-B66E-7F9F2E013F76}.Release-Plus|Mixed Platforms.Build.0 = Release|x86
+		{24115FAC-7BB2-4A70-B66E-7F9F2E013F76}.Release-Plus|x86.ActiveCfg = Release|x86
+		{24115FAC-7BB2-4A70-B66E-7F9F2E013F76}.Release-Plus|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
