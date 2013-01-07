@@ -72,7 +72,7 @@ namespace DataHandler
         }
 
         public static void addUser(User user)
-        {
+        { 
             DBHandler.insert("INSERT INTO UserProperties(email , name , userId , password , securityCode) VALUES('" + user.Email + "' , '" + user.Name + "' , '" + user.UserId +  "' ,'" + user.Password + "' , '" + user.SecurityCode + "')");
         }
     }
