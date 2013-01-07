@@ -14,7 +14,6 @@ namespace loginHandler
         [STAThread]
         static void Main()
         {
-            int i = 0;
             DBHandler.initDB();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);

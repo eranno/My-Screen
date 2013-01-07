@@ -52,8 +52,8 @@ namespace loginHandler
                 return;
             }
 
-            String confCode = validEmail(email.Text, password.Text);
-            if (confCode == null )
+            String id = validEmail(email.Text, password.Text);
+            if (id == null)
             {
                 error.Text = EMAIL_NOT_VALID;
                 error.Visible = true;
@@ -63,18 +63,21 @@ namespace loginHandler
             //set new values in user's properties table.
             //
             Boolean success = setProperties(name.Text, email.Text,
-                password.Text, confCode);
+                password.Text, id);
             //Boolean success = setProperties("name.Text", "email.Text",
             //    "password.Text", "confCode");
             //
-            if (success) MessageBox.Show("Login successfull!\ncontinue to MyScreen");
+            if (success)
+            {
+                //MessageBox.Show("Login successfull!\ncontinue to MyScreen");
+            }
             else
             {
                 return;
             }
-            MainForm MainForm = new MainForm();
+            confirmation confirmation = new confirmation();
             this.Hide();
-            MainForm.Show();
+            confirmation.Show();
         }
 
         //checks if email is valid
@@ -106,14 +109,14 @@ namespace loginHandler
                 }
                 else
                 {
-                    MessageBox.Show("Success code: " + code);
+                    MessageBox.Show("Success code: " + body);
                     return body;
                 }
             }
         }
         //insert user's properties
         private Boolean setProperties(String name, String email,
-                                        String password, String securityCode)
+                                        String password, String userId)
         {
             String sql;
             //TODO. connect to user's DB and update
@@ -124,10 +127,11 @@ namespace loginHandler
             DBHandler.executeCmd(sql);
             //end tester
             //**************************
+            userId = userId.Substring(0, 20);
             sql = "INSERT INTO UserProperties"
-                            + "(email , name , password , securityCode)"
+                            + "(email , name , password , userId)"
                             + "VALUES('"+email+"and','"+name+"','"+password+"','"
-                            +securityCode+"')";
+                            + userId + "')";
             /*
             sql = "INSERT INTO UserProperties(email , name , password , securityCode)"
             +"VALUES('myComp@gmail.com', 'localhost' , '123456' ,"
@@ -135,7 +139,7 @@ namespace loginHandler
             */
             MessageBox.Show(DBHandler.insert(sql));
             
-            MessageBox.Show(DBHandler.showTables());
+            //MessageBox.Show(DBHandler.showTables());
             return true;
         }
     }
