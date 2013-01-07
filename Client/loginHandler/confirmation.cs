@@ -23,6 +23,7 @@ namespace loginHandler
 
         private void submit_Click(object sender, EventArgs e)
         {
+            int i;
             if (confirmationCode.Text == "")
             {
                 error.Text = NO_CONF_CODE;
