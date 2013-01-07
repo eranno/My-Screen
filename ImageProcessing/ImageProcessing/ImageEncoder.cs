@@ -42,7 +42,7 @@ namespace ImageProcessing
             make_user_id(inputBitmap);
 
             //get image id
-            String imageID = LocalData.getUserProperties().idx;
+            String imageID = LocalData.getUserProperties().ImageId;
 
             //save image id 32 bit in image <45 .. 76>
             make_image_id(inputBitmap, imageID);
@@ -104,8 +104,8 @@ namespace ImageProcessing
 
         public static void make_user_id(Bitmap inputBitmap)
         {
-            String USER_ID = "00000000000000000000000000000000";
-            //String USER_ID = LocalData.getUserProperties().UserId;
+            //String USER_ID = "00000000000000000000000000000000";
+            String USER_ID = LocalData.getUserProperties().UserId;
             if (USER_ID != null)
             {
                 int pos;
@@ -129,7 +129,8 @@ namespace ImageProcessing
         public static void make_image_id(Bitmap inputBitmap, String imageID)
         {
 
-            String IMAGE_ID = "11111111111111111111111111111111";
+            //String IMAGE_ID = "11111111111111111111111111111111";
+            String IMAGE_ID = LocalData.getUserProperties().ImageId;
             int pos;
             for (int x = 0; x < IMAGE_ID.Length; x++)
             {
