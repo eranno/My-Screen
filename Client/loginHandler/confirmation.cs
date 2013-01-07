@@ -29,9 +29,9 @@ namespace loginHandler
                 error.Visible = true;
             }
             //CHECK IF VALIDATE COSE MATCHES
-            DataTable dt = DBHandler.getTable("SELECT securityCode FROM UserProperties");
+            DataTable dt = DBHandler.getTable("SELECT userId FROM UserProperties");
             DataRow row = dt.Rows[0];
-            String confCodeFromTable = row["securityCode"].ToString();
+            String confCodeFromTable = row["userId"].ToString();
 
             if (confirmationCode.Text != confCodeFromTable)
             {
