@@ -84,7 +84,7 @@ namespace ImageProcessing
                 image.SetPixel(i, y2, temp);
             }
         }
-             
+
 
 
     }
