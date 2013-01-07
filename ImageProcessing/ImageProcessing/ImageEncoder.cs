@@ -53,7 +53,7 @@ namespace ImageProcessing
             Encode_Image(path, inputBitmap);
 
             //send image info to server
-            bool send = send_to_server(ImageKey);
+            bool send =  true;//= send_to_server(ImageKey);
             if (send)
             {
                 Console.Write("\n" + send + "\n");
