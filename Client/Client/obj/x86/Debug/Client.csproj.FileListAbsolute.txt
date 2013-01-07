@@ -1,9 +1,0 @@
-C:\Users\Noam Tzumie\Desktop\פרוייקטים\MyScreen\VCS\My-Screen\Client\Client\bin\Debug\Client.exe
-C:\Users\Noam Tzumie\Desktop\פרוייקטים\MyScreen\VCS\My-Screen\Client\Client\bin\Debug\Client.pdb
-C:\Users\Noam Tzumie\Desktop\פרוייקטים\MyScreen\VCS\My-Screen\Client\Client\obj\x86\Debug\ResolveAssemblyReference.cache
-C:\Users\Noam Tzumie\Desktop\פרוייקטים\MyScreen\VCS\My-Screen\Client\Client\obj\x86\Debug\Client.Form1.resources
-C:\Users\Noam Tzumie\Desktop\פרוייקטים\MyScreen\VCS\My-Screen\Client\Client\obj\x86\Debug\Client.Properties.Resources.resources
-C:\Users\Noam Tzumie\Desktop\פרוייקטים\MyScreen\VCS\My-Screen\Client\Client\obj\x86\Debug\GenerateResource.read.1.tlog
-C:\Users\Noam Tzumie\Desktop\פרוייקטים\MyScreen\VCS\My-Screen\Client\Client\obj\x86\Debug\GenerateResource.write.1.tlog
-C:\Users\Noam Tzumie\Desktop\פרוייקטים\MyScreen\VCS\My-Screen\Client\Client\obj\x86\Debug\Client.exe
-C:\Users\Noam Tzumie\Desktop\פרוייקטים\MyScreen\VCS\My-Screen\Client\Client\obj\x86\Debug\Client.pdb
