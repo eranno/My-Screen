@@ -30,6 +30,10 @@ namespace loginHandler
                 error.Visible = true;
             }
             //CHECK IF VALIDATE COSE MATCHES
+            User user = new User();
+            user.Name = "";
+            Console.Write(user.Name);
+            LocalData.addUser(user);
             DataTable dt = DBHandler.getTable("SELECT userId FROM UserProperties");
             DataRow row = dt.Rows[0];
             String confCodeFromTable = row["userId"].ToString();
@@ -51,6 +55,7 @@ namespace loginHandler
 
         private void confirmation_Load(object sender, EventArgs e)
         {
+
 
         }
     }
