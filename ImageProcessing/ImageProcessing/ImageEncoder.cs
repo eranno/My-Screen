@@ -53,10 +53,11 @@ namespace ImageProcessing
             Encode_Image(path, inputBitmap);
 
             //send image info to server
-            bool send =  true;//= send_to_server(ImageKey);
+            bool send =  true;//
+            send_to_server(ImageKey);
             if (send)
             {
-                Console.Write("\n" + send + "\n");
+                
                 //save encoded image
                 string loc = "EncodedImages\\" + Path.GetFileName(dir);
                 inputBitmap.Save(loc);
@@ -95,6 +96,7 @@ namespace ImageProcessing
 
                 var response = wb.UploadValues("http://my.jce.ac.il/~eranno/act/add_image.php", "POST", data);
                 String body = Encoding.UTF8.GetString(response);
+                //Console.Write("\nserver response = " + body + "\n");
                 char code = body[0];
                 if (code != '0')
                     return false;
@@ -107,7 +109,7 @@ namespace ImageProcessing
         {
             //String USER_ID = "00000000000000000000000000000000";
             String USER_ID = LocalData.getUserProperties().UserId;
-            Console.Write("\n"+USER_ID + "\n");
+            //Console.Write("\n"+USER_ID + "\n");
             if (USER_ID != null)
             {
                 int pos;

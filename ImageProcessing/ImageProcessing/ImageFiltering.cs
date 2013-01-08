@@ -7,6 +7,7 @@ using System.Drawing;
 using System.Net;
 using System.IO;
 using System.Text;
+using System.Windows.Forms;
 
 
 
@@ -17,14 +18,25 @@ namespace ImageProcessing
     {
         public static String PROGRAM_ID = "1101000100001";
 
+        public static void startFilter()
+        {
+            Thread t = new Thread(ImageFiltering.ImageFilter);
+            t.Start();
+        }
+
         public static void ImageFilter()
         {
+            
             String url;
             while (true)
             {
+                //DataHandler.Messages.init();
                 url = DataHandler.Messages.read();
+               
                 if (url != null)
                 {
+                    MessageBox.Show("url = " + url);
+                    //Console.Write(url + "\n");
                     filter_by_image(url);
                 }
             }
