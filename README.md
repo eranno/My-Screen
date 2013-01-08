@@ -1,4 +1,4 @@
-Team:
+MyScreen Team:
 
 Noam Tzumie <br\>
 Eran Naor <br\>
