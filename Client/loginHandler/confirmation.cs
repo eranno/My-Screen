@@ -13,6 +13,7 @@ namespace loginHandler
 {
     public partial class confirmation : Form
     {
+        int i;
         private const string NO_CONF_CODE = "no confirmation code. try again";
         private const string WORNG_CONF_CODE = "worng confirmation code. try again";
 
