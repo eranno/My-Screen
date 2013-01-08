@@ -20,6 +20,8 @@ namespace DataHandler
                  Directory.CreateDirectory("Thumbnails");
             if (!Directory.Exists("EncodedImages"))
                 Directory.CreateDirectory("EncodedImages");
+            if (!Directory.Exists("DecodedImages"))
+                Directory.CreateDirectory("DecodedImages");
             bool isDbExist = File.Exists(dbName);
             sqliteCon = new SQLiteConnection(connectionString);
             sqliteCon.Open();
@@ -44,6 +46,15 @@ namespace DataHandler
                 "[pathEncrypted] TEXT NULL," +
                 "[pathThumb] TEXT NULL," +
                 "[pathOriginal] TEXT NULL" +
+                ")";
+
+            string DecryptedImagesTableSQL = "CREATE TABLE [DecryptedImages] (" +
+                "[id] INTEGER PRIMARY KEY AUTOINCREMENT," +
+                "[name] TEXT NULL," +
+                "[type] TEXT  NULL," +
+                "[pathEncrypted] TEXT NULL," +
+                "[pathThumb] TEXT NULL," +
+                "[path] TEXT NULL" +
                 ")";
 
             string AuthImagesTable = "CREATE TABLE [AuthImages] (" +
@@ -85,10 +96,13 @@ namespace DataHandler
                 createUserPropertiesCommand.ExecuteNonQuery();
                 createUserPropertiesCommand.Dispose();
 
+                SQLiteCommand createDecryptedImagesCommand = new SQLiteCommand(DecryptedImagesTableSQL, sqliteCon);
+                createDecryptedImagesCommand.ExecuteNonQuery();
+                createDecryptedImagesCommand.Dispose();
+
                 // Commit the changes into the database
                 sqlTransaction.Commit();
             } // end using
-
         }
 
         public static DataTable getTable(string query)
@@ -224,7 +238,7 @@ namespace DataHandler
             //dump.Add("INSERT INTO AuthImages(imageId , friendId) VALUES('1', 'ilan@gmail.com')");
 
 
-            dump.Add("INSERT INTO UserProperties(email , name , password , securityCode , userId) VALUES('myComp@gmail.com', 'localhost' , '123456' , '187365543208213678653094' , '12id45')");
+            dump.Add("INSERT INTO UserProperties(email , name , password , securityCode , userId , imageId) VALUES('myComp@gmail.com', 'localhost' , '123456' , '187365543208213678653094' , 'userId' , '12')");
 
             foreach (string cmd in dump)
             {
@@ -241,6 +255,7 @@ namespace DataHandler
             executeCmd("DROP TABLE  Images");
             executeCmd("DROP TABLE  AuthImages");
             executeCmd("DROP TABLE  UserProperties");
+            executeCmd("DROP TABLE  DecryptedImages");
             createTables();
         }
     }

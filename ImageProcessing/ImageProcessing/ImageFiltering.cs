@@ -7,6 +7,8 @@ using System.Drawing;
 using System.Net;
 using System.IO;
 using System.Text;
+using System.Windows.Forms;
+using DataHandler;
 
 
 
@@ -17,14 +19,26 @@ namespace ImageProcessing
     {
         public static String PROGRAM_ID = "1101000100001";
 
+        public static void startFilter()
+        {
+            Thread t = new Thread(ImageFiltering.ImageFilter);
+            t.Start();
+        }
+
         public static void ImageFilter()
         {
+            
             String url;
             while (true)
             {
+                DataHandler.Messages.init();
+
                 url = DataHandler.Messages.read();
+               
                 if (url != null)
                 {
+                   
+                    //Console.Write(url + "\n");
                     filter_by_image(url);
                 }
             }
@@ -35,6 +49,7 @@ namespace ImageProcessing
         {
             if (url.EndsWith(".jpg"))
             {
+                //MessageBox.Show("url = " + url);
                 filter_by_imageID(url);
             }
         }
@@ -44,6 +59,7 @@ namespace ImageProcessing
         {
             Bitmap image = get_image_from_url(url);
             bool result2 = image.Width == 400 && image.Height == 300;
+            //MessageBox.Show("url = " + url + "size? = " + result2);
             int program_id = get_program_id(image);
             bool result1 = program_id == Convert.ToInt32(PROGRAM_ID, 2);
             if (result1 && result2)
@@ -68,8 +84,11 @@ namespace ImageProcessing
             using (var wb = new WebClient())
             {
                 var data = new NameValueCollection();
-                data["email"] = "noam185@gmail.com";
-                data["password"] = "1234";
+                User user = LocalData.getUserProperties();
+                data["email"] = user.Email;
+                data["password"] = user.Password;
+                data["UID"] = Convert.ToString(user_id);
+                data["IID"] = Convert.ToString(image_id);
 
 
                 var response = wb.UploadValues("http://myscreen.cu.cc/act/permission.php", "POST", data);

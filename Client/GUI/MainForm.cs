@@ -11,6 +11,7 @@ using DataHandler;
 using System.Xml;
 using System.Net;
 using System.Collections.Specialized;
+using ImageProcessing;
 
 namespace GUI
 {
@@ -57,6 +58,7 @@ namespace GUI
                 TrafficHandler.activate();
                 btDecrypt.Text = "Stop Decrypt";
                 isDecrypt = true;
+                ImageFiltering.startFilter();
             }
         }
 
@@ -118,7 +120,7 @@ namespace GUI
 
         private void btAddFriend_Click(object sender, EventArgs e)
         { 
-            AddFriend ad = new AddFriend(friends);
+            AddFriend ad = new AddFriend();
             ad.ShowDialog(this);
             //Need to check if change ocurr in xml file.
             populateFriends();
@@ -174,6 +176,11 @@ namespace GUI
             Messages.init();
             TrafficFollow form = new TrafficFollow();
             form.Show();
+        }
+
+        private void syncWithServerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(Server.buildJson());
         }
     }
 }

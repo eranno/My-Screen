@@ -8,43 +8,16 @@ using System.Windows.Forms;
 using System.IO;
 using System.Drawing;
 using DataHandler;
-using System.Text.RegularExpressions;
+
 
 namespace GUI
 {
     public class Friends
     {
-
-        DataTable friends;
-
-        public Friends()
+        public DataTable friendsSource()
         {
-            friends = DBHandler.getTable("SELECT * FROM Friends");
+            return DBHandler.getTable("SELECT * FROM Friends");
         }
-
-        public bool addFriend(string email , string name)
-        {
-            var res = friends.Select("email = '" + email + "'");
-            var regex = Regex.IsMatch(email, "@.");
-            if (!regex)
-            {
-                MessageBox.Show("Please enter valid email");
-                return false;
-            }
-            if (res.Length != 0)
-            {
-                MessageBox.Show("Friend already exist in your list");
-                return false;
-            }
-
-            DataRow row = friends.NewRow();
-            row["email"] = email;
-            row["name"] = name;
-            friends.Rows.Add(row);
-            DBHandler.updateTable(friends, "SELECT * FROM Friends");
-            return true;
-        }
-
         public DataTable getFriendImagesSource(string friendId)
         {
             string friendImages = "SELECT Images.* FROM AuthImages , Images WHERE friendId=" + "'" + friendId + "'" + " AND imageId=id";
@@ -79,14 +52,5 @@ namespace GUI
                 }
             return map;
         }
-           
-        
-        public DataTable friendsSource()
-        {
-            return friends;
-        }
-
-       
-
     }
 }

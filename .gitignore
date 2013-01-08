@@ -300,3 +300,5 @@ dependencies
 /dependencies/System.Data.SQLite/2010/doc/SQLite.NET.chm
 /dependencies/System.Data.SQLite/2010/readme.htm
 /dependencies/System.Data.SQLite/2010/uninstall/unins000.dat
+/ImageProcessing/ImageProcessing/obj
+/Client/MyScreen/*.htm

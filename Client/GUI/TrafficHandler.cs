@@ -5,6 +5,7 @@ using System.Text;
 using Fiddler;
 using System.Threading;
 using System.Windows.Forms;
+using DataHandler;
 
 namespace GUI
 {
