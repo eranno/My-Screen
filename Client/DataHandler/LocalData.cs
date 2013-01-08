@@ -73,6 +73,7 @@ namespace DataHandler
             user.Name = row["name"].ToString();
             user.Password = row["password"].ToString();
             user.SecurityCode = row["securityCode"].ToString();
+            user.ImageId = row["imageId"].ToString();
             return user;
         }
 
