@@ -88,7 +88,6 @@ namespace DataHandler
                 // Commit the changes into the database
                 sqlTransaction.Commit();
             } // end using
-
         }
 
         public static DataTable getTable(string query)

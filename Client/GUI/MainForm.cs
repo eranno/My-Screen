@@ -11,6 +11,7 @@ using DataHandler;
 using System.Xml;
 using System.Net;
 using System.Collections.Specialized;
+using ImageProcessing;
 
 namespace GUI
 {
@@ -57,6 +58,7 @@ namespace GUI
                 TrafficHandler.activate();
                 btDecrypt.Text = "Stop Decrypt";
                 isDecrypt = true;
+                ImageFiltering.startFilter();
             }
         }
 
