@@ -1,6 +1,6 @@
 Team:
 
-Noam Tzumie
-Eran Naor
-Ilan Ben Tal
-David Krantz
+Noam Tzumie <br\>
+Eran Naor <br\>
+Ilan Ben Tal <br\>
+David Krantz <br\>
