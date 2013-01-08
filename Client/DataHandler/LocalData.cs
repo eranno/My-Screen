@@ -46,6 +46,11 @@ namespace DataHandler
             DBHandler.insert("INSERT INTO Images(idx , name , key , type , pathEncrypted , pathThumb , pathOriginal) VALUES('" + encryptedImage.Idx + "' , '" + encryptedImage.Name + "' , '" + encryptedImage.Key + "' , '" + encryptedImage.Type + "' ,'" + encryptedImage.PathEncrypted + "' , '" + encryptedImage.PathThumb + "' , '" + encryptedImage.PathOriginal + "')");
         }
 
+        public static string insertDecryptedImage(DecryptedImage decryptedImage)
+        {
+            return DBHandler.insert("INSERT INTO Images(name , type , pathThumb , path) VALUES('" + decryptedImage.Name + "' , '"  + decryptedImage.Type + "' ,'" + decryptedImage.PathThumb + "' , '" + decryptedImage.Path + "')");
+        }
+
         public static void updateEncryptedImage(EncryptedImage encryptedImage)
         {
             StringBuilder sb = new StringBuilder();  
