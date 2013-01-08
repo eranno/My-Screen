@@ -30,7 +30,16 @@ namespace ImageProcessing
             Decode_Image(image, path);
 
             //save image in DataBase
+            saveImage(image, user_id);
 
+
+        }
+
+        private static void saveImage(Bitmap image,int user_id)
+        {
+            String time = DateTime.Now.ToString("yyyyMMddHHmmssfff");
+            string loc = "DecodedImages\\" + Convert.ToString(user_id) + time + ".jpg" ;
+            image.Save("loc");
 
 
         }

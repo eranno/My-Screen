@@ -20,6 +20,8 @@ namespace DataHandler
                  Directory.CreateDirectory("Thumbnails");
             if (!Directory.Exists("EncodedImages"))
                 Directory.CreateDirectory("EncodedImages");
+            if (!Directory.Exists("DecodedImages"))
+                Directory.CreateDirectory("DecodedImages");
             bool isDbExist = File.Exists(dbName);
             sqliteCon = new SQLiteConnection(connectionString);
             sqliteCon.Open();
@@ -50,6 +52,7 @@ namespace DataHandler
                 "[id] INTEGER PRIMARY KEY AUTOINCREMENT," +
                 "[name] TEXT NULL," +
                 "[type] TEXT  NULL," +
+                "[pathEncrypted] TEXT NULL," +
                 "[pathThumb] TEXT NULL," +
                 "[path] TEXT NULL" +
                 ")";
@@ -178,22 +181,6 @@ namespace DataHandler
                     + " | key: " + row["key"].ToString() + " | type: " + row["type"].ToString() 
                     + " | pathEncrypted: " + row["pathEncrypted"].ToString()
                     + " | pathThumb: " + row["pathThumb"].ToString() + " | pathOriginal: " + row["pathOriginal"].ToString());
-            }
-            sb.AppendLine();
-            sb.AppendLine();
-
-            sb.AppendLine("****************************");
-            sb.AppendLine();
-            sb.AppendLine("DecryptedImages Table: ");
-            sb.AppendLine();
-            DataTable dt5 = getTable("SELECT * FROM DecryptedImages");
-            foreach (DataRow row in dt5.Rows)
-            {
-                sb.AppendLine("**     id: " + row["id"].ToString()
-                    + " |  name: " + row["name"].ToString()
-                    + " | type: " + row["type"].ToString()
-                    + " | pathThumb: " + row["pathThumb"].ToString()
-                    + " | path: " + row["path"].ToString());
             }
             sb.AppendLine();
             sb.AppendLine();

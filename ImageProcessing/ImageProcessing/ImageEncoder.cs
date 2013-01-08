@@ -91,6 +91,9 @@ namespace ImageProcessing
                 data["serial"] = user.ImageId;
 
                 //idx ++;
+                int idx = Convert.ToInt32(user.ImageId) + 1;
+                user.ImageId = Convert.ToString(idx);
+                LocalData.updateUser(user);
 
                 data["rsa"] = ImageKey;
 
