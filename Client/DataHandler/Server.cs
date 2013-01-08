@@ -14,7 +14,7 @@ namespace DataHandler
     public class Server
     {
         public static string SUCCESS = "Server Success:";
-
+        //TODO generalize server methods!
         public static string addContact(Friend friend)
         {
             string resp = null;
@@ -46,6 +46,39 @@ namespace DataHandler
             }
 
 
+            return msg;
+        }
+
+        public static string addPermission(Friend friend , string key)
+        {
+            string resp = null;
+            string msg = null;
+            using (var wb = new WebClient())
+            {
+                var data = new NameValueCollection();
+                User user = LocalData.getUserProperties();
+                data["email"] = user.Email;
+                data["password"] = user.Password;
+                data["femail"] = friend.Email;
+                data["fid"] = friend.FriendId;
+                data["serial"] = key;
+
+                var response = wb.UploadValues("http://my.jce.ac.il/~eranno/act/add_permission.php", "POST", data);
+                resp = Encoding.UTF8.GetString(response);
+            }
+
+            switch (resp)
+            {
+                case "0":
+                    msg = "Server Success: Permission granted to user";
+                    break;
+                case "1":
+                    msg = "Server Error: invalid input";
+                    break;
+                case "2":
+                    msg = "Server Error: Invalid user properties";
+                    break;
+            }
             return msg;
         }
 
