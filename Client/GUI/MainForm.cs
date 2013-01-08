@@ -120,7 +120,7 @@ namespace GUI
 
         private void btAddFriend_Click(object sender, EventArgs e)
         { 
-            AddFriend ad = new AddFriend(friends);
+            AddFriend ad = new AddFriend();
             ad.ShowDialog(this);
             //Need to check if change ocurr in xml file.
             populateFriends();

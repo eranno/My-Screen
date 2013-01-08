@@ -6,16 +6,47 @@ using System.Data;
 using Newtonsoft.Json.Linq;
 using System.IO;
 using System.Collections.Specialized;
+using System.Net;
 
 
 namespace DataHandler
 {
     public class Server
     {
-        public static void sync()
-        {
+        public static string SUCCESS = "Server Success:";
 
-            
+        public static string addContact(Friend friend)
+        {
+            string resp = null;
+            string msg = null; 
+            using (var wb = new WebClient())
+            {
+                var data = new NameValueCollection();
+                User user = LocalData.getUserProperties();
+                data["email"] = user.Email;
+                data["password"] = user.Password;
+                data["femail"] = friend.Email;
+                data["fid"] = friend.FriendId;
+
+                var response = wb.UploadValues("http://my.jce.ac.il/~eranno/act/add_contact.php", "POST", data);
+                resp = Encoding.UTF8.GetString(response);
+            }
+
+            switch (resp)
+            {
+                case "0":
+                    msg = "Server Success: Friend added to server";
+                    break;
+                case "1":
+                    msg = "Server Error: invalid input";
+                    break;
+                case "2":
+                    msg = "Server Error: Invalid user properties";
+                    break;
+            }
+
+
+            return msg;
         }
 
         public static string buildJson()
