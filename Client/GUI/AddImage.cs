@@ -49,7 +49,9 @@ namespace GUI
                 string ImageIdx = row["idx"].ToString();
                 string path = row["pathThumb"].ToString();
                 friends.addImageToFriend(friendId, id, path);
-                Server.addPermission(friendId, ImageIdx);
+                string msg = Server.addPermission(friendId, ImageIdx);
+                if (!msg.Contains(Server.SUCCESS))
+                    MessageBox.Show(msg + " image name: " + row["name"].ToString());
             }
             this.Close();
         }

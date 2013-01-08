@@ -46,8 +46,8 @@ namespace DataHandler
                     msg = "Server Error: Invalid user properties";
                     break;
             }
-
-
+            if (msg == null)
+                msg = "Error: Connection to server";
             return msg;
         }
         private static string permission(string friendEmail, string imageId , string url)
@@ -85,6 +85,8 @@ namespace DataHandler
                     msg = "Server Error: Invalid user properties";
                     break;
             }
+            if (msg == null)
+                msg = "Error: Connection to server";
             return msg;
         }
         public static string addPermission(string friendEmail , string imageId)

@@ -162,7 +162,8 @@ namespace GUI
             {
                 DataRow row = lvi.Tag as DataRow;
                 string msg = Server.removePermission(currFriendId , row["idx"].ToString());
-                MessageBox.Show(msg);
+                if(!msg.Contains(Server.SUCCESS))
+                    MessageBox.Show(msg + " Image name: " + row["name"].ToString());
                 LocalData.removeImageFromFriend(row["id"].ToString() , currFriendId);
                 lvi.Remove();
             }
@@ -183,6 +184,12 @@ namespace GUI
         private void syncWithServerToolStripMenuItem_Click(object sender, EventArgs e)
         {
             MessageBox.Show(Server.buildJson());
+        }
+
+        private void statisticToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Gallery form = new Gallery();
+            form.ShowDialog(this);
         }
     }
 }
