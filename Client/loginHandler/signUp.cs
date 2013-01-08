@@ -142,5 +142,10 @@ namespace loginHandler
             //MessageBox.Show(DBHandler.showTables());
             return true;
         }
+
+        private void signUp_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

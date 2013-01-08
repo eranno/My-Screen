@@ -124,7 +124,7 @@
             this.error.TabIndex = 9;
             this.error.Visible = false;
             // 
-            // login
+            // signUp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -139,8 +139,9 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.name);
             this.Controls.Add(this.btnSubmit);
-            this.Name = "login";
+            this.Name = "signUp";
             this.Text = "login";
+            this.Load += new System.EventHandler(this.signUp_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
