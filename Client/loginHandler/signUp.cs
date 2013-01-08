@@ -18,6 +18,7 @@ namespace loginHandler
         private const string PASSWORD_DOESNT_MACH = "password doesn't mach!";
         private const string PARAM_MISSING = "at list one parameter is missing!"
                                                + "\n please try again!";
+        private const string EMAIL_NOT_REGEX = "Not a legal email patteren! please try again.";
         private const string EMAIL_NOT_VALID = "email not valid! please try again.";
 
         public signUp()
@@ -28,14 +29,8 @@ namespace loginHandler
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-            //MessageBox.Show(DBHandler.showTables());
-            //tester
-            //confirmation confirmation = new confirmation();
-            //this.Hide();
-            //confirmation.Show();
-            //MessageBox.Show("Submit!");
             error.Visible = false;
-            
+            //check params
             if (password.Text != reEnterPassword.Text)
             {
                 password.Text = null;
@@ -51,9 +46,16 @@ namespace loginHandler
                 error.Visible = true;
                 return;
             }
+            if ( ! validEmail(email.Text, password.Text) )
+            {
+                error.Text = EMAIL_NOT_REGEX;
+                error.Visible = true;
+                return;
+            }
 
-            String id = validEmail(email.Text, password.Text);
-            if (id == null)
+            //try to sign newUser
+            String userId = newUserName(email.Text, password.Text);
+            if ( userId == null )
             {
                 error.Text = EMAIL_NOT_VALID;
                 error.Visible = true;
@@ -61,15 +63,11 @@ namespace loginHandler
             }
             
             //set new values in user's properties table.
-            //
             Boolean success = setProperties(name.Text, email.Text,
-                password.Text, id);
-            //Boolean success = setProperties("name.Text", "email.Text",
-            //    "password.Text", "confCode");
-            //
+                password.Text, userId);
             if (success)
             {
-                //MessageBox.Show("Login successfull!\ncontinue to MyScreen");
+                
             }
             else
             {
@@ -80,15 +78,17 @@ namespace loginHandler
             confirmation.Show();
         }
 
-        //checks if email is valid
-        private String validEmail(String email, String password)
+        //checks if email&password is in ok pattern
+        private Boolean validEmail(String email, String password)
         {
-            //send to newUserName method in order to check if user is valid. 
-            return newUserName(email, password);
+            Boolean patternOk = false;
+            //TODO check if email&password pattern ok
+            patternOk = true;
+            return patternOk;
         }
 
         //conctes to server to validate new user.
-        //return string of confirmation code
+        //return string of userId
         private String newUserName(String email, String password)
         {
             //TODO. connect to server and validate
@@ -104,12 +104,12 @@ namespace loginHandler
                 char code = body[0];
                 if (code == '1' || code == '2')
                 {
-                    MessageBox.Show("Error code: " + code);
+                    //MessageBox.Show("Error code: " + code);
                     return null;
                 }
                 else
                 {
-                    MessageBox.Show("Success code: " + body);
+                    //MessageBox.Show("Success code: " + body);
                     return body;
                 }
             }
@@ -118,29 +118,23 @@ namespace loginHandler
         private Boolean setProperties(String name, String email,
                                         String password, String userId)
         {
-            String sql;
-            //TODO. connect to user's DB and update
-            //get confirmation code
-            //***************************
-            //tester
-            sql = "DELETE FROM UserProperties WHERE `email` like '%'";
-            DBHandler.executeCmd(sql);
-            //end tester
-            //**************************
+           
+            const string NOT_CONFIRMED = "not confirmed";
             userId = userId.Substring(0, 20);
-            sql = "INSERT INTO UserProperties"
-                            + "(email , name , password , userId)"
-                            + "VALUES('"+email+"and','"+name+"','"+password+"','"
-                            + userId + "')";
-            /*
-            sql = "INSERT INTO UserProperties(email , name , password , securityCode)"
-            +"VALUES('myComp@gmail.com', 'localhost' , '123456' ,"
-            +"'187365543208213678653094')";
-            */
-            MessageBox.Show(DBHandler.insert(sql));
-            
-            //MessageBox.Show(DBHandler.showTables());
-            return true;
+            User user = new User();
+            user.Email = email;
+            user.Name = name;
+            user.Password = password;
+            user.UserId = userId;
+            user.SecurityCode = NOT_CONFIRMED;
+            String result = LocalData.addUser(user);
+            if (result == null) return true;
+            //
+            else
+            {
+                //MessageBox.Show("SQL ERROR: " + result);
+            }
+            return false;
         }
 
         private void signUp_Load(object sender, EventArgs e)

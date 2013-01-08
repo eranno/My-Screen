@@ -50,7 +50,7 @@ namespace ImageProcessing
             d.Name = name;
             d.Path = loc;
 
-            //DataHandler.LocalData
+            DataHandler.LocalData.insertDecryptedImage(d);
 
         }
 

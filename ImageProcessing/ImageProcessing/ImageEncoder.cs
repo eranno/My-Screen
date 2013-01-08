@@ -86,20 +86,23 @@ namespace ImageProcessing
             {
                 var data = new NameValueCollection();
                 User user = LocalData.getUserProperties();
-                data["email"] = user.Email;
-                data["password"] = user.Password;
-                data["serial"] = user.ImageId;
+                data["email"] = "erannn@gmail.com";//user.Email;
+                data["password"] = "1234";// user.Password;
+                //Console.Write("\n-------------------------------\nimageid = " + user.ImageId + "\n ---------------------------");
+                data["serial"] = "10101010";//user.ImageId;
 
                 //idx ++;
                 int idx = Convert.ToInt32(user.ImageId) + 1;
                 user.ImageId = Convert.ToString(idx);
                 LocalData.updateUser(user);
-
+                //Console.Write("\n-------------------------------\n imagekey = " + ImageKey + "\n ---------------------------");
                 data["rsa"] = ImageKey;
 
                 var response = wb.UploadValues("http://my.jce.ac.il/~eranno/act/add_image.php", "POST", data);
                 String body = Encoding.UTF8.GetString(response);
-                //Console.Write("\nserver response = " + body + "\n");
+                if (body == null)
+                    return false;
+               // Console.Write("\n-------------------------------\nserver response = " + body + "\n ---------------------------");
                 char code = body[0];
                 if (code != '0')
                     return false;
