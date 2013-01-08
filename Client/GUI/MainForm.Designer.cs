@@ -107,7 +107,7 @@
             // 
             this.statisticToolStripMenuItem.Name = "statisticToolStripMenuItem";
             this.statisticToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
-            this.statisticToolStripMenuItem.Text = "Statistic";
+            this.statisticToolStripMenuItem.Text = "Gallery";
             // 
             // syncWithServerToolStripMenuItem
             // 
