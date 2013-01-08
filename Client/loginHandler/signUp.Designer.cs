@@ -139,6 +139,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.name);
             this.Controls.Add(this.btnSubmit);
+            this.MaximizeBox = false;
             this.Name = "signUp";
             this.Text = "login";
             this.Load += new System.EventHandler(this.signUp_Load);
