@@ -104,12 +104,12 @@ namespace loginHandler
                 char code = body[0];
                 if (code == '1' || code == '2')
                 {
-                    MessageBox.Show("Error code: " + code);
+                    //MessageBox.Show("Error code: " + code);
                     return null;
                 }
                 else
                 {
-                    MessageBox.Show("Success code: " + body);
+                    //MessageBox.Show("Success code: " + body);
                     return body;
                 }
             }
@@ -128,9 +128,12 @@ namespace loginHandler
             user.UserId = userId;
             user.SecurityCode = NOT_CONFIRMED;
             String result = LocalData.addUser(user);
-            if ( result == null ) return true;
+            if (result == null) return true;
             //
-            else MessageBox.Show("SQL ERROR: " + result );
+            else
+            {
+                //MessageBox.Show("SQL ERROR: " + result);
+            }
             return false;
         }
 

@@ -52,7 +52,7 @@
             // 
             // name
             // 
-            this.name.Location = new System.Drawing.Point(90, 42);
+            this.name.Location = new System.Drawing.Point(93, 42);
             this.name.Name = "name";
             this.name.Size = new System.Drawing.Size(100, 20);
             this.name.TabIndex = 1;
@@ -68,7 +68,7 @@
             // 
             // email
             // 
-            this.email.Location = new System.Drawing.Point(91, 78);
+            this.email.Location = new System.Drawing.Point(93, 78);
             this.email.Name = "email";
             this.email.Size = new System.Drawing.Size(100, 20);
             this.email.TabIndex = 3;
@@ -109,7 +109,7 @@
             // 
             // reEnterPassword
             // 
-            this.reEnterPassword.Location = new System.Drawing.Point(119, 135);
+            this.reEnterPassword.Location = new System.Drawing.Point(93, 135);
             this.reEnterPassword.Name = "reEnterPassword";
             this.reEnterPassword.Size = new System.Drawing.Size(100, 20);
             this.reEnterPassword.TabIndex = 7;
@@ -141,6 +141,7 @@
             this.Controls.Add(this.btnSubmit);
             this.MaximizeBox = false;
             this.Name = "signUp";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "login";
             this.Load += new System.EventHandler(this.signUp_Load);
             this.ResumeLayout(false);

@@ -55,7 +55,7 @@ namespace loginHandler
                 }
                 else 
                 {
-                    MessageBox.Show("Success code: " + body);
+                    //MessageBox.Show("Success code: " + body);
                     error.Text = WORNG_CONF_CODE;
                     error.Visible = true;
                     return;
