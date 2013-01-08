@@ -180,7 +180,7 @@ namespace GUI
 
         private void syncWithServerToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(DataHandler.Server.buildJson());
+            MessageBox.Show(Server.buildJson());
         }
     }
 }
