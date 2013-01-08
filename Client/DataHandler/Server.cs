@@ -14,6 +14,8 @@ namespace DataHandler
     public class Server
     {
         public static string SUCCESS = "Server Success:";
+        public static string ADD_PERMISSION = "http://my.jce.ac.il/~eranno/act/add_permission.php";
+        public static string REMOVE_PERMISSION = "http://my.jce.ac.il/~eranno/act/remove_permission.php";
         //TODO generalize server methods!
         public static string addContact(Friend friend)
         {
@@ -48,29 +50,33 @@ namespace DataHandler
 
             return msg;
         }
-
-        public static string addPermission(Friend friend , string key)
+        private static string permission(string friendEmail, string imageId , string url)
         {
             string resp = null;
             string msg = null;
+
             using (var wb = new WebClient())
             {
                 var data = new NameValueCollection();
                 User user = LocalData.getUserProperties();
                 data["email"] = user.Email;
                 data["password"] = user.Password;
-                data["femail"] = friend.Email;
-                data["fid"] = friend.FriendId;
-                data["serial"] = key;
+                data["femail"] = friendEmail;
+                data["fid"] = "";//TODO - ask eran to remove this!.
+                data["serial"] = imageId;
 
-                var response = wb.UploadValues("http://my.jce.ac.il/~eranno/act/add_permission.php", "POST", data);
+                var response = wb.UploadValues(url, "POST", data);
                 resp = Encoding.UTF8.GetString(response);
             }
-
+            string type = null;
+            if (url.Equals(ADD_PERMISSION))
+                type = "granted to";
+            else
+                type = "removed from";
             switch (resp)
             {
                 case "0":
-                    msg = "Server Success: Permission granted to user";
+                    msg = "Server Success: Permission "+ type + " friend";
                     break;
                 case "1":
                     msg = "Server Error: invalid input";
@@ -81,6 +87,16 @@ namespace DataHandler
             }
             return msg;
         }
+        public static string addPermission(string friendEmail , string imageId)
+        {
+            return permission(friendEmail , imageId , ADD_PERMISSION) ;
+        }
+
+        public static string removePermission(string friendEmail, string imageId)
+        {
+            return permission(friendEmail, imageId, REMOVE_PERMISSION);
+        }
+
 
         public static string buildJson()
         {

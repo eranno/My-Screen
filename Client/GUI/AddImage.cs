@@ -46,8 +46,10 @@ namespace GUI
             {
                 DataRowView row = dataGridView1.SelectedRows[i].DataBoundItem as DataRowView;
                 string id = row["id"].ToString();
+                string ImageIdx = row["idx"].ToString();
                 string path = row["pathThumb"].ToString();
                 friends.addImageToFriend(friendId, id, path);
+                Server.addPermission(friendId, ImageIdx);
             }
             this.Close();
         }
@@ -60,6 +62,11 @@ namespace GUI
         private void dataGridView1_SizeChanged(object sender, EventArgs e)
         {
             dataGridView1.Columns["name"].Width = dataGridView1.Width;
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            dataGridView1.DataSource = friends.getFriendImagesSource(friendId);
         }
 
     }

@@ -161,6 +161,8 @@ namespace GUI
             foreach (ListViewItem lvi in lvImgs.SelectedItems)
             {
                 DataRow row = lvi.Tag as DataRow;
+                string msg = Server.removePermission(currFriendId , row["idx"].ToString());
+                MessageBox.Show(msg);
                 LocalData.removeImageFromFriend(row["id"].ToString() , currFriendId);
                 lvi.Remove();
             }
