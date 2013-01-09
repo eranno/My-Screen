@@ -104,5 +104,10 @@ namespace loginHandler
             this.Hide();
             signUp.Show();
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
