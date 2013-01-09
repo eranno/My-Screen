@@ -32,12 +32,12 @@ require('../inc/conn.php');
 
 //add the new contact
 $sql = "INSERT INTO `contacts` (`user`, `friend`)
-		SELECT u1.`id`, u2.`id`
-		FROM `users` as u1
-			INNER JOIN `users` u2
-			ON u2.`email`='$femail'
-		WHERE u1.email = '$email' AND BINARY u1.`pass`='$pass'
-		";
+	SELECT u1.`id`, u2.`id`
+	FROM `users` as u1
+		INNER JOIN `users` u2
+		ON u2.`email`='$femail'
+	WHERE u1.email = '$email' AND BINARY u1.`pass`='$pass'
+	";
 mysql_query($sql) or die('2');
 
 
