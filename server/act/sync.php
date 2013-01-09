@@ -11,12 +11,16 @@ output:
 ***/
 
 
+//error - no input
+if (!$_POST || !isset($_POST['json'])) 
+	exit('1');
 
 require_once('server.php');
 
 
 try
 {
+	$json = $_POST['json'];
 	$s = new server($json);
 	$s->action();
 	$s->sqlQuery();
@@ -28,7 +32,4 @@ catch ( Exception $e)
 	echo '1';	//json error
 	//echo 'Caught exception: ',  $e->getMessage(), "\n";
 }
-
-
-
 ?>
