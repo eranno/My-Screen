@@ -80,6 +80,7 @@
             this.Controls.Add(this.confirmationCode);
             this.Controls.Add(this.label1);
             this.Name = "confirmation";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form2";
             this.Load += new System.EventHandler(this.confirmation_Load);
             this.ResumeLayout(false);

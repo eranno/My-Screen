@@ -10,7 +10,6 @@ using DataHandler;
 using GUI;
 using System.Net;
 using System.Collections.Specialized;
-using LocalData;
 
 namespace loginHandler
 {
@@ -27,6 +26,8 @@ namespace loginHandler
 
         private void submit_Click(object sender, EventArgs e)
         {
+            const string CONFIRMED = "confirmed";
+
             if (confirmationCode.Text == "")
             {
                 error.Text = NO_CONF_CODE;
@@ -42,23 +43,22 @@ namespace loginHandler
                 data["userId"] = user.UserId;
                 data["securityCode"] = confirmationCode.Text;
 
-                var response = wb.UploadValues("http://my.jce.ac.il/~eranno/act/activate.php", "GET", data);
+                var response = wb.UploadValues("http://my.jce.ac.il/~eranno/act/activate.php", "POST", data);
 
                 //contains conf code
                 String body = Encoding.UTF8.GetString(response);
                 char code = body[0];
                 if (code == '1' || code == '2')
                 {
-                    MessageBox.Show("Error code: " + code);
-                    error.Text = WORNG_CONF_CODE;
-                    error.Visible = true;
-                    return ;
+                    user.SecurityCode = CONFIRMED;
+                    MessageBox.Show("Login successfull!\ncontinue to MyScreen");
                 }
-                else
+                else 
                 {
-                    MessageBox.Show("Success code: " + body);
+                    //MessageBox.Show("Success code: " + body);
                     error.Text = WORNG_CONF_CODE;
                     error.Visible = true;
+                    return;
                 }
             }
 

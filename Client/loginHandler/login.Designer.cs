@@ -114,7 +114,11 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.email);
             this.Controls.Add(this.emailLabel);
+            this.Cursor = System.Windows.Forms.Cursors.Default;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.MaximizeBox = false;
             this.Name = "login";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "login";
             this.Load += new System.EventHandler(this.login_Load);
             this.ResumeLayout(false);
