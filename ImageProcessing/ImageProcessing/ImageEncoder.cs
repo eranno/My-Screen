@@ -86,8 +86,8 @@ namespace ImageProcessing
             {
                 var data = new NameValueCollection();
                 User user = LocalData.getUserProperties();
-                data["email"] = "erannn@gmail.com";//user.Email;
-                data["password"] = "1234";// user.Password;
+                data["email"] = "noam@gmail.com";//user.Email;
+                data["password"] = "1234";//user.Password;
                 Console.Write("\n-------------------------------\nimageid = " + user.ImageId + "\n ---------------------------");
                 data["serial"] = user.ImageId;
 
@@ -113,8 +113,8 @@ namespace ImageProcessing
 
         public static void make_user_id(Bitmap inputBitmap)
         {
-            //String USER_ID = "00000000000000000000000000000000";
-            String USER_ID = LocalData.getUserProperties().UserId;
+            String USER_ID = "00000000000000000000000000001100";
+            //String USER_ID = LocalData.getUserProperties().UserId;
             //Console.Write("\n"+USER_ID + "\n");
             if (USER_ID != null)
             {
