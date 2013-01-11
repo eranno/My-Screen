@@ -1,7 +1,7 @@
 <?php
 /***
 file: remove_contact.php
-add contact member
+remove contact member
 
 input: email, freind-email \ id
 output:
@@ -24,25 +24,29 @@ if ( !$_POST || !isset($_POST['email']) || !isset($_POST['password']) || !(isset
 $email 	= strtolower($_POST['email']);
 $pass 	= $_POST['password'];
 $femail	= strtolower($_POST['femail']);
-$fid	= $_POST['fid'];
 
 
 //connect to db
 require('../inc/conn.php');
 
-//add the new contact
-$sql = "DELETE c FROM `contacts` c
-			INNER JOIN `users` u1
-			ON u1.`email`='$email'
-			INNER JOIN `users` u2
-			ON u2.`email`='$femail'
-		WHERE c.`user`=u1.`id` AND c.`friend`=u2.`id` AND BINARY u1.`pass`='$pass'
-		";
+//del the contact
+$sql = "DELETE c, p
+	FROM `contacts` c
+		INNER JOIN `users` u1
+		ON u1.`email`='$email'
+		INNER JOIN `users` u2
+		ON u2.`email`='$femail'
+		INNER JOIN `images` i
+		ON i.`owner`=u1.`id`
+		INNER JOIN `permissions` p
+		ON p.`user`=u2.`id` AND p.`image`=i.`id`
+	WHERE c.`user`=u1.`id` AND c.`friend`=u2.`id` AND BINARY u1.`pass`='$pass'
+	";
 mysql_query($sql) or die('2');
 
 
 //if success
-if (mysql_affected_rows() == 1)
+if (mysql_affected_rows() > 0)
 	echo '0';
 
 //bad email/pass

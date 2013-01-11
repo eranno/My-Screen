@@ -7,7 +7,6 @@
 <br />email: <input name="email" />
 <br />password: <input name="password" />
 <br />serial: <input name="serial" />
-<br />rsa: <input name="rsa" />
 <br /><input type="submit" />
 </form>
 

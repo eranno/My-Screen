@@ -15,11 +15,11 @@ class server
 
 	//action arrays
 	private $sql;
-	private $mail;
+	//private $mail;
 
 	//possible actions
 	private $act = array(
-		"login" 		=> 0,	//zero is counter, for future use.
+		"login" 		=> 0,	//zero is counter. for future use, maybe.
 		"add_contacts" 		=> 0,
 		"add_images" 		=> 0,
 		"add_permissions" 	=> 0,
@@ -27,6 +27,17 @@ class server
 		"remove_images" 	=> 0,
 		"remove_permissions" 	=> 0
 	);
+
+//$schema = array(
+//	"login" 		=> array("id","email","password"),
+//	"add_contacts" 		=> 0,
+//	"add_images" 		=> 0,
+//	"add_permissions" 	=> array("user","images" => 0),
+//	"remove_contacts" 	=> 0,
+//	"remove_images" 	=> 0,
+//	"remove_permissions" 	=> array("user","images" => 0)
+//);
+
 
 	public function __construct($arr)
 	{
@@ -42,10 +53,30 @@ class server
 
 		//set arrays
 		$this->sql 	= array();
-		$this->mail	= array();
+		//$this->mail	= array();
 
 		//set user connection details
 		$this->user($this->json->login);
+	}
+
+	//getters
+	public function getSQL(){ return $this->sql; }
+
+
+	public function sqlQuery()
+	{
+		foreach ($s->getSQL() as $value)
+			$sql .= "\n$value;";
+
+		//connect to db
+		require('../inc/conn.php');
+
+		mysql_query($sql) or die('2');
+		if (mysql_errno())
+			echo mysql_errno() . ": " . mysql_error() . "\n";
+
+		//close db
+		mysql_close($link);
 	}
 
 	//call for all $act methods
@@ -102,7 +133,7 @@ class server
 	public function add_images($arr)
 	{
 		//start sql
-		$temp_sql = 	"INSERT INTO `images` (`serial`, `cipher`, `owner`)
+		$temp_sql = 	"INSERT INTO `images` (`serial`, `rsa`, `owner`)
 				VALUES";
 
 		//loop images
@@ -117,20 +148,6 @@ class server
 	
 	public function add_permissions($arr)
 	{
-/*
-	"add_permissions":
-	{
-		"user":"ilan@gmail.com",
-		"images":
-		{
-			"0":"duygkiu76576445twdtg",
-			"1":"trdcfujhkhgfuy3465457"
-		}
-	},
-*/
-
-
-
 		//start sql
 		$temp_sql = 	"INSERT INTO `permissions` (`image`, `user`)
 				SELECT i.`id`, u2.`id`
@@ -140,7 +157,7 @@ class server
 					INNER JOIN `contacts` c
 					ON c.`user`=u1.`id` AND c.`friend`=u2.`id`
 					INNER JOIN `images` i
-					ON i.`owner`=u2.`id` AND (";
+					ON i.`owner`=u1.`id` AND (";
 
 		//loop images
 		foreach ($arr->images as &$value) {
@@ -156,12 +173,14 @@ class server
 	}
 	
 	//Reminder:
-	//when removing contact remove all of it's images permissions as well
+	//when removing contact, remove all of it's images permissions as well
 	public function remove_contacts($arr)
 	{
 		return 0;
 	}
-	
+
+	//Reminder:
+	//When removing image, remove all of it's permissions as well
 	public function remove_images($arr)
 	{
 		return 0;

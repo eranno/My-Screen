@@ -31,22 +31,29 @@ $fid	= $_POST['fid'];
 require('../inc/conn.php');
 
 //add the new image
-$sql = "INSERT INTO `images` (`serial`, `rsa`, `owner`)
-		SELECT '$serial', '$rsa', u.`id`
-		FROM `users` as u
-		WHERE u.email = '$email' AND BINARY u.`pass`='$pass'
-		";
-mysql_query($sql) or die('2');
+$sql = "SELECT i.`rsa`
+	FROM `images` as i
+		INNER JOIN `users` u1
+		ON u1.email = '$email' AND BINARY u1.`pass`='$pass'
+		INNER JOIN `permissions` p
+		ON p.`image`=i.`id` AND p.`user`=u1.`id`
+		INNER JOIN `users` u2
+		ON u2.`id` = '$fid'
+	WHERE i.`serial`='$serial' AND i.`owner`=u2.`id`
+	";
+$result = mysql_query($sql);
+if (!$result) exit('2');
 
+//get result
+$row = mysql_fetch_row($result);
 
-//if success
-if (mysql_affected_rows() == 1)
-	echo '0';
-
-//bad email/pass
-else
+//if no results
+if (!$row)
 	echo '2';
 
+//output code
+else
+	echo $row[0];
 
 //close db
 mysql_close($link);

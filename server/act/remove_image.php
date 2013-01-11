@@ -15,7 +15,7 @@ output:
 include('../inc/settings.php');
 
 //error - no email
-if ( !$_POST || !isset($_POST['email']) || !isset($_POST['password']) || !isset($_POST['serial']) || !isset($_POST['rsa']) )
+if ( !$_POST || !isset($_POST['email']) || !isset($_POST['password']) || !isset($_POST['serial']) )
 	exit('1');
 
 
@@ -24,23 +24,25 @@ if ( !$_POST || !isset($_POST['email']) || !isset($_POST['password']) || !isset(
 $email 	= strtolower($_POST['email']);
 $pass 	= $_POST['password'];
 $serial	= $_POST['serial'];
-$rsa	= $_POST['rsa'];
 
 
 //connect to db
 require('../inc/conn.php');
 
-//add the new contact
-$sql = "DELETE i FROM `images` i
-			INNER JOIN `users` u
-			ON u.`email`='$email'
-		WHERE i.`serial`='$serial' AND i.`owner`=u.`id` AND BINARY u.`pass`='$pass'
-		";
+//del the image & permissions
+$sql = "DELETE i, p 
+	FROM `images` i
+		INNER JOIN `users` u
+		ON u.`email`='$email'
+		INNER JOIN `permissions` p
+		ON p.`image`=i.`id`
+	WHERE i.`serial`='$serial' AND i.`owner`=u.`id` AND BINARY u.`pass`='$pass'
+	";
 mysql_query($sql) or die('2');
 
 
 //if success
-if (mysql_affected_rows() == 1)
+if (mysql_affected_rows() > 0)
 	echo '0';
 
 //bad email/pass
