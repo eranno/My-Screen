@@ -11,7 +11,8 @@ namespace ImageProcessing
         {
             //Encoding e = new Encoding("C:\\Users\\user\\pics\\stage\\input\\fromWeb0.jpg", "0");
             //Decoding d = new Decoding("http://sphotos-b.ak.fbcdn.net/hphotos-ak-ash4/380823_10152328329080595_2146413406_n.jpg", "0");
-            Console.Read();
+            MedianFilter m = new MedianFilter("C:\\Users\\user\\Documents\\myscreen\\My-Screen\\Client\\GUI\\bin\\Debug\\DecodedImages\\12.jpg");
+            
         }
     }
 }
