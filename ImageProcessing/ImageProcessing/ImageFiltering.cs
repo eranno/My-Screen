@@ -38,11 +38,9 @@ namespace ImageProcessing
                 
 
                 url = DataHandler.Messages.read();
-               
+                
                 if (url != null)
                 {
-                    MessageBox.Show(url);
-                   
                     //Console.Write(url + "\n");
                     filter_by_image(url);
                 }
@@ -62,23 +60,30 @@ namespace ImageProcessing
 
         private static void filter_by_imageID(String url)
         {
-        
-            Bitmap image = get_image_from_url(url);
-            bool result2 = image.Width == 400 && image.Height == 300;
-
-            int program_id = get_program_id(image);
-            bool result1 = program_id == Convert.ToInt32(PROGRAM_ID, 2);
-            if (result1 && result2)
+            //DBHandler.insert("INSERT INTO DecryptedImages(url) VALUES('" + url + "')");
+            //MessageBox.Show("url befor filter = "+url);
+            bool check = LocalData.getDecodedImageUrl(url).Equals(url) || LocalData.getUrl(url).Equals(url);
+            if (!check)
             {
-                //anlyse image id
-                filter_by_Permissions(image);
+                DBHandler.insert("INSERT INTO URLs(url) VALUES('" + url + "')");
+                //MessageBox.Show("in");
+                Bitmap image = get_image_from_url(url);
+                bool result2 = image.Width == 400 && image.Height == 300;
+
+                int program_id = get_program_id(image);
+                bool result1 = program_id == Convert.ToInt32(PROGRAM_ID, 2);
+                if (result1 && result2)
+                {
+                    //anlyse image id
+                    filter_by_Permissions(image, url);
+                }
             }
         }
 
 
 
 
-        private static void filter_by_Permissions(Bitmap image)
+        private static void filter_by_Permissions(Bitmap image, String url)
         {
 
             //check permission from server/Data Base
@@ -86,7 +91,7 @@ namespace ImageProcessing
             uint image_id = get_image_id(image);
 
             //testing erase next line
-            ImageDecoder.decode_image(image, user_id, image_id);
+            ImageDecoder.decode_image(image, user_id, image_id, url);
 
             /*
             //check permission

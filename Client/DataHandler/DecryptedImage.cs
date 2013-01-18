@@ -12,6 +12,7 @@ namespace DataHandler
         private string _Type;
         private string _PathThumb;
         private string _Path;
+        private string _Url;
 
         public int Id
         {
@@ -37,6 +38,11 @@ namespace DataHandler
         {
             set { this._Path = value; }
             get { return this._Path; }
+        }
+        public string Url
+        {
+            set { this._Url = value; }
+            get { return this._Url; }
         }
     }
 }
