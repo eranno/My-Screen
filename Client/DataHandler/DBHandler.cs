@@ -218,10 +218,10 @@ namespace DataHandler
         public static String fillWithDump()
         {
             List<string> dump = new List<string>(); 
-            dump.Add("INSERT INTO Friends(email , name , userId) VALUES('noam185@gmail.com' ,'Noam Tzumie' , '12345')");
-            dump.Add("INSERT INTO Friends(email , name , userId) VALUES('david@gmail.com' ,'David krantz' , '7890')");
-            dump.Add("INSERT INTO Friends(email , name , userId) VALUES('ilan@gmail.com' , 'Ilan Ben Tal' , '534535')");
-            dump.Add("INSERT INTO Friends(email , name , userId) VALUES('eran@gmail.com' , 'Eran Naor' , '34535')");
+            //dump.Add("INSERT INTO Friends(email , name , userId) VALUES('noam185@gmail.com' ,'Noam Tzumie' , '12345')");
+            //dump.Add("INSERT INTO Friends(email , name , userId) VALUES('david@gmail.com' ,'David krantz' , '7890')");
+            //dump.Add("INSERT INTO Friends(email , name , userId) VALUES('ilan@gmail.com' , 'Ilan Ben Tal' , '534535')");
+            //dump.Add("INSERT INTO Friends(email , name , userId) VALUES('eran@gmail.com' , 'Eran Naor' , '34535')");
 
             //dump.Add("INSERT INTO Images(idx , name , key , type , pathEncrypted , pathThumb , pathOriginal) VALUES('index 1' , 'Desert' , '#$%2fffwe4533' , 'jpg' ,'c:\\cmyImages\\' , 'C:\\Users\\Public\\Pictures\\Sample Pictures\\thumbs\\Hydrangeas.png' , 'c:\\originalPath\\')");
             //dump.Add("INSERT INTO Images(idx , name , key , type , pathEncrypted , pathThumb , pathOriginal) "
@@ -238,7 +238,7 @@ namespace DataHandler
             //dump.Add("INSERT INTO AuthImages(imageId , friendId) VALUES('1', 'ilan@gmail.com')");
 
 
-            dump.Add("INSERT INTO UserProperties(email , name , password , securityCode , userId , imageId) VALUES('myComp@gmail.com', 'localhost' , '123456' , '187365543208213678653094' , 'userId' , '12')");
+            dump.Add("INSERT INTO UserProperties(email , name , password , securityCode , userId , imageId) VALUES('erannn@gmail.com', 'localhost' , '1234' , '187365543208213678653094' , '1' , '12')");
 
             foreach (string cmd in dump)
             {
