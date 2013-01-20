@@ -13,6 +13,7 @@ namespace DataHandler
         private static SQLiteConnection sqliteCon;
         private static String dbName = "myScreen.s3db";
         private static String connectionString = @"Data Source=" + dbName;
+       
 
         public static void initDB()
         {
@@ -54,7 +55,12 @@ namespace DataHandler
                 "[type] TEXT  NULL," +
                 "[pathEncrypted] TEXT NULL," +
                 "[pathThumb] TEXT NULL," +
-                "[path] TEXT NULL" +
+                "[path] TEXT NULL," +
+                "[url] TEXT NULL" +
+                ")";
+
+            string URLs = "CREATE TABLE [urls] (" +
+                "[url] TEXT NULL" +
                 ")";
 
             string AuthImagesTable = "CREATE TABLE [AuthImages] (" +
@@ -99,6 +105,10 @@ namespace DataHandler
                 SQLiteCommand createDecryptedImagesCommand = new SQLiteCommand(DecryptedImagesTableSQL, sqliteCon);
                 createDecryptedImagesCommand.ExecuteNonQuery();
                 createDecryptedImagesCommand.Dispose();
+
+                SQLiteCommand createURLsCommand = new SQLiteCommand(URLs, sqliteCon);
+                createURLsCommand.ExecuteNonQuery();
+                createURLsCommand.Dispose();
 
                 // Commit the changes into the database
                 sqlTransaction.Commit();
@@ -256,6 +266,8 @@ namespace DataHandler
             executeCmd("DROP TABLE  AuthImages");
             executeCmd("DROP TABLE  UserProperties");
             executeCmd("DROP TABLE  DecryptedImages");
+            executeCmd("DROP TABLE  URLs");
+       
             createTables();
         }
     }
