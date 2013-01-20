@@ -28,6 +28,11 @@ namespace ImageProcessing
             t.Start();
         }
 
+        public static void abortThread(Thread t)
+        {
+            t.Abort();
+        }
+
         public static void ImageFilter()
         {
             
@@ -88,29 +93,6 @@ namespace ImageProcessing
             //testing erase next line
             ImageDecoder.decode_image(image, user_id, image_id);
 
-            /*
-            //check permission
-            using (var wb = new WebClient())
-            {
-                var data = new NameValueCollection();
-                User user = LocalData.getUserProperties();
-                data["email"] = "erann@gmail.com"; ;//user.Email;
-                data["password"] = "1234";//user.Password;
-                data["UID"] =Convert.ToString(user_id);
-                data["IID"] = Convert.ToString(image_id);
-
-
-                var response = wb.UploadValues("http://myscreen.cu.cc/act/permission.php", "POST", data);
-                String permission = Encoding.UTF8.GetString(response);
-
-                if (permission[0] == 0)//check with eran
-                {
-                    //Decode
-                    ImageDecoder.decode_image(image, user_id, image_id);
-                }
-
-            }
-             */
 
         }
 
@@ -189,7 +171,7 @@ namespace ImageProcessing
         private static Bitmap get_image_from_url(String url)
         {
 
-            Bitmap inputBitmap;
+            Bitmap inputBitmap = null;
             using (WebClient wc = new WebClient())
             {
                 Stream strm = null;
