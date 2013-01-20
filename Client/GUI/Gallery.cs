@@ -25,6 +25,8 @@ namespace GUI
         public void getFiles()
         {
             String time = DateTime.Now.ToString("dd-MM-yyyy");
+            if (!Directory.Exists("DecodedImages\\" + time))
+                Directory.CreateDirectory("DecodedImages\\" + time);
             files = Directory.GetFiles("DecodedImages\\" + time);
             pointer = 0;
         }
