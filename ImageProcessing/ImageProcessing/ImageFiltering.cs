@@ -20,15 +20,15 @@ namespace ImageProcessing
         public static String PROGRAM_ID = "1101000100001";
         private static String[] lastURL = new String[10];
         private static int count = 0;
-        
+        private static Thread t;
 
         public static void startFilter()
         {
-            Thread t = new Thread(ImageFiltering.ImageFilter);
+            t = new Thread(ImageFiltering.ImageFilter);
             t.Start();
         }
 
-        public static void abortThread(Thread t)
+        public static void abortThread()
         {
             t.Abort();
         }
@@ -72,12 +72,13 @@ namespace ImageProcessing
 
             //if in DB
 
-            bool decoded = LocalData.getDecodedImageUrl(url);
+           // bool decoded = LocalData.getDecodedImageUrl(url);
             bool urls = LocalData.isUrlExist(url);
 
             //.Show("a = " + a + "\nb = " + b);
-            if (decoded && urls)
+            if (!urls)
             {
+                LocalData.insertUrl(url);
                 Bitmap image = get_image_from_url(url);
                 bool result2 = image.Width == 400 && image.Height == 300;
 

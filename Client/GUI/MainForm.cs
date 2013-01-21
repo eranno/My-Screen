@@ -50,6 +50,7 @@ namespace GUI
                 btDecrypt.Text = "Start Decrypt";
                 isDecrypt = false;
                 TrafficHandler.terminate();
+                ImageFiltering.abortThread();
                 MessageBox.Show("Traffic observer terminated");
             }
             else
@@ -172,6 +173,7 @@ namespace GUI
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             TrafficHandler.terminate();
+            ImageFiltering.abortThread();
         }
 
         private void followAfterTrafficToolStripMenuItem_Click(object sender, EventArgs e)
