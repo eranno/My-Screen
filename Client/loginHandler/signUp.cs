@@ -121,7 +121,7 @@ namespace loginHandler
         {
            
             const string NOT_CONFIRMED = "not confirmed";
-            userId = userId.Substring(0, 32);
+            //userId = userId.Substring(0, 32);
             User user = new User(); 
             user.Email = email;
             user.Name = name;
