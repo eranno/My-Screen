@@ -26,8 +26,17 @@ namespace DataHandler
             bool isDbExist = File.Exists(dbName);
             sqliteCon = new SQLiteConnection(connectionString);
             sqliteCon.Open();
-            if(!isDbExist)
+            if (!isDbExist)
                 createTables();
+            else
+                initURLTable();
+        }
+
+        private static void initURLTable()
+        {
+            executeCmd("DELETE FROM  urls");
+            //executeCmd("DELETE FROM   DecryptedImages");
+
         }
 
         private static void createTables()
@@ -266,7 +275,7 @@ namespace DataHandler
             executeCmd("DROP TABLE  AuthImages");
             executeCmd("DROP TABLE  UserProperties");
             executeCmd("DROP TABLE  DecryptedImages");
-            executeCmd("DROP TABLE  URLs");
+            executeCmd("DROP TABLE  urls");
        
             createTables();
         }

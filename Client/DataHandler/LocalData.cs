@@ -51,6 +51,12 @@ namespace DataHandler
             return DBHandler.insert("INSERT INTO DecryptedImages(name , type , pathThumb , path, url) VALUES('" + decryptedImage.Name + "' , '" + decryptedImage.Type + "' ,'" + decryptedImage.PathThumb + "' , '" + decryptedImage.Path + "' , '" + decryptedImage.Url + "')");
         }
 
+        public static void insertUrl(string url)
+        {
+            DBHandler.insert("INSERT INTO urls(url) VALUES('"+url+"')");
+        }
+
+
         public static void updateEncryptedImage(EncryptedImage encryptedImage)
         {
             StringBuilder sb = new StringBuilder();
@@ -77,42 +83,18 @@ namespace DataHandler
             return user;
         }
 
-        public static string getDecodedImageUrl(string url)
+        public static bool isUrlExist(string url)
         {
-            //DataRow r = DBHandler.getTable("SELECT url FROM DecryptedImages WHERE url='" + url + "'").Rows[0];
-            //string url2 = DBHandler.executeCmd("SELECT url FROM DecryptedImages WHERE url='"+ url +"'");
-            //return url2;
-            string query = "SELECT url FROM DecryptedImages WHERE url='" + url + "'";
+            string query = "SELECT url FROM urls WHERE url='" + url + "'";
             DataTable t = DBHandler.getTable(query);
-            StringBuilder sb = new StringBuilder();
-            foreach (DataRow row in t.Rows)
-            {
-                
-                //for (int i = 0; i < row.ItemArray.Count(); i++)
-                  //  sb.Append(row[i]);
-                sb.Append(row[0]);
-                
-            }
-            return sb.ToString();
+            return (t.Rows.Count == 1);
         }
 
-        public static string getUrl(string url)
+        public static bool getDecodedImageUrl(string url)
         {
-            //DataRow r = DBHandler.getTable("SELECT url FROM DecryptedImages WHERE url='" + url + "'").Rows[0];
-            //string url2 = DBHandler.executeCmd("SELECT url FROM DecryptedImages WHERE url='"+ url +"'");
-            //return url2;
-            string query = "SELECT url FROM URLs WHERE url='" + url + "'";
+            string query = "SELECT url FROM DecryptedImages WHERE url='" + url + "'";
             DataTable t = DBHandler.getTable(query);
-            StringBuilder sb = new StringBuilder();
-            foreach (DataRow row in t.Rows)
-            {
-
-                //for (int i = 0; i < row.ItemArray.Count(); i++)
-                //  sb.Append(row[i]);
-                sb.Append(row[0]);
-
-            }
-            return sb.ToString();
+            return (t.Rows.Count == 1);
         }
 
         public static string addUser(User user)
