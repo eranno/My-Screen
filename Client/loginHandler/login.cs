@@ -76,7 +76,7 @@ namespace loginHandler
             {
                 if (String.Compare(password, user.Password) == 0)
                 {
-                    //TODO earse...
+                    //TODO earse after eran will change
                     user.SecurityCode = CONFIRMED;
                     if (String.Compare(CONFIRMED, user.SecurityCode) != 0)
                     {
@@ -90,6 +90,8 @@ namespace loginHandler
                     }
                 }
             }
+            //TODO
+            //return true;
             return confirmed;
         }
 

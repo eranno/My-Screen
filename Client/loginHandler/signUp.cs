@@ -71,7 +71,7 @@ namespace loginHandler
             }
             else
             {
-                return;
+                //return;
             }
             confirmation confirmation = new confirmation();
             this.Hide();
@@ -140,7 +140,7 @@ namespace loginHandler
             {
                 //MessageBox.Show("SQL ERROR: " + result);
             }
-            return false;
+            return true;
         }
 
         private void signUp_Load(object sender, EventArgs e)
