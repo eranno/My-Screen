@@ -15,7 +15,7 @@ output: send activation to this email
 include('../inc/settings.php');
 
 //error - no email
-if (!isset($_GET['c']) || !isset($_GET['mail'])) 
+if (!isset($_GET['c']) || !isset($_GET['email'])) 
 	exit('1');
 
 //add user
