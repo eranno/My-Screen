@@ -1,4 +1,4 @@
-﻿using System;
+﻿﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,7 +15,7 @@ namespace DataHandler
         public static void createThumb(List<string> files)
         {
             Thread t = new Thread(LocalData.workerThumbs);
-            t.Start(files); 
+            t.Start(files);
         }
 
         private static void workerThumbs(object files)
@@ -36,7 +36,7 @@ namespace DataHandler
             }
         }
 
-        public static void removeImageFromFriend(string imageId , string friendId)
+        public static void removeImageFromFriend(string imageId, string friendId)
         {
             DBHandler.executeCmd("DELETE FROM AuthImages WHERE imageId=" + imageId + " AND friendId=" + "'" + friendId + "'");
         }
@@ -48,12 +48,12 @@ namespace DataHandler
 
         public static string insertDecryptedImage(DecryptedImage decryptedImage)
         {
-            return DBHandler.insert("INSERT INTO Images(name , type , pathThumb , path) VALUES('" + decryptedImage.Name + "' , '"  + decryptedImage.Type + "' ,'" + decryptedImage.PathThumb + "' , '" + decryptedImage.Path + "')");
+            return DBHandler.insert("INSERT INTO DecryptedImages(name , type , pathThumb , path, url) VALUES('" + decryptedImage.Name + "' , '" + decryptedImage.Type + "' ,'" + decryptedImage.PathThumb + "' , '" + decryptedImage.Path + "' , '" + decryptedImage.Url + "')");
         }
 
         public static void updateEncryptedImage(EncryptedImage encryptedImage)
         {
-            StringBuilder sb = new StringBuilder();  
+            StringBuilder sb = new StringBuilder();
             sb.Append("idx='" + encryptedImage.Idx + "',");
             sb.Append("name='" + encryptedImage.Name + "',");
             sb.Append("key='" + encryptedImage.Key + "',");
@@ -61,13 +61,13 @@ namespace DataHandler
             sb.Append("pathEncrypted='" + encryptedImage.PathEncrypted + "',");
             sb.Append("pathThumb='" + encryptedImage.PathThumb + "',");
             sb.Append("pathOriginal='" + encryptedImage.PathOriginal + "'");
-            DBHandler.executeCmd("UPDATE Images SET " + sb + " WHERE pathOriginal='" + encryptedImage.PathOriginal +"'");
+            DBHandler.executeCmd("UPDATE Images SET " + sb + " WHERE pathOriginal='" + encryptedImage.PathOriginal + "'");
         }
 
         public static User getUserProperties()
         {
             DataRow row = DBHandler.getTable("SELECT * FROM UserProperties").Rows[0];
-            User user = new User(); 
+            User user = new User();
             user.Email = row["email"].ToString();
             user.UserId = row["userId"].ToString();
             user.Name = row["name"].ToString();
@@ -77,13 +77,51 @@ namespace DataHandler
             return user;
         }
 
+        public static string getDecodedImageUrl(string url)
+        {
+            //DataRow r = DBHandler.getTable("SELECT url FROM DecryptedImages WHERE url='" + url + "'").Rows[0];
+            //string url2 = DBHandler.executeCmd("SELECT url FROM DecryptedImages WHERE url='"+ url +"'");
+            //return url2;
+            string query = "SELECT url FROM DecryptedImages WHERE url='" + url + "'";
+            DataTable t = DBHandler.getTable(query);
+            StringBuilder sb = new StringBuilder();
+            foreach (DataRow row in t.Rows)
+            {
+                
+                //for (int i = 0; i < row.ItemArray.Count(); i++)
+                  //  sb.Append(row[i]);
+                sb.Append(row[0]);
+                
+            }
+            return sb.ToString();
+        }
+
+        public static string getUrl(string url)
+        {
+            //DataRow r = DBHandler.getTable("SELECT url FROM DecryptedImages WHERE url='" + url + "'").Rows[0];
+            //string url2 = DBHandler.executeCmd("SELECT url FROM DecryptedImages WHERE url='"+ url +"'");
+            //return url2;
+            string query = "SELECT url FROM URLs WHERE url='" + url + "'";
+            DataTable t = DBHandler.getTable(query);
+            StringBuilder sb = new StringBuilder();
+            foreach (DataRow row in t.Rows)
+            {
+
+                //for (int i = 0; i < row.ItemArray.Count(); i++)
+                //  sb.Append(row[i]);
+                sb.Append(row[0]);
+
+            }
+            return sb.ToString();
+        }
+
         public static string addUser(User user)
-        { 
-            return DBHandler.insert("INSERT INTO UserProperties(email , name , userId , password , securityCode) VALUES('" + user.Email + "' , '" + user.Name + "' , '" + user.UserId +  "' ,'" + user.Password + "' , '" + user.SecurityCode + "')");
+        {
+            return DBHandler.insert("INSERT INTO UserProperties(email , name , userId , password , securityCode) VALUES('" + user.Email + "' , '" + user.Name + "' , '" + user.UserId + "' ,'" + user.Password + "' , '" + user.SecurityCode + "')");
         }
         public static string deleteUser(User user)
         {
-            return DBHandler.executeCmd("DELETE FROM UserProperties WHERE email='" + user.Email +"'");
+            return DBHandler.executeCmd("DELETE FROM UserProperties WHERE email='" + user.Email + "'");
         }
 
         public static string updateUser(User user)

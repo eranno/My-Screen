@@ -12,7 +12,7 @@ namespace GUI
 {
     public partial class Gallery : Form
     {
-        string[] files;
+        List<string> files;
         int pointer;
         int picWidth, picHieght;
         public Gallery()
@@ -24,13 +24,17 @@ namespace GUI
 
         public void getFiles()
         {
-           files = Directory.GetFiles("DecodedImages");
-           pointer = 0;
+            files = new List<string>();
+            String time = DateTime.Now.ToString("dd-MM-yyyy");
+            String decodedDir = "DecodedImages\\" + time;
+            if(Directory.Exists(decodedDir))
+                files = Directory.GetFiles(decodedDir).ToList<string>();
+            pointer = 0;
         }
 
         public void initComponents()
         {
-            if (files.Length == 0)
+            if (files.Count == 0)
             {
                 btnNext.Enabled = false;
                 btnPrev.Enabled = false;
@@ -47,7 +51,7 @@ namespace GUI
 
         private void btnNext_Click(object sender, EventArgs e)
         {
-            if (pointer < files.Length)
+            if (pointer < files.Count)
             {
                 showImage();
                 pointer++;

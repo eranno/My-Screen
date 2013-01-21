@@ -21,14 +21,14 @@ namespace DataHandler
         {
             string resp = null;
             string msg = null; 
+            User user = LocalData.getUserProperties();
             using (var wb = new WebClient())
             {
                 var data = new NameValueCollection();
-                User user = LocalData.getUserProperties();
                 data["email"] = user.Email;
                 data["password"] = user.Password;
                 data["femail"] = friend.Email;
-                data["fid"] = friend.FriendId;
+                data["fid"] = friend.FriendId; 
 
                 var response = wb.UploadValues("http://my.jce.ac.il/~eranno/act/add_contact.php", "POST", data);
                 resp = Encoding.UTF8.GetString(response);
@@ -43,7 +43,7 @@ namespace DataHandler
                     msg = "Server Error: invalid input";
                     break;
                 case "2":
-                    msg = "Server Error: Invalid user properties";
+                    msg = "Server Error: Invalid user properties: " + user.Email + " , " +  user.UserId + " , " + user.Password;
                     break;
             }
             if (msg == null)
@@ -82,7 +82,7 @@ namespace DataHandler
                     msg = "Server Error: invalid input";
                     break;
                 case "2":
-                    msg = "Server Error: Invalid user properties";
+                    msg = "Server Error: Invalid user properties {Permissions}";
                     break;
             }
             if (msg == null)
@@ -132,5 +132,37 @@ namespace DataHandler
             JObject o2 = new JObject(p);
             return o2;
         }
+
+        private void buildImages(JObject json)
+        {
+            DataTable images = DBHandler.getTable("SELECT * FROM Images");
+            List<object> l = new List<object>();
+
+            for(int i=0;i<images.Rows.Count;i++) 
+            {
+                DataRow row = images.Rows[i];
+                l.Add(new JProperty( Convert.ToString(i) , row["key"].ToString()));       
+            }
+
+            JObject o = new JObject(l.ToArray());
+            JProperty p = new JProperty("add_images", o);
+        }
+
+        private void buildPermission(JObject json )
+        {
+            DataTable permission = DBHandler.getTable("SELECT * FROM AuthImages GROUPBY friendId");
+            List<object> l = new List<object>();
+
+            for (int i = 0; i < permission.Rows.Count; i++)
+            {
+                DataRow row = permission.Rows[i];
+                l.Add(new JProperty("user", row["email"].ToString()));
+            }
+
+            JObject o = new JObject(l.ToArray());
+            JProperty p = new JProperty("add_images", o);
+        }
+
+     
     }
 }

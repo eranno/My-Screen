@@ -40,20 +40,13 @@ mysql_query($sql) or die('2');
 //close db
 mysql_close($link);
 
-//send mail
-$headers = "From: do-not-reply@myscreen.cu.cc\r\n" .
-	"Reply-To: $email\r\n" .
-	'X-Mailer: PHP/' . phpversion();
-
-$subject = "MyScreen - account activation";
-$message =	"Welcome to My Screen" .
-			"\n\n press on this <a href='http://myscreen.cu.cc/active.php?c=$code&mail=$mail'>link</a> to activate your account" .
-			"\n or go to http://myscreen.cu.cc/activate.php and copy this code: $code" .
-			"\n\n\n by the way, your password is: $pass" .
-			"\n don't forget it.";
-mail($email, $subject, $message, $headers);
-
-echo '0';	//success
+//send email confirmation
+require_once('../mail/email.php');
+$m = new email();
+$m->addMail($email);
+$m->addParams('c',$code);
+$m->addParams('p',$pass);
+echo $m->sendMail();
 
 
 //-----------------------------------------------------------------

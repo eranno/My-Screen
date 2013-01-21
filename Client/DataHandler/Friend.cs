@@ -32,6 +32,7 @@ namespace DataHandler
         public string insert()
         {
             string msg = null;
+            //this.FriendId = "12";//TODO: Mock up
             string response = Server.addContact(this);
             if (response != null && response.Contains(Server.SUCCESS))
             {

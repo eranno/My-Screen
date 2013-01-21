@@ -32,10 +32,10 @@ require('../inc/conn.php');
 
 //add the new image
 $sql = "INSERT INTO `images` (`serial`, `rsa`, `owner`)
-		SELECT '$serial', '$rsa', u.`id`
-		FROM `users` as u
-		WHERE u.email = '$email' AND BINARY u.`pass`='$pass'
-		";
+	SELECT '$serial', '$rsa', u.`id`
+	FROM `users` u
+	WHERE u.`email` = '$email' AND BINARY u.`pass`='$pass'
+	";
 mysql_query($sql) or die('2');
 
 

@@ -86,23 +86,23 @@ namespace ImageProcessing
             {
                 var data = new NameValueCollection();
                 User user = LocalData.getUserProperties();
-                data["email"] = "erannn@gmail.com";//user.Email;
-                data["password"] = "1234";// user.Password;
-                //Console.Write("\n-------------------------------\nimageid = " + user.ImageId + "\n ---------------------------");
-                data["serial"] = "10101010";//user.ImageId;
+                data["email"] = "noam@gmail.com";//user.Email;
+                data["password"] = "1234";//user.Password;
+                Console.Write("\n-------------------------------\nimageid = " + user.ImageId + "\n ---------------------------");
+                data["serial"] = user.ImageId;
 
                 //idx ++;
                 int idx = Convert.ToInt32(user.ImageId) + 1;
                 user.ImageId = Convert.ToString(idx);
                 LocalData.updateUser(user);
-                //Console.Write("\n-------------------------------\n imagekey = " + ImageKey + "\n ---------------------------");
+                Console.Write("\n-------------------------------\n imagekey = " + ImageKey + "\n ---------------------------");
                 data["rsa"] = ImageKey;
 
                 var response = wb.UploadValues("http://my.jce.ac.il/~eranno/act/add_image.php", "POST", data);
                 String body = Encoding.UTF8.GetString(response);
                 if (body == null)
                     return false;
-               // Console.Write("\n-------------------------------\nserver response = " + body + "\n ---------------------------");
+                Console.Write("\n-------------------------------\nserver response = " + body + "\n ---------------------------");
                 char code = body[0];
                 if (code != '0')
                     return false;
@@ -113,8 +113,8 @@ namespace ImageProcessing
 
         public static void make_user_id(Bitmap inputBitmap)
         {
-            //String USER_ID = "00000000000000000000000000000000";
-            String USER_ID = LocalData.getUserProperties().UserId;
+            String USER_ID = "00000000000000000000000000001100";
+            //String USER_ID = LocalData.getUserProperties().UserId;
             //Console.Write("\n"+USER_ID + "\n");
             if (USER_ID != null)
             {
