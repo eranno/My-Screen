@@ -40,8 +40,8 @@ namespace loginHandler
             using (var wb = new WebClient())
             {
                 var data = new NameValueCollection();
-                data["userId"] = user.UserId;
-                data["securityCode"] = confirmationCode.Text;
+                data["email"] = user.Email;
+                data["c"] = confirmationCode.Text;
 
                 var response = wb.UploadValues("http://my.jce.ac.il/~eranno/act/activate.php", "POST", data);
 
@@ -60,7 +60,7 @@ namespace loginHandler
                     
                     user.SecurityCode = CONFIRMED;
                     MessageBox.Show("Login successfull!\ncontinue to MyScreen");
-                    return;
+                    //return;
 
                 }
             }
