@@ -46,18 +46,14 @@ $m = new email();
 $m->addMail($email);
 $m->addParams('c',$code);
 $m->addParams('p',$pass);
-echo $m->sendMail();
 
 
-//-----------------------------------------------------------------
+//try {
+//	echo $m->sendMail();
+//} catch (Exception $e) {
+//	echo $code;
+//}
 
-function randomPassword($len) {
-    $alphabet = "abcdefghijklmnopqrstuwxyzABCDEFGHIJKLMNOPQRSTUWXYZ0123456789";
-    $pass = array(); //remember to declare $pass as an array
-    for ($i = 0; $i < $len; $i++) {
-        $n = rand(0, 59);
-        $pass[$i] = $alphabet[$n];
-    }
-    return implode($pass); //turn the array into a string
-}
+
+
 ?>
