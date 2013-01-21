@@ -32,11 +32,10 @@ class email
 		
 		try {
 			$mail_it = file_get_contents($url);
+			return $mail_it;
 		} catch (Exception $e) {
 			return -1;
 		}
-		
-		return $mail_it;
 	}
 }
 ?>
