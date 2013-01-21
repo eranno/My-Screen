@@ -49,7 +49,7 @@ $m->addParams('p',$pass);
 
 
 //try {
-//	echo $m->sendMail();
+	echo $m->sendMail();
 //} catch (Exception $e) {
 //	echo $code;
 //}
