@@ -50,15 +50,18 @@ namespace loginHandler
                 char code = body[0];
                 if (code == '1' || code == '2')
                 {
-                    user.SecurityCode = CONFIRMED;
-                    MessageBox.Show("Login successfull!\ncontinue to MyScreen");
-                }
-                else 
-                {
                     //MessageBox.Show("Success code: " + body);
                     error.Text = WORNG_CONF_CODE;
                     error.Visible = true;
                     return;
+                }
+                else 
+                {
+                    
+                    user.SecurityCode = CONFIRMED;
+                    MessageBox.Show("Login successfull!\ncontinue to MyScreen");
+                    return;
+
                 }
             }
 

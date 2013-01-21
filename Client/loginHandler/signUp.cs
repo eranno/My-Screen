@@ -99,17 +99,18 @@ namespace loginHandler
                 data["password"] = password;
 
                 var response = wb.UploadValues("http://my.jce.ac.il/~eranno/act/signup.php", "POST", data);
+                //MessageBox.Show("Error code: after web ");
                 //contains conf code
                 String body = Encoding.UTF8.GetString(response);
                 char code = body[0];
                 if (code == '1' || code == '2')
                 {
-                    //MessageBox.Show("Error code: " + code);
+                    MessageBox.Show("Error code: " + code);
                     return null;
                 }
                 else
                 {
-                    //MessageBox.Show("Success code: " + body);
+                    MessageBox.Show("Success code: " + body);
                     return body;
                 }
             }
@@ -120,15 +121,20 @@ namespace loginHandler
         {
            
             const string NOT_CONFIRMED = "not confirmed";
-            userId = userId.Substring(0, 20);
-            User user = new User();
+            userId = userId.Substring(0, 32);
+            User user = new User(); 
             user.Email = email;
             user.Name = name;
             user.Password = password;
             user.UserId = userId;
             user.SecurityCode = NOT_CONFIRMED;
+            DBHandler.initDB();
             String result = LocalData.addUser(user);
-            if (result == null) return true;
+            if (result == null)
+            {
+                MessageBox.Show("in set");
+                return true;
+            }
             //
             else
             {
@@ -139,7 +145,7 @@ namespace loginHandler
 
         private void signUp_Load(object sender, EventArgs e)
         {
-
+            
         }
     }
 }

@@ -68,32 +68,25 @@ namespace loginHandler
         {
 
             Boolean confirmed = false;
-            String sql;
-            //*****************************
-            //tester: insert what you want, and delete right after...
-            DBHandler.initDB();
-            
-            
-            DBHandler.showTables();
-            sql = "DELETE FROM UserProperties WHERE `email` like '%'";
-            DBHandler.executeCmd(sql);
-            sql = "INSERT INTO UserProperties"
-                            + "(`email`,`password`)"
-                            + "VALUES('" + email + "','" + password + "')";
-            DBHandler.insert(sql);
-            //end tester
-            //*****************************
-            //check ip password matches
-            sql = "SELECT `email`, `password` FROM UserProperties "
-                            + "WHERE `email`= '" + email+"'";
-            DataTable userProps = DBHandler.getTable(sql);
-            foreach (DataRow row in userProps.Rows)
+            const string CONFIRMED = "confirmed";
+
+            User user = LocalData.getUserProperties();
+
+            if (String.Compare(email, user.Email) == 0)
             {
-                if (row["password"].ToString() == password)
+                if (String.Compare(password, user.Password) == 0)
                 {
-                    confirmed = true;
-                } 
-                break;
+                    if (String.Compare(CONFIRMED, user.SecurityCode) != 0)
+                    {
+                        confirmation confirmation = new confirmation();
+                        this.Hide();
+                        confirmation.Show();
+                    }
+                    else
+                    {
+                        confirmed = true;
+                    }
+                }
             }
             return confirmed;
         }
