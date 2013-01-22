@@ -59,7 +59,7 @@ namespace loginHandler
                 {
                     
                     user.SecurityCode = CONFIRMED;
-                    MessageBox.Show("Login successfull!\ncontinue to MyScreen");
+                    MessageBox.Show("Login successfull!\n\ncontinue to MyScreen");
                     //return;
 
                 }

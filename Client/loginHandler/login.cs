@@ -77,7 +77,7 @@ namespace loginHandler
                 if (String.Compare(password, user.Password) == 0)
                 {
                     //TODO earse after eran will change
-                    user.SecurityCode = CONFIRMED;
+                    //user.SecurityCode = CONFIRMED;
                     if (String.Compare(CONFIRMED, user.SecurityCode) != 0)
                     {
                         confirmation confirmation = new confirmation();

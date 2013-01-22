@@ -105,12 +105,12 @@ namespace loginHandler
                 char code = body[0];
                 if (code == '1' || code == '2')
                 {
-                    MessageBox.Show("Error code: " + code);
+                    //MessageBox.Show("Error code: " + code);
                     return null;
                 }
                 else
                 {
-                    MessageBox.Show("Success code: " + body);
+                    //MessageBox.Show("Success code: " + body);
                     return body;
                 }
             }
@@ -132,7 +132,7 @@ namespace loginHandler
             String result = LocalData.addUser(user);
             if (result == null)
             {
-                MessageBox.Show("in set");
+                //MessageBox.Show("in set");
                 return true;
             }
             //
