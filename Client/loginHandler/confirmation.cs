@@ -50,7 +50,7 @@ namespace loginHandler
                 char code = body[0];
                 if (code == '1' || code == '2')
                 {
-                    //MessageBox.Show("Success code: " + body);
+                    MessageBox.Show("Success code: " + body);
                     error.Text = WORNG_CONF_CODE;
                     error.Visible = true;
                     return;
@@ -59,6 +59,8 @@ namespace loginHandler
                 {
                     
                     user.SecurityCode = CONFIRMED;
+                    String ok = LocalData.updateUser(user);
+                    //MessageBox.Show(ok);
                     MessageBox.Show("Login successfull!\n\ncontinue to MyScreen");
                     //return;
 
