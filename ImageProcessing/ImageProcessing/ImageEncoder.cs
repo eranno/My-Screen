@@ -15,8 +15,8 @@ namespace ImageProcessing
 
         public static String PROGRAM_ID = "1101000100001";
         public static int SWAPS = 300;
-        public static int HIGHT = 300;
-        public static int WIDTH = 400;
+        public static int HIGHT = 300; //set new image hight
+        public static int WIDTH = 400; //set new image width
 
         public static void EncodeImage(String dir, EncryptedImage imageData)
         {
