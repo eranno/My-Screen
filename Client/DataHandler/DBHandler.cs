@@ -257,7 +257,7 @@ namespace DataHandler
             //dump.Add("INSERT INTO AuthImages(imageId , friendId) VALUES('1', 'ilan@gmail.com')");
 
 
-            dump.Add("INSERT INTO UserProperties(email , name , password , securityCode , userId , imageId) VALUES('erannn@gmail.com', 'localhost' , '1234' , '187365543208213678653094' , '1' , '12')");
+            dump.Add("INSERT INTO UserProperties(email , name , password , securityCode , userId , imageId) VALUES('eran@gmail.com', 'localhost' , '1234' , '187365543208213678653094' , '1' , '12')");
 
             foreach (string cmd in dump)
             {
